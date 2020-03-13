@@ -1,0 +1,1 @@
+CREATE DATABASE web_bookstore WITH ENCODING 'UTF8';

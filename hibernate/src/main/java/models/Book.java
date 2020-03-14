@@ -2,11 +2,11 @@ package models;
 import javax.persistence.*;
 import java.util.List;
 
-/*public enum cover_type {
-    "Твёрдая",
-    "Мягкая",
-    "Твёрдая Тканевая",
-    "Кожаная"
+/*enum cover_type {
+    Твёрдая,
+    Мягкая,
+    Твёрдая_Тканевая,
+    Кожаная
 };*/
 
 @Entity
@@ -36,7 +36,7 @@ public class Book {
     private int count_book;
 
     @Column (name = "cover", nullable = false)
-    private /*cover_type*/ String cover;
+    private /*cover_type*/String cover;
 
     @Column (name = "price", nullable = false)
     private double price;

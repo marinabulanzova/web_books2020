@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a6473cb1-fd09-4918-acb6-910f747b0d08" name="Default Changelist" comment="" />
+    <list default="true" id="a6473cb1-fd09-4918-acb6-910f747b0d08" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/432516cc-f1cd-4d54-a1f1-e1153600fc98.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/432516cc-f1cd-4d54-a1f1-e1153600fc98/storage_v2/_src_/database/DB_web_bookstore.bPoz7w.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/432516cc-f1cd-4d54-a1f1-e1153600fc98/storage_v2/_src_/database/DB_web_bookstore.bPoz7w/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/432516cc-f1cd-4d54-a1f1-e1153600fc98/storage_v2/_src_/database/DB_web_bookstore.bPoz7w/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/432516cc-f1cd-4d54-a1f1-e1153600fc98/storage_v2/_src_/database/DB_web_bookstore.bPoz7w/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/hibernate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/hibernate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/AuthorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/AuthorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/GenericDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/OrderDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Book.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +45,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1Yc3V2glo93cIiF8XzInsIg0SRL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -41,6 +68,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -79,6 +107,8 @@
       <workItem from="1583905514952" duration="3418000" />
       <workItem from="1583939909294" duration="2867000" />
       <workItem from="1584013492256" duration="3985000" />
+      <workItem from="1584168610745" duration="9754000" />
+      <workItem from="1584199698716" duration="1336000" />
     </task>
     <servers />
   </component>
@@ -86,22 +116,26 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="315" y="45" key="#Assign_Data_Sources" timestamp="1584172592957">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="315" y="45" key="#Assign_Data_Sources/65.24.1301.744@65.24.1301.744" timestamp="1584172592957" />
     <state x="315" y="45" key="#Project_Structure" timestamp="1583514809954">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="315" y="45" key="#Project_Structure/65.24.1301.744@65.24.1301.744" timestamp="1583514809954" />
-    <state x="315" y="44" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583482856651">
+    <state x="505" y="93" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584172310787">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="315" y="44" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.24.1301.744@65.24.1301.744" timestamp="1583482856651" />
+    <state x="505" y="93" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.24.1301.744@65.24.1301.744" timestamp="1584172310787" />
     <state x="528" y="102" key="#com.intellij.ide.util.MemberChooser" timestamp="1583529024460">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="528" y="102" key="#com.intellij.ide.util.MemberChooser/65.24.1301.744@65.24.1301.744" timestamp="1583529024460" />
-    <state x="244" y="122" width="907" height="516" key="FileChooserDialogImpl" timestamp="1583480176573">
+    <state x="244" y="122" width="907" height="516" key="FileChooserDialogImpl" timestamp="1584172149655">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="244" y="122" width="907" height="516" key="FileChooserDialogImpl/65.24.1301.744@65.24.1301.744" timestamp="1583480176573" />
+    <state x="244" y="122" width="907" height="516" key="FileChooserDialogImpl/65.24.1301.744@65.24.1301.744" timestamp="1584172149655" />
     <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1583228332324">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
@@ -110,10 +144,10 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="65" y="24" width="1301" height="744" key="SettingsEditor/65.24.1301.744@65.24.1301.744" timestamp="1583948251814" />
-    <state x="378" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1584013625208">
+    <state x="378" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1584199698818">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="378" y="211" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1584013625208" />
+    <state x="378" y="211" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1584199698818" />
     <state x="411" y="238" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1583948240830">
       <screen x="65" y="24" width="1301" height="744" />
     </state>

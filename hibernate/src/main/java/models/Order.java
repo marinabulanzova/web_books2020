@@ -1,5 +1,6 @@
 package models;
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
@@ -10,16 +11,17 @@ import java.util.List;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_order;
+    private Integer id_order;
 
-    @Column(name = "id_customer")
-    private int id_customer;
+    @ManyToOne
+    @JoinColumn(name = "id_customer", referencedColumnName = "id_user")
+    private User customer;
 
     @Column(name = "delivery_address", nullable = true, length = 100)
     private String delivery_address;
 
     @Column(name = "payment", nullable = false)
-    private String /*payment_method*/ payment;
+    private String payment;
 
     @Column(name = "order_date", nullable = false)
     private Timestamp order_date;
@@ -28,32 +30,33 @@ public class Order {
     private Date delivery_date;
 
     @Column(name = "status", nullable = false)
-    private String /*order_status*/ status;
+    private String status;
 
     @Column(name = "delivery_price", nullable = false)
-    private double delivery_price;
+    private BigDecimal delivery_price;
 
     @OneToMany(mappedBy = "id_order", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Basket_order> id_books_in_basket_order;
+    private List<Basket_order> basket_orderList;
 
-    @ManyToOne
-    @JoinColumn(name = "id_customer", referencedColumnName = "id_user", nullable = false)
-    private User customer;
+    public Order() {}
 
-    public int getId_order() {
+    public Order(User customer, String delivery_address, String payment, Timestamp order_date,
+                 Date delivery_date, String status, BigDecimal delivery_price) {
+        this.customer = customer;
+        this.delivery_address = delivery_address;
+        this.payment = payment;
+        this.order_date = order_date;
+        this.delivery_date = delivery_date;
+        this.status = status;
+        this.delivery_price = delivery_price;
+    }
+
+    public Integer getId_order() {
         return id_order;
     }
 
-    public void setId_order(int id_order) {
+    public void setId_order(Integer id_order) {
         this.id_order = id_order;
-    }
-
-    public int getId_customer() {
-        return id_customer;
-    }
-
-    public void setId_customer(int id_customer) {
-        this.id_customer = id_customer;
     }
 
     public String getDelivery_address() {
@@ -96,12 +99,29 @@ public class Order {
         this.status = status;
     }
 
-    public double getDelivery_price() {
+    public BigDecimal getDelivery_price() {
         return delivery_price;
     }
 
-    public void setDelivery_price(double delivery_price) {
+    public void setDelivery_price(BigDecimal delivery_price) {
         this.delivery_price = delivery_price;
+    }
+
+    public List<Basket_order> getBasket_orderList() {
+        return basket_orderList;
+    }
+
+    public void setBasket_orderList(List<Basket_order> basket_orderList) {
+        this.basket_orderList = basket_orderList;
+    }
+
+    public void addBasket_orderList(Basket_order b_o) {
+        b_o.setOrder(this);
+        basket_orderList.add(b_o);
+    }
+
+    public void removeBasket_customerList(Basket_order b_o) {
+        basket_orderList.remove(b_o);
     }
 
     public User getCustomer() {
@@ -110,5 +130,41 @@ public class Order {
 
     public void setCustomer(User customer) {
         this.customer = customer;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        if (customer != null ? !customer.equals(order.customer) : order.customer != null) return false;
+        if (delivery_address != null ? !delivery_address.equals(order.delivery_address) : order.delivery_address != null) return false;
+        if (order_date!= null ? !order_date.equals(order.order_date) : order.order_date != null) return false;
+        if (delivery_date != null ? !delivery_date.equals(order.delivery_date) : order.delivery_date != null) return false;
+        return status != null ? status.equals(order.status) : order.status == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = customer != null ? customer.hashCode() : 0;
+        result = 31 * result + (delivery_address != null ? delivery_address.hashCode() : 0);
+        result = 31 * result + (order_date != null ? order_date.hashCode() : 0);
+        result = 31 * result + (delivery_date != null ? delivery_date.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id_order=" + id_order +
+                ", customer=" + customer +
+                ", delivery_address='" + delivery_address + '\'' +
+                ", payment='" + payment + '\'' +
+                ", order_date=" + order_date +
+                ", delivery_date=" + delivery_date +
+                ", status='" + status + '\'' +
+                ", delivery_price=" + delivery_price +
+                '}';
     }
 }

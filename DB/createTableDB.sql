@@ -2,7 +2,7 @@ set DATESTYLE to "DMY";
 
 -- "Авторы" -- 
 CREATE TABLE IF NOT EXISTS Authors  (
-  id_author int primary key,
+  id_author serial primary key,
   name varchar(60) not null
 );
 
@@ -10,7 +10,7 @@ CREATE TYPE cover_type as enum ('Твёрдая', 'Мягкая', 'Твёрда�
 
 -- "Книги" --
 CREATE TABLE IF NOT EXISTS Books (
-  id_book int primary key, -- номер книги
+  id_book serial primary key, -- номер книги
   gеnre varchar(30) not null, -- жанр 
   title varchar(50) not null, -- название
   publishing_house varchar(30) not null, -- издательство
@@ -23,16 +23,16 @@ CREATE TABLE IF NOT EXISTS Books (
 
 -- "Авторы книг" -- 
 CREATE TABLE IF NOT EXISTS Books_authors (
+  id serial primary key,
   id_book int not null, -- книга
-  id_author int not null, -- автор
-  primary key(id_book, id_author)
+  id_author int not null -- автор
 );
 
 CREATE TYPE status_user AS enum ('клиент', 'администратор');
 
 -- "Клиенты" --
 CREATE TABLE IF NOT EXISTS Users (
-  id_user int primary key, -- номер клиента
+  id_user serial primary key, -- номер клиента
   surname varchar(20), -- фамилия
   first_name varchar(20) not null,-- имя
   patronymic varchar(20), -- отчество 
@@ -40,15 +40,15 @@ CREATE TABLE IF NOT EXISTS Users (
   phone_number varchar(11) unique not null, -- номер телефона
   e_mail varchar(30) unique not null, -- адрес электронной почты
   password_hash varchar(50) not null, -- хэш пароля
-  status status_user default 'клиент'
+  admin boolean default false
 );
 
 -- "Корзина клиента" -- 
 CREATE TABLE IF NOT EXISTS Basket_customer (
+  id serial primary key,
   id_book int not null, -- книга
   id_customer int not null, -- клиент
-  count_book int not null, -- количество экземпляров
-  primary key (id_book, id_customer)
+  count_book int not null -- количество экземпляров
 );
 
 CREATE TYPE order_status AS enum ('в обработке', 'собран', 'в пути', 'доставлен');
@@ -57,7 +57,7 @@ CREATE TYPE payment_method AS enum ('картой', 'наличными');
 
 -- "Заказы" --
 CREATE TABLE IF NOT EXISTS Orders (
-  id_order int primary key, -- номер заказа
+  id_order serial primary key, -- номер заказа
   id_customer int not null, -- номер клиента
   delivery_address varchar(100), -- адрес доставки
   payment payment_method not null, -- способ оплаты
@@ -69,15 +69,14 @@ CREATE TABLE IF NOT EXISTS Orders (
 
 -- "Составляющие заказа" --
 CREATE TABLE IF NOT EXISTS Order_basket (
+  id serial primary key,
   id_order int not null, -- номер заказа
   id_book int not null, -- номер книги
   count_book int not null, -- количество книг
-  price numeric(6,2) not null, -- цена на момент заказа 
-  primary key(id_order, id_book)
+  price numeric(6,2) not null -- цена на момент заказа
 );
 
-
-ALTER TABLE Orders ADD 
+ALTER TABLE Orders ADD
 	foreign key (id_customer)
 	references Users(id_user); 
 

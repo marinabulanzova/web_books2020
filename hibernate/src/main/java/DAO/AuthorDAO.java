@@ -9,26 +9,26 @@ import java.util.List;
 public class AuthorDAO {
     private SessionFactory sessionFactory;
 
-    public Author getById(int id){
+    public Author getById(int id) {
         Session session = sessionFactory.openSession();
         Author author = (Author) session.get(Author.class, id);
         session.close();
         return author;
     }
 
-    public void save(Author author){
+    public void save(Author author) {
         Session session = sessionFactory.openSession();
-        Transaction t1 = session.beginTransaction();
+        Transaction t = session.beginTransaction();
         session.save(author);
-        t1.commit();
+        t.commit();
         session.close();
     }
 
     public void update(Author author) {
         Session session = sessionFactory.openSession();
-        Transaction t2 = session.beginTransaction();
+        Transaction t = session.beginTransaction();
         session.update(author);
-        t2.commit();
+        t.commit();
         session.close();
     }
 
@@ -40,11 +40,17 @@ public class AuthorDAO {
         session.close();
     }
 
-    public List<Author> findAll() {
+    /*public List<Author> findAll() {
         Session session = sessionFactory.openSession();
         List<Author> list = (List<Author>)session.createQuery("From Author").list();
         session.close();
         return list;
     }
+
+    public List findByName(String name) {
+        Session session = sessionFactory.openSession();
+        String text_query = "SELECT a FROM Author a WHERE a.name LIKE '%" + name + "%'";
+        return session.createQuery(text_query).getResultList();
+    }*/
 
 }

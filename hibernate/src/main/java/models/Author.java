@@ -10,19 +10,43 @@ public class Author {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column (name = "id_author", nullable = false)
-    private int id_author;
+    private Integer id_author;
 
     @Column (name = "name", length = 60, nullable = false)
     private String name;
 
     @OneToMany(mappedBy = "id_author", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Book_author> id_books;
+    private List<Book_author> book_authors;
 
-    public int getId_author() {
+    public Author() {}
+
+    public Author(String name) {
+        this.name = name;
+        //book_authors = new ArrayList<>();
+    }
+
+    public List<Book_author> getBook_authors() {
+        return book_authors;
+    }
+
+    public void setBook_authors(List<Book_author> book_authors) {
+        this.book_authors = book_authors;
+    }
+
+    public void addBook_authors(Book_author book_author) {
+        book_author.setAuthor(this);
+        book_authors.add(book_author);
+    }
+
+    public void removeBook_authors(Book_author book_author) {
+        book_authors.remove(book_author);
+    }
+
+    public Integer getId_author() {
         return id_author;
     }
 
-    public void setId_author(int id_author) {
+    public void setId_author(Integer id_author) {
         this.id_author = id_author;
     }
 
@@ -34,12 +58,24 @@ public class Author {
         this.name = name;
     }
 
-    public List<Book_author> getId_books() {
-        return id_books;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return name.equals(author.name);
     }
 
-    public void setId_books(List<Book_author> id_books) {
-        this.id_books = id_books;
+    @Override
+    public int hashCode() {
+        return name.hashCode();
     }
 
+    @Override
+    public String toString() {
+        return "Author{" +
+                "id_author=" + id_author +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

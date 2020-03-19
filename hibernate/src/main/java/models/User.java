@@ -1,10 +1,7 @@
 package models;
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(name = "Users")
@@ -12,7 +9,7 @@ import java.util.Objects;
 public class User {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private int id_user;
+    private Integer id_user;
 
     @Column (name = "surname", nullable = true, length = 20)
     private String surname;
@@ -35,20 +32,42 @@ public class User {
     @Column (name = "password_hash", nullable = false, length = 50)
     private String password_hash;
 
-    @Column (name = "status")
-    private String /*status_user*/ status;
+    @Column (name = "admin")
+    private Boolean admin;
 
     @OneToMany(mappedBy = "id_user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Basket_customer> id_books_in_basket;
+    private List<Basket_customer> basket_customerList;
 
     @OneToMany(mappedBy = "id_user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Order> orders;
 
-    public int getId_user() {
+    public User() {}
+
+    public User(String surname, String first_name, String patronymic, String address,
+                String phone_number, String e_mail, String password_hash, Boolean admin) {
+        this.surname = surname;
+        this.first_name = first_name;
+        this.patronymic = patronymic;
+        this.address = address;
+        this.phone_number = phone_number;
+        this.e_mail = e_mail;
+        this.password_hash = password_hash;
+        this.admin = admin;
+    }
+
+    public Boolean getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
+    }
+
+    public Integer getId_user() {
         return id_user;
     }
 
-    public void setId_user(int id_user) {
+    public void setId_user(Integer id_user) {
         this.id_user = id_user;
     }
 
@@ -108,11 +127,66 @@ public class User {
         this.password_hash = password_hash;
     }
 
-    public String getStatus() {
-        return status;
+    public List<Basket_customer> getBasket_customerList() {
+        return basket_customerList;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setBasket_customerList(List<Basket_customer> basket_customerList) {
+        this.basket_customerList = basket_customerList;
+    }
+
+    public void addBasket_customerList(Basket_customer b_c) {
+        b_c.setCustomer(this);
+        basket_customerList.add(b_c);
+    }
+
+    public void removeBasket_customerList(Basket_customer b_c) {
+        basket_customerList.remove(b_c);
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
+    public void addOrder(Order order) {
+        order.setCustomer(this);
+        orders.add( order );
+    }
+
+    public void removeOrder(Order order) {
+        orders.remove( order );
+        order.setCustomer(null);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return phone_number.equals(user.phone_number);
+    }
+
+    @Override
+    public int hashCode() {
+        return phone_number.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id_user=" + id_user +
+                ", surname='" + surname + '\'' +
+                ", first_name='" + first_name + '\'' +
+                ", patronymic='" + patronymic + '\'' +
+                ", address='" + address + '\'' +
+                ", phone_number='" + phone_number + '\'' +
+                ", e_mail='" + e_mail + '\'' +
+                ", password_hash='" + password_hash + '\'' +
+                ", admin=" + admin +
+                '}';
     }
 }

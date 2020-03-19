@@ -2,22 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6473cb1-fd09-4918-acb6-910f747b0d08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/432516cc-f1cd-4d54-a1f1-e1153600fc98.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/432516cc-f1cd-4d54-a1f1-e1153600fc98/storage_v2/_src_/database/DB_web_bookstore.bPoz7w.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/432516cc-f1cd-4d54-a1f1-e1153600fc98/storage_v2/_src_/database/DB_web_bookstore.bPoz7w/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/432516cc-f1cd-4d54-a1f1-e1153600fc98/storage_v2/_src_/database/DB_web_bookstore.bPoz7w/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/432516cc-f1cd-4d54-a1f1-e1153600fc98/storage_v2/_src_/database/DB_web_bookstore.bPoz7w/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_6_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_customerDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_orderDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Book_authorDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/main/java/utils/HibernateSessionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/BookTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/createTableDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/createTableDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/fillDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/fillDB.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/hibernate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/hibernate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/AuthorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/AuthorDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/BookDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/GenericDAO.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/OrderDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Basket_customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Basket_customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Basket_customer_key.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Basket_order.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Basket_order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Basket_order_key.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Book_author.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Book_author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Book_author_key.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/utils/HibernateSession.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,15 +84,29 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.4081448" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/DB" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="hibernate" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -108,7 +134,10 @@
       <workItem from="1583939909294" duration="2867000" />
       <workItem from="1584013492256" duration="3985000" />
       <workItem from="1584168610745" duration="9754000" />
-      <workItem from="1584199698716" duration="1336000" />
+      <workItem from="1584199698716" duration="9273000" />
+      <workItem from="1584452580751" duration="17635000" />
+      <workItem from="1584518561321" duration="11209000" />
+      <workItem from="1584631563875" duration="15124000" />
     </task>
     <servers />
   </component>
@@ -120,38 +149,54 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="315" y="45" key="#Assign_Data_Sources/65.24.1301.744@65.24.1301.744" timestamp="1584172592957" />
-    <state x="315" y="45" key="#Project_Structure" timestamp="1583514809954">
+    <state x="315" y="45" key="#Project_Structure" timestamp="1584633176674">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="315" y="45" key="#Project_Structure/65.24.1301.744@65.24.1301.744" timestamp="1583514809954" />
+    <state x="315" y="45" key="#Project_Structure/65.24.1301.744@65.24.1301.744" timestamp="1584633176674" />
     <state x="505" y="93" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584172310787">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="505" y="93" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.24.1301.744@65.24.1301.744" timestamp="1584172310787" />
-    <state x="528" y="102" key="#com.intellij.ide.util.MemberChooser" timestamp="1583529024460">
+    <state x="810" y="144" key="#com.intellij.ide.util.MemberChooser" timestamp="1584649143092">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="528" y="102" key="#com.intellij.ide.util.MemberChooser/65.24.1301.744@65.24.1301.744" timestamp="1583529024460" />
-    <state x="244" y="122" width="907" height="516" key="FileChooserDialogImpl" timestamp="1584172149655">
+    <state x="810" y="144" key="#com.intellij.ide.util.MemberChooser/65.24.1301.744@65.24.1301.744" timestamp="1584649143092" />
+    <state x="244" y="122" width="907" height="516" key="FileChooserDialogImpl" timestamp="1584453887947">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="244" y="122" width="907" height="516" key="FileChooserDialogImpl/65.24.1301.744@65.24.1301.744" timestamp="1584172149655" />
+    <state x="244" y="122" width="907" height="516" key="FileChooserDialogImpl/65.24.1301.744@65.24.1301.744" timestamp="1584453887947" />
+    <state width="1147" height="174" key="GridCell.Tab.0.bottom" timestamp="1584520985101">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1147" height="174" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1584520985101" />
+    <state width="1147" height="174" key="GridCell.Tab.0.center" timestamp="1584520985101">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1147" height="174" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1584520985101" />
+    <state width="1147" height="174" key="GridCell.Tab.0.left" timestamp="1584520985101">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1147" height="174" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1584520985101" />
+    <state width="1147" height="174" key="GridCell.Tab.0.right" timestamp="1584520985101">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1147" height="174" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1584520985101" />
     <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1583228332324">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state width="263" height="500" key="HiddenNamespacesPopup/65.24.1301.744@65.24.1301.744" timestamp="1583228332324" />
-    <state x="65" y="24" width="1301" height="744" key="SettingsEditor" timestamp="1583948251814">
+    <state x="65" y="24" width="1301" height="744" key="SettingsEditor" timestamp="1584633000363">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="65" y="24" width="1301" height="744" key="SettingsEditor/65.24.1301.744@65.24.1301.744" timestamp="1583948251814" />
-    <state x="378" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1584199698818">
+    <state x="65" y="24" width="1301" height="744" key="SettingsEditor/65.24.1301.744@65.24.1301.744" timestamp="1584633000363" />
+    <state x="378" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1584631561204">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="378" y="211" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1584199698818" />
-    <state x="411" y="238" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1583948240830">
+    <state x="378" y="211" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1584631561203" />
+    <state x="411" y="238" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584632972316">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="411" y="238" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/65.24.1301.744@65.24.1301.744" timestamp="1583948240830" />
+    <state x="411" y="238" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/65.24.1301.744@65.24.1301.744" timestamp="1584632972316" />
     <state x="65" y="24" key="new project wizard" timestamp="1583948211848">
       <screen x="65" y="24" width="1301" height="744" />
     </state>

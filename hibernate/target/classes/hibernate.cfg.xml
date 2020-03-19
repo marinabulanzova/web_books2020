@@ -19,6 +19,10 @@
         <mapping class="models.Basket_order"/>
         <mapping class="models.Order"/>
         <mapping class="models.Book_author"/>
+        <!-- <property name="connection.username"/> -->
+        <!-- <property name="connection.password"/> -->
 
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>
 </hibernate-configuration>

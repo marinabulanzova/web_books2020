@@ -4,10 +4,14 @@ import models.Author;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import java.util.List;
+
 
 public class AuthorDAO {
     private SessionFactory sessionFactory;
+
+    public AuthorDAO(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     public Author getById(int id) {
         Session session = sessionFactory.openSession();
@@ -16,41 +20,36 @@ public class AuthorDAO {
         return author;
     }
 
-    public void save(Author author) {
+    // добавление автора только в том случае, когда создаём книгу с таким автором
+    public Integer save(Author author) {
         Session session = sessionFactory.openSession();
         Transaction t = session.beginTransaction();
-        session.save(author);
+
+        Integer id = (Integer) session.save(author);
+
         t.commit();
         session.close();
+        return id;
     }
 
     public void update(Author author) {
         Session session = sessionFactory.openSession();
         Transaction t = session.beginTransaction();
+
         session.update(author);
+
         t.commit();
         session.close();
     }
 
     public void delete(Author author) {
         Session session = sessionFactory.openSession();
-        Transaction t3 = session.beginTransaction();
+        Transaction t = session.beginTransaction();
+
         session.delete(author);
-        t3.commit();
+
+        t.commit();
         session.close();
     }
-
-    /*public List<Author> findAll() {
-        Session session = sessionFactory.openSession();
-        List<Author> list = (List<Author>)session.createQuery("From Author").list();
-        session.close();
-        return list;
-    }
-
-    public List findByName(String name) {
-        Session session = sessionFactory.openSession();
-        String text_query = "SELECT a FROM Author a WHERE a.name LIKE '%" + name + "%'";
-        return session.createQuery(text_query).getResultList();
-    }*/
 
 }

@@ -1,5 +1,6 @@
 package models;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -18,11 +19,12 @@ public class Author {
     @OneToMany(mappedBy = "id_author", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Book_author> book_authors;
 
+
     public Author() {}
 
     public Author(String name) {
         this.name = name;
-        //book_authors = new ArrayList<>();
+        book_authors = new ArrayList();
     }
 
     public List<Book_author> getBook_authors() {

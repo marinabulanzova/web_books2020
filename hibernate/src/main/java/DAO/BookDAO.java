@@ -9,6 +9,10 @@ import java.util.List;
 public class BookDAO {
     private SessionFactory sessionFactory;
 
+    public BookDAO(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
     public Book getById(int id){
         Session session = sessionFactory.openSession();
         Book book = (Book) session.get(Book.class, id);
@@ -16,27 +20,34 @@ public class BookDAO {
         return book;
     }
 
-    public void save(Book book){
+    public Integer save(Book book) {
         Session session = sessionFactory.openSession();
-        Transaction t1 = session.beginTransaction();
-        session.save(book);
-        t1.commit();
+        Transaction t = session.beginTransaction();
+
+        Integer id = (Integer) session.save(book);
+
+        t.commit();
         session.close();
+        return id;
     }
 
     public void update(Book book) {
         Session session = sessionFactory.openSession();
-        Transaction t2 = session.beginTransaction();
+        Transaction t = session.beginTransaction();
+
         session.update(book);
-        t2.commit();
+
+        t.commit();
         session.close();
     }
 
     public void delete(Book book) {
         Session session = sessionFactory.openSession();
-        Transaction t3 = session.beginTransaction();
+        Transaction t = session.beginTransaction();
+
         session.delete(book);
-        t3.commit();
+
+        t.commit();
         session.close();
     }
 
@@ -48,8 +59,8 @@ public class BookDAO {
     }
 
    // поиск книг по различным фильтрам
-   public List<Book> find(String title, String genre, String publishing_house, int min_p_year, int max_p_year,
-                          int min_p_count, int max_p_count, int count, String cover, double min_price, double max_price,
+   public List<Book> find(String title, String genre, String publishing_house, Integer min_p_year, Integer max_p_year,
+                          Integer min_p_count, Integer max_p_count, Integer count, String cover, Double min_price, Double max_price,
                           String name_author) {
        Session session = sessionFactory.openSession();
        String text_query = "SELECT b FROM Book b";
@@ -76,23 +87,23 @@ public class BookDAO {
                text_query += (flagAnd ? " AND" : "") + " b.publishing_house = '" + publishing_house + "'";
                flagAnd = true;
            }
-           if (min_p_year != 0) {
+           if (min_p_year != null) {
                text_query += (flagAnd ? " AND" : "") + " b.publication_year   >= " + min_p_year;
                flagAnd = true;
            }
-           if (max_p_year != 0) {
+           if (max_p_year != null) {
                text_query += (flagAnd ? " AND" : "") + " b.publication_year  <= " + max_p_year;
                flagAnd = true;
            }
-           if (min_p_count != 0) {
+           if (min_p_count != null) {
                text_query += (flagAnd ? " AND" : "") + " b.page_count >= " + min_p_count;
                flagAnd = true;
            }
-           if (max_p_count != 0) {
+           if (max_p_count != null) {
                text_query += (flagAnd ? " AND" : "") + " b.page_count <= " + max_p_count;
                flagAnd = true;
            }
-           if (count != 0) {
+           if (count != null) {
                text_query += (flagAnd ? " AND" : "") + " b.count_book  = " + count;
                flagAnd = true;
            }
@@ -100,11 +111,11 @@ public class BookDAO {
                text_query += (flagAnd ? " AND" : "") + " b.cover <= '" + cover + "'";
                flagAnd = true;
            }
-           if (min_price != 0) {
+           if (min_price != null) {
                text_query += (flagAnd ? " AND" : "") + " b.price >= " + min_price;
                flagAnd = true;
            }
-           if (max_price != 0) {
+           if (max_price != null) {
                text_query += (flagAnd ? " AND" : "") + " b.price <= " + max_price;
                flagAnd = true;
            }

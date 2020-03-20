@@ -9,6 +9,10 @@ import java.util.List;
 public class UserDAO {
     private SessionFactory sessionFactory;
 
+    public UserDAO(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
     public User getById(int id){
         Session session = sessionFactory.openSession();
         User user = (User) session.get(User.class, id);
@@ -16,27 +20,34 @@ public class UserDAO {
         return user;
     }
 
-    public void save(User user){
+    public Integer save(User user){
         Session session = sessionFactory.openSession();
-        Transaction t1 = session.beginTransaction();
-        session.save(user);
-        t1.commit();
+        Transaction t = session.beginTransaction();
+
+        Integer id = (Integer) session.save(user);
+
+        t.commit();
         session.close();
+        return id;
     }
 
     public void update(User user) {
         Session session = sessionFactory.openSession();
-        Transaction t2 = session.beginTransaction();
+        Transaction t = session.beginTransaction();
+
         session.update(user);
-        t2.commit();
+
+        t.commit();
         session.close();
     }
 
     public void delete(User user) {
         Session session = sessionFactory.openSession();
-        Transaction t3 = session.beginTransaction();
+        Transaction t = session.beginTransaction();
+
         session.delete(user);
-        t3.commit();
+
+        t.commit();
         session.close();
     }
 

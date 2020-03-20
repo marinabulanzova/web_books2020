@@ -11,6 +11,10 @@ import java.util.List;
 public class OrderDAO {
     private SessionFactory sessionFactory;
 
+    public OrderDAO(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
     public Order getById(int id){
         Session session = sessionFactory.openSession();
         Order order = (Order) session.get(Order.class, id);
@@ -18,26 +22,37 @@ public class OrderDAO {
         return order;
     }
 
-    public void save(Order order){
+    public Integer save(Order order){
         Session session = sessionFactory.openSession();
-        Transaction t1 = session.beginTransaction();
-        session.save(order);
-        t1.commit();
+        Transaction t = session.beginTransaction();
+
+        order.getCustomer().addOrder(order);
+        Integer id = (Integer) session.save(order);
+
+        t.commit();
         session.close();
+        return id;
     }
 
     public void update(Order order) {
         Session session = sessionFactory.openSession();
-        Transaction t2 = session.beginTransaction();
+        Transaction t = session.beginTransaction();
+
+        //order.getCustomer().removeOrder(order);
         session.update(order);
-        t2.commit();
+        //order.getCustomer().addOrder(order);
+
+        t.commit();
         session.close();
     }
 
     public void delete(Order order) {
         Session session = sessionFactory.openSession();
         Transaction t3 = session.beginTransaction();
+
+        order.getCustomer().removeOrder(order);
         session.delete(order);
+
         t3.commit();
         session.close();
     }
@@ -50,8 +65,8 @@ public class OrderDAO {
     }
 
     // поиск заказа по различным фильтрам
-    public List<Order> find(int id_customer, String delivery_address, String payment, Date min_o_date, Date max_o_date,
-                            Date min_d_date, Date max_d_date, String status, double min_d_price, double max_d_price) {
+    public List<Order> find(Integer id_customer, String delivery_address, String payment, Date min_o_date, Date max_o_date,
+                            Date min_d_date, Date max_d_date, String status, Double min_d_price, Double max_d_price) {
         Session session = sessionFactory.openSession();
         String text_query = "SELECT o FROM Order o";
         if (id_customer != 0 || delivery_address != null || payment != null ||
@@ -59,8 +74,8 @@ public class OrderDAO {
                 status != null || min_d_price != 0 || max_d_price != 0) {
             text_query += " WHERE";
             Boolean flagAnd = false;
-            if (id_customer != 0) {
-                text_query += (flagAnd ? " AND" : "") + " o.id_customer = " + id_customer;
+            if (id_customer != null) {
+                text_query += (flagAnd ? " AND" : "") + " o.customer.id_customer = " + id_customer;
                 flagAnd = true;
             }
             if (delivery_address != null) {
@@ -87,11 +102,11 @@ public class OrderDAO {
                 text_query += (flagAnd ? " AND" : "") + " o.status  = '" + status + "'";
                 flagAnd = true;
             }
-            if (min_d_price != 0) {
+            if (min_d_price != null) {
                 text_query += (flagAnd ? " AND" : "") + " o.delivery_price >= " + min_d_price;
                 flagAnd = true;
             }
-            if (max_d_price != 0) {
+            if (max_d_price != null) {
                 text_query += (flagAnd ? " AND" : "") + " o.delivery_price = " + max_d_price;
                 flagAnd = true;
             }

@@ -8,42 +8,36 @@ import java.util.List;
 
 public class Basket_orderDAO {
     private SessionFactory sessionFactory;
-    // добавить в корзину заказа (происходит после этапа добавления заказа, и копируется из корзины пользователя)
-    public void save(Basket_order basket_o){
-        Session session = sessionFactory.openSession();
-        Transaction t1 = session.beginTransaction();
-        session.save(basket_o);
-        t1.commit();
-        session.close();
+
+    public Basket_orderDAO(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
-    // кажется что update не нужен, мы же не можем изменить цену и количество товара, после того, как заказ был оформлен
-    /*public void update(Basket_order basket_o) {
+
+    // добавить в корзину заказа (происходит после этапа добавления заказа, и копируется из корзины пользователя)
+    public Integer save(Basket_order basket_o){
         Session session = sessionFactory.openSession();
-        Transaction t2 = session.beginTransaction();
-        session.update(basket_o);
-        t2.commit();
+        Transaction t = session.beginTransaction();
+
+        basket_o.getOrder().addBasket_orderList(basket_o);
+        basket_o.getBook().addBasket_orderList(basket_o);
+        Integer id = (Integer) session.save(basket_o);
+
+        t.commit();
         session.close();
-    }*/
+        return id;
+    }
+
     // удалять после того, как удалили соответствующий заказ (или это не нужно так-как удаление каскадное ?)
     public void delete(Basket_order basket_o) {
         Session session = sessionFactory.openSession();
-        Transaction t3 = session.beginTransaction();
+        Transaction t = session.beginTransaction();
+
+        basket_o.getBook().removeBasket_orderList(basket_o);
+        basket_o.getOrder().removeBasket_orderList(basket_o);
         session.delete(basket_o);
-        t3.commit();
+
+        t.commit();
         session.close();
     }
 
-    // удалить по id заказа (или это не нужно так-как удаление каскадное ?)
-    public int deleteByIdOrder(int id_order) {
-        Session session = sessionFactory.openSession();
-        String text_query = "DELETE Basket_order WHERE id_order = " + id_order;
-        return session.createQuery(text_query).executeUpdate();
-    }
-    // аналогично basket_customer нет смысла искать все книги и для конкретного пользователя тоже
-    /*public List<Basket_order> find() {
-        Session session = sessionFactory.openSession();
-        List<Basket_order> list = (List<Basket_order>)session.createQuery("From Author").list();
-        session.close();
-        return list;
-    }*/
 }

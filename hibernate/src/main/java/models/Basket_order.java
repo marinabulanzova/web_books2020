@@ -11,7 +11,7 @@ public class Basket_order {
     private Integer id;
 
     @Column (name = "price", nullable = false)
-    private BigDecimal price;
+    private Double price;
 
     @Column (name = "count_book", nullable = false)
     private Integer count_book;
@@ -27,7 +27,7 @@ public class Basket_order {
     public Basket_order() {
     }
 
-    public Basket_order(Book book, Order order, Integer count_book, BigDecimal price) {
+    public Basket_order(Book book, Order order, Integer count_book, Double price) {
         this.book = book;
         this.order = order;
         this.count_book = count_book;
@@ -42,11 +42,11 @@ public class Basket_order {
         this.id = id;
     }
 
-    public BigDecimal getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

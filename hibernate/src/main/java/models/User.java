@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -38,7 +39,7 @@ public class User {
     @OneToMany(mappedBy = "id_user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Basket_customer> basket_customerList;
 
-    @OneToMany(mappedBy = "id_user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "id_user", cascade = CascadeType.ALL/*, orphanRemoval = true*/)
     private List<Order> orders;
 
     public User() {}
@@ -53,6 +54,8 @@ public class User {
         this.e_mail = e_mail;
         this.password_hash = password_hash;
         this.admin = admin;
+        basket_customerList = new ArrayList();
+        orders = new ArrayList();
     }
 
     public Boolean getAdmin() {

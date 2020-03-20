@@ -1,6 +1,6 @@
 package models;
 import javax.persistence.*;
-import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -33,7 +33,7 @@ public class Book {
     private String cover;
 
     @Column (name = "price", nullable = false)
-    private BigDecimal price;
+    private Double price;
 
     @OneToMany(mappedBy = "id_book", cascade = CascadeType.ALL, orphanRemoval = true)
     private List <Book_author> book_authors;
@@ -41,13 +41,13 @@ public class Book {
     @OneToMany(mappedBy = "id_book", cascade = CascadeType.ALL, orphanRemoval = true)
     private List <Basket_customer> basket_customerList;
 
-    @OneToMany(mappedBy = "id_book", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "id_book", cascade = CascadeType.ALL/*, orphanRemoval = true*/)
     private List <Basket_order> basket_orderList;
 
     public Book() {}
 
     public Book(String genre, String title, String publishing_house, Integer publication_year,
-                Integer page_count, Integer count_book, String cover, BigDecimal prise) {
+                Integer page_count, Integer count_book, String cover, Double prise) {
         this.genre = genre;
         this.title = title;
         this.publication_year = publication_year;
@@ -56,6 +56,9 @@ public class Book {
         this.count_book = count_book;
         this.cover = cover;
         this.price = prise;
+        basket_orderList = new ArrayList();
+        basket_customerList = new ArrayList();
+        book_authors = new ArrayList();
     }
 
     public String getTitle() {
@@ -82,11 +85,11 @@ public class Book {
         this.publication_year = publication_year;
     }
 
-    public BigDecimal getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -165,6 +168,11 @@ public class Book {
         b_c.setBook(null);
     }
 
+    public void updateBasket_customerList(Basket_customer b_c) {
+        basket_customerList.remove(b_c);
+        b_c.setBook(null);
+    }
+
     public List<Basket_order> getBasket_orderList() {
         return basket_orderList;
     }
@@ -178,24 +186,9 @@ public class Book {
         basket_orderList.add(b_o);
     }
 
-    public void removeBasket_customerList(Basket_order b_o) {
+    public void removeBasket_orderList(Basket_order b_o) {
         basket_orderList.remove(b_o);
     }
-
-
-    /*@Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Order order = (Order) o;
-
-        if (id != null ? !id.equals(order.id) : order.id != null) return false;
-        if (client != null ? !client.equals(order.client) : order.client != null) return false;
-        if (part != null ? !part.equals(order.part) : order.part != null) return false;
-        if (count != null ? !count.equals(order.count) : order.count != null) return false;
-        return price != null ? price.equals(order.price) : order.price == null;
-    }*/
 
     @Override
     public boolean equals(Object o) {

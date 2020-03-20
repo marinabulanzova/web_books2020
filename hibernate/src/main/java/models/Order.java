@@ -3,6 +3,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -33,7 +34,7 @@ public class Order {
     private String status;
 
     @Column(name = "delivery_price", nullable = false)
-    private BigDecimal delivery_price;
+    private Double delivery_price;
 
     @OneToMany(mappedBy = "id_order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Basket_order> basket_orderList;
@@ -41,7 +42,7 @@ public class Order {
     public Order() {}
 
     public Order(User customer, String delivery_address, String payment, Timestamp order_date,
-                 Date delivery_date, String status, BigDecimal delivery_price) {
+                 Date delivery_date, String status, Double delivery_price) {
         this.customer = customer;
         this.delivery_address = delivery_address;
         this.payment = payment;
@@ -49,6 +50,7 @@ public class Order {
         this.delivery_date = delivery_date;
         this.status = status;
         this.delivery_price = delivery_price;
+        basket_orderList = new ArrayList();
     }
 
     public Integer getId_order() {
@@ -99,11 +101,11 @@ public class Order {
         this.status = status;
     }
 
-    public BigDecimal getDelivery_price() {
+    public Double getDelivery_price() {
         return delivery_price;
     }
 
-    public void setDelivery_price(BigDecimal delivery_price) {
+    public void setDelivery_price(Double delivery_price) {
         this.delivery_price = delivery_price;
     }
 
@@ -120,7 +122,7 @@ public class Order {
         basket_orderList.add(b_o);
     }
 
-    public void removeBasket_customerList(Basket_order b_o) {
+    public void removeBasket_orderList(Basket_order b_o) {
         basket_orderList.remove(b_o);
     }
 

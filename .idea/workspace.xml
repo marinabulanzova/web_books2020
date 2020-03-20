@@ -2,34 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6473cb1-fd09-4918-acb6-910f747b0d08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_6_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_customerDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_orderDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Book_authorDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/java/utils/HibernateSessionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/BookTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_testng_testng_6_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/main/java/utils/HibernateSessionFactoryUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_6_14.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/createTableDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/createTableDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/fillDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/fillDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DB/build.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/hibernate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/hibernate.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/AuthorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/AuthorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_customerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_customerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_orderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_orderDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Book_authorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Book_authorDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/OrderDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Basket_customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Basket_customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Basket_customer_key.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Basket_order.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Basket_order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Basket_order_key.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Book_author.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Book_author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Book_author_key.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/utils/HibernateSession.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/BookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/BookTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/AuthorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/DAO/AuthorDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/Basket_customerDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/DAO/Basket_customerDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/Basket_orderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/DAO/Basket_orderDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/BookDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/DAO/BookDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/Book_authorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/DAO/Book_authorDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/OrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/DAO/OrderDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/DAO/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Author.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/models/Author.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Basket_customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/models/Basket_customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Basket_customer_key.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Basket_order.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/models/Basket_order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Basket_order_key.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/models/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Book_author.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/models/Book_author.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Book_author_key.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/models/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/models/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +93,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4081448" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -94,7 +103,7 @@
       <recent name="$PROJECT_DIR$/DB" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="TestNG.BookTest.testSaveListDelete">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="hibernate" />
@@ -102,8 +111,64 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BookTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="hibernate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testDAO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testDAO" />
+      <option name="MAIN_CLASS_NAME" value="testDAO.BookTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookTest.testSaveListDelete (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="hibernate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testDAO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testDAO" />
+      <option name="MAIN_CLASS_NAME" value="testDAO.BookTest" />
+      <option name="METHOD_NAME" value="testSaveListDelete" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookTest.testSaveListDelete" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="hibernate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testDAO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testDAO" />
+      <option name="MAIN_CLASS_NAME" value="testDAO.BookTest" />
+      <option name="METHOD_NAME" value="testSaveListDelete" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.BookTest.testSaveListDelete" />
+        <item itemvalue="TestNG.BookTest.testSaveListDelete (1)" />
+        <item itemvalue="TestNG.BookTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -137,7 +202,8 @@
       <workItem from="1584199698716" duration="9273000" />
       <workItem from="1584452580751" duration="17635000" />
       <workItem from="1584518561321" duration="11209000" />
-      <workItem from="1584631563875" duration="15124000" />
+      <workItem from="1584631563875" duration="15241000" />
+      <workItem from="1584689865432" duration="14107000" />
     </task>
     <servers />
   </component>
@@ -157,46 +223,50 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="505" y="93" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.24.1301.744@65.24.1301.744" timestamp="1584172310787" />
-    <state x="810" y="144" key="#com.intellij.ide.util.MemberChooser" timestamp="1584649143092">
+    <state x="810" y="144" key="#com.intellij.ide.util.MemberChooser" timestamp="1584691311507">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="810" y="144" key="#com.intellij.ide.util.MemberChooser/65.24.1301.744@65.24.1301.744" timestamp="1584649143092" />
+    <state x="810" y="144" key="#com.intellij.ide.util.MemberChooser/65.24.1301.744@65.24.1301.744" timestamp="1584691311507" />
     <state x="244" y="122" width="907" height="516" key="FileChooserDialogImpl" timestamp="1584453887947">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="244" y="122" width="907" height="516" key="FileChooserDialogImpl/65.24.1301.744@65.24.1301.744" timestamp="1584453887947" />
-    <state width="1147" height="174" key="GridCell.Tab.0.bottom" timestamp="1584520985101">
+    <state width="1255" height="192" key="GridCell.Tab.0.bottom" timestamp="1584703927925">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1147" height="174" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1584520985101" />
-    <state width="1147" height="174" key="GridCell.Tab.0.center" timestamp="1584520985101">
+    <state width="1255" height="192" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1584703927925" />
+    <state width="1255" height="192" key="GridCell.Tab.0.center" timestamp="1584703927924">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1147" height="174" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1584520985101" />
-    <state width="1147" height="174" key="GridCell.Tab.0.left" timestamp="1584520985101">
+    <state width="1255" height="192" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1584703927924" />
+    <state width="1255" height="192" key="GridCell.Tab.0.left" timestamp="1584703927924">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1147" height="174" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1584520985101" />
-    <state width="1147" height="174" key="GridCell.Tab.0.right" timestamp="1584520985101">
+    <state width="1255" height="192" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1584703927924" />
+    <state width="1255" height="192" key="GridCell.Tab.0.right" timestamp="1584703927925">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1147" height="174" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1584520985101" />
+    <state width="1255" height="192" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1584703927925" />
     <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1583228332324">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state width="263" height="500" key="HiddenNamespacesPopup/65.24.1301.744@65.24.1301.744" timestamp="1583228332324" />
-    <state x="65" y="24" width="1301" height="744" key="SettingsEditor" timestamp="1584633000363">
+    <state x="65" y="24" width="1301" height="744" key="SettingsEditor" timestamp="1584700101313">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="65" y="24" width="1301" height="744" key="SettingsEditor/65.24.1301.744@65.24.1301.744" timestamp="1584633000363" />
-    <state x="378" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1584631561204">
+    <state x="65" y="24" width="1301" height="744" key="SettingsEditor/65.24.1301.744@65.24.1301.744" timestamp="1584700101313" />
+    <state x="379" y="61" key="antBuildFilePropertiesDialogDimension" timestamp="1584702289799">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="378" y="211" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1584631561203" />
-    <state x="411" y="238" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584632972316">
+    <state x="379" y="61" key="antBuildFilePropertiesDialogDimension/65.24.1301.744@65.24.1301.744" timestamp="1584702289799" />
+    <state x="378" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1584689866461">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="411" y="238" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/65.24.1301.744@65.24.1301.744" timestamp="1584632972316" />
+    <state x="378" y="211" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1584689866461" />
+    <state x="411" y="238" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584700010728">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="411" y="238" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/65.24.1301.744@65.24.1301.744" timestamp="1584700010728" />
     <state x="65" y="24" key="new project wizard" timestamp="1583948211848">
       <screen x="65" y="24" width="1301" height="744" />
     </state>

@@ -28,8 +28,7 @@ INSERT INTO Books_authors VALUES
 	(default, 5, 4),
 	(default, 6, 6),
 	(default, 7, 5),
-	(default, 8, 8),
-	(default, 8, 9);
+	(default, 8, 8);
 
 INSERT INTO Users /*(surname, first_name, patronymic, address, phone_number, e_mail, password_hash, user_right)*/ VALUES 
 	(default, 'Матвеев', 'Даниил', 'Олегович', 'г.Москва, Лермонтовский проспект, д.13, к.56', '89507899067', 'matveev_d@mail.ru', 'drgdrh', true),

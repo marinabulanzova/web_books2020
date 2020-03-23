@@ -1,85 +1,48 @@
 package DAO;
 
-import models.Book;
 import models.Order;
-import models.User;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+
 
 import java.sql.Date;
 import java.util.List;
 
 public class OrderDAO {
-    private SessionFactory sessionFactory;
+    private Session session;
 
-    public OrderDAO(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    public OrderDAO(Session session) {
+        this.session = session;
     }
 
-    public Order getById(int id){
-        Session session = sessionFactory.openSession();
-        session.getTransaction().begin();
-
+    public Order getById(int id) {
         Order order = (Order) session.get(Order.class, id);
-
-        session.getTransaction().commit();
-        session.close();
         return order;
     }
 
-    public Integer save(Order order){
-        Session session = sessionFactory.openSession();
-        session.getTransaction().begin();
-
+    public Integer save(Order order) {
         order.getCustomer().addOrder(order);
         Integer id = (Integer) session.save(order);
-
-        session.getTransaction().commit();
-        session.close();
         return id;
     }
 
     public void update(Order order) {
-        Session session = sessionFactory.openSession();
-        session.getTransaction().begin();
-
-        //order.getCustomer().removeOrder(order);
         session.update(order);
-        //order.getCustomer().addOrder(order);
-
-        session.getTransaction().commit();
-        session.close();
     }
 
     public void delete(Order order) {
-        Session session = sessionFactory.openSession();
-        session.getTransaction().begin();
-
-        order.getCustomer().removeOrder(order);
         session.delete(order);
-
-        session.getTransaction().commit();
-        session.close();
+        order.getCustomer().removeOrder(order);
     }
 
     public List<Order> findAll() {
-        Session session = sessionFactory.openSession();
-        session.getTransaction().begin();
-
         String test_query = "SELECT o FROM Order o ORDER BY order_date";
         List<Order> list = (List<Order>)session.createQuery(test_query).getResultList();
-
-        session.getTransaction().commit();
-        session.close();
         return list;
     }
 
     // поиск заказа по различным фильтрам
-    public List<Order> find(User customer, String delivery_address, Boolean payment_card, Date min_o_date, Date max_o_date,
+    public List<Order> find(Integer customer, String delivery_address, Boolean payment_card, Date min_o_date, Date max_o_date,
                             Date min_d_date, Date max_d_date, String status, Double min_d_price, Double max_d_price) {
-        Session session = sessionFactory.openSession();
-        session.getTransaction().begin();
 
         String text_query = "SELECT o FROM Order o";
         if (customer != null || delivery_address != null || payment_card != null ||
@@ -88,11 +51,11 @@ public class OrderDAO {
             text_query += " WHERE";
             Boolean flagAnd = false;
             if (customer != null) {
-                text_query += (flagAnd ? " AND" : "") + " o.customer.id_customer = " + customer;
+                text_query += (flagAnd ? " AND" : "") + " o.customer.id_user = " + customer;
                 flagAnd = true;
             }
             if (delivery_address != null) {
-                text_query += (flagAnd ? " AND" : "") + " o.delivery_address = '" + delivery_address + "'";
+                text_query += (flagAnd ? " AND" : "") + " o.delivery_address LIKE '%" + delivery_address + "%'";
                 flagAnd = true;
             }
             if (payment_card != null) {
@@ -108,11 +71,11 @@ public class OrderDAO {
                 flagAnd = true;
             }
             if (min_d_date != null) {
-                text_query += (flagAnd ? " AND" : "") + " o.order_date >= '" + min_d_date + "'";
+                text_query += (flagAnd ? " AND" : "") + " o.delivery_date >= '" + min_d_date + "'";
                 flagAnd = true;
             }
             if (max_d_date != null) {
-                text_query += (flagAnd ? " AND" : "") + " o.order_date = '" + max_d_date + "'";
+                text_query += (flagAnd ? " AND" : "") + " o.delivery_date <= '" + max_d_date + "'";
                 flagAnd = true;
             }
             if (status != null) {
@@ -124,14 +87,12 @@ public class OrderDAO {
                 flagAnd = true;
             }
             if (max_d_price != null) {
-                text_query += (flagAnd ? " AND" : "") + " o.delivery_price = " + max_d_price;
+                text_query += (flagAnd ? " AND" : "") + " o.delivery_price <= " + max_d_price;
                 flagAnd = true;
             }
         }
         text_query+=" ORDER BY order_date";
         List<Order> list = (List<Order>)session.createQuery(text_query).getResultList();
-        session.getTransaction().commit();
-        session.close();
         return list;
     }
 }

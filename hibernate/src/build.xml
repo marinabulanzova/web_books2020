@@ -1,5 +1,5 @@
 <?xml version = "1.0" encoding = "utf-8"?>
-<project basedir = "." default = "build" name = "build">
+<project basedir = "." default = "buildProject" name = "buildProject">
     <property file = "../../build.properties"/>
 
     <path id = "classpath.master">
@@ -10,14 +10,14 @@
         <pathelement path = "${build.dir}"/>
     </path>
 
-    <target name = "build">
+    <target name = "buildProject">
         <mkdir dir = "${build.dir}"/>
-        <copy file="hibernate/src/hibernate.cfg.xml" todir="${build.dir}"/>
+        <copy file="hibernate/src/main/resources/hibernate.cfg.xml" todir="${build.dir}"/>
 
         <javac includeantruntime = "false"
                destdir = "${build.dir}"
-               source = "${jdk.version}"
-               target = "${jdk.version}">
+               source = "8"
+               target = "8">
             <src path = "${src.dir}"/>
             <classpath refid = "classpath.master"/>
         </javac>

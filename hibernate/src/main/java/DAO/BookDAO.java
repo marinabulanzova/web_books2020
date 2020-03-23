@@ -2,66 +2,36 @@ package DAO;
 
 import models.Book;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import java.util.List;
 
 public class BookDAO {
-    private SessionFactory sessionFactory;
-    public BookDAO(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    private Session session;
+
+    public BookDAO(Session session) {
+        this.session = session;
     }
 
     public Book getById(int id){
-        Session session = sessionFactory.openSession();
-        session.getTransaction().begin();
-
         Book book = (Book) session.get(Book.class, id);
-
-        session.getTransaction().commit();
-        session.close();
         return book;
     }
 
     public Integer save(Book book) {
-        Session session = sessionFactory.openSession();
-        session.getTransaction().begin();
-
         Integer id = (Integer) session.save(book);
-
-        session.getTransaction().commit();
-        session.close();
         return id;
     }
 
     public void update(Book book) {
-        Session session = sessionFactory.openSession();
-        session.getTransaction().begin();
-
         session.update(book);
-
-        session.getTransaction().commit();
-        session.close();
     }
 
     public void delete(Book book) {
-        Session session = sessionFactory.openSession();
-        session.getTransaction().begin();
-
         session.delete(book);
-
-        session.getTransaction().commit();
-        session.close();
     }
 
     public List<Book> findAll() {
-        Session session = sessionFactory.openSession();
-        session.getTransaction().begin();
-
         String test_query = "SELECT b FROM Book b order by price";
         List<Book> list = (List<Book>)session.createQuery(test_query).getResultList();
-
-        session.getTransaction().commit();
-        session.close();
         return list;
     }
 
@@ -69,8 +39,6 @@ public class BookDAO {
    public List<Book> find(String title, String genre, String publishing_house, Integer min_p_year, Integer max_p_year,
                           Integer min_p_count, Integer max_p_count, Integer count, String cover, Double min_price, Double max_price,
                           String name_author) {
-       Session session = sessionFactory.openSession();
-       session.getTransaction().begin();
 
        String text_query = "SELECT b FROM Book b";
        Boolean flagAnd = false;
@@ -134,10 +102,7 @@ public class BookDAO {
            }
        }
        text_query+=" ORDER BY price";
-       System.out.println(text_query);
        List<Book> list = (List<Book>)session.createQuery(text_query).getResultList();
-       session.getTransaction().commit();
-       session.close();
        return list;
    }
 }

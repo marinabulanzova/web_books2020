@@ -35,7 +35,7 @@ public class Order {
     @Column(name = "delivery_price", nullable = false)
     private Double delivery_price;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Basket_order> basket_orderList;
 
     public Order() {}

@@ -2,20 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6473cb1-fd09-4918-acb6-910f747b0d08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_6_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/Basket_customerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/OrderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/UserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/testng.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/test/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/Basket_orderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/Book_authorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/TestAuthor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/createTableDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/createTableDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/dropDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/dropDB.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/fillDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/fillDB.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/hibernate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/hibernate.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/hibernate.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/hibernate.cfg.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/AuthorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/AuthorDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_customerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_customerDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_orderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_orderDAO.java" afterDir="false" />
@@ -23,13 +23,18 @@
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Book_authorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Book_authorDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/OrderDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Author.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/utils/HibernateSessionFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/utils/HibernateSessionFactoryUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/utils/HibernateSessionFactoryUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/Basket_customerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/Basket_customerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/BookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/BookTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/OrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/testng.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/AuthorDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/Basket_customerDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/Basket_orderDAO.class" beforeDir="false" />
@@ -38,18 +43,20 @@
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/OrderDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/UserDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/META-INF/hibernate.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/hibernate.cfg.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Author.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Basket_customer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Basket_order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Book$cover_type.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Book.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Book_author.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Order.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/utils/HibernateSessionFactory.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/utils/HibernateSessionFactoryUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/test-classes/testDAO/Basket_customerTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/test-classes/testDAO/BookTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/test-classes/testDAO/OrderTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/test-classes/testDAO/UserTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,8 +80,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Tag Library Descriptor" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -104,19 +111,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/hibernate/src/test" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4081448" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hibernate/src/test" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/DB" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.OrderTest.testSaveUpdateDelete">
-    <configuration name="BookTest.testFind" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.BookTest">
+    <configuration name="BookTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="hibernate" />
       <extension name="coverage">
         <pattern>
@@ -126,8 +136,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="testDAO" />
       <option name="MAIN_CLASS_NAME" value="testDAO.BookTest" />
-      <option name="METHOD_NAME" value="testFind" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -170,7 +179,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.testFind" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAuthor.testSaveUpdateDelete" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="hibernate" />
       <extension name="coverage">
         <pattern>
@@ -179,8 +188,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testDAO" />
-      <option name="MAIN_CLASS_NAME" value="testDAO.UserTest" />
-      <option name="METHOD_NAME" value="testFind" />
+      <option name="MAIN_CLASS_NAME" value="testDAO.TestAuthor" />
+      <option name="METHOD_NAME" value="testSaveUpdateDelete" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -208,11 +217,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.BookTest" />
+        <item itemvalue="TestNG.TestAuthor.testSaveUpdateDelete" />
         <item itemvalue="TestNG.OrderTest.testSaveUpdateDelete" />
         <item itemvalue="TestNG.BookTest.testSaveUpdateDelete" />
-        <item itemvalue="TestNG.UserTest.testFind" />
         <item itemvalue="TestNG.UserTest.testSaveUpdateDelete" />
-        <item itemvalue="TestNG.BookTest.testFind" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +258,7 @@
       <workItem from="1584689865432" duration="20132000" />
       <workItem from="1584861043558" duration="15522000" />
       <workItem from="1584884587198" duration="13675000" />
-      <workItem from="1584945574341" duration="10205000" />
+      <workItem from="1584945574341" duration="39990000" />
     </task>
     <servers />
   </component>
@@ -273,30 +282,46 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="413" y="188" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1301.744@65.24.1301.744" timestamp="1584875211094" />
-    <state x="810" y="144" key="#com.intellij.ide.util.MemberChooser" timestamp="1584862275089">
+    <state x="810" y="144" key="#com.intellij.ide.util.MemberChooser" timestamp="1584972821319">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="810" y="144" key="#com.intellij.ide.util.MemberChooser/65.24.1301.744@65.24.1301.744" timestamp="1584862275089" />
+    <state x="810" y="144" key="#com.intellij.ide.util.MemberChooser/65.24.1301.744@65.24.1301.744" timestamp="1584972821319" />
     <state x="244" y="122" width="907" height="516" key="FileChooserDialogImpl" timestamp="1584453887947">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="244" y="122" width="907" height="516" key="FileChooserDialogImpl/65.24.1301.744@65.24.1301.744" timestamp="1584453887947" />
-    <state width="1255" height="406" key="GridCell.Tab.0.bottom" timestamp="1584955797102">
+    <state width="1255" height="328" key="GridCell.Tab.0.bottom" timestamp="1584982474288">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1255" height="406" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1584955797102" />
-    <state width="1255" height="406" key="GridCell.Tab.0.center" timestamp="1584955797101">
+    <state width="1255" height="328" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1584982474288" />
+    <state width="1255" height="328" key="GridCell.Tab.0.center" timestamp="1584982474286">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1255" height="406" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1584955797101" />
-    <state width="1255" height="406" key="GridCell.Tab.0.left" timestamp="1584955797101">
+    <state width="1255" height="328" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1584982474286" />
+    <state width="1255" height="328" key="GridCell.Tab.0.left" timestamp="1584982474285">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1255" height="406" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1584955797101" />
-    <state width="1255" height="406" key="GridCell.Tab.0.right" timestamp="1584955797101">
+    <state width="1255" height="328" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1584982474285" />
+    <state width="1255" height="328" key="GridCell.Tab.0.right" timestamp="1584982474287">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1255" height="406" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1584955797101" />
+    <state width="1255" height="328" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1584982474287" />
+    <state width="1255" height="240" key="GridCell.Tab.1.bottom" timestamp="1584960352804">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1255" height="240" key="GridCell.Tab.1.bottom/65.24.1301.744@65.24.1301.744" timestamp="1584960352804" />
+    <state width="1255" height="240" key="GridCell.Tab.1.center" timestamp="1584960352803">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1255" height="240" key="GridCell.Tab.1.center/65.24.1301.744@65.24.1301.744" timestamp="1584960352803" />
+    <state width="1255" height="240" key="GridCell.Tab.1.left" timestamp="1584960352803">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1255" height="240" key="GridCell.Tab.1.left/65.24.1301.744@65.24.1301.744" timestamp="1584960352803" />
+    <state width="1255" height="240" key="GridCell.Tab.1.right" timestamp="1584960352804">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state width="1255" height="240" key="GridCell.Tab.1.right/65.24.1301.744@65.24.1301.744" timestamp="1584960352804" />
     <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1583228332324">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
@@ -309,10 +334,10 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="65" y="24" width="1301" height="744" key="SettingsEditor/65.24.1301.744@65.24.1301.744" timestamp="1584891092255" />
-    <state x="379" y="61" key="antBuildFilePropertiesDialogDimension" timestamp="1584702289799">
+    <state x="379" y="61" key="antBuildFilePropertiesDialogDimension" timestamp="1584988198357">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="379" y="61" key="antBuildFilePropertiesDialogDimension/65.24.1301.744@65.24.1301.744" timestamp="1584702289799" />
+    <state x="379" y="61" key="antBuildFilePropertiesDialogDimension/65.24.1301.744@65.24.1301.744" timestamp="1584988198357" />
     <state x="378" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1584945574301">
       <screen x="65" y="24" width="1301" height="744" />
     </state>

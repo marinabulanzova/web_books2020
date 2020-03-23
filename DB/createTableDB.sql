@@ -6,8 +6,6 @@ CREATE TABLE IF NOT EXISTS Authors  (
   name varchar(60) not null
 );
 
---CREATE TYPE cover_type as enum ('Твёрдая', 'Мягкая', 'Твёрдая_тканевая', 'Кожаная');
-
 -- "Книги" --
 CREATE TABLE IF NOT EXISTS Books (
   id_book serial primary key, -- номер книги
@@ -48,8 +46,6 @@ CREATE TABLE IF NOT EXISTS Basket_customer (
   id_customer int not null, -- клиент
   count_book int not null -- количество экземпляров
 );
-
---CREATE TYPE order_status AS enum ('в обработке', 'собран', 'в пути', 'доставлен');
 
 -- "Заказы" --
 CREATE TABLE IF NOT EXISTS Orders (

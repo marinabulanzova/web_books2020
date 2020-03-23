@@ -2,7 +2,7 @@ package testDAO;
 
 import DAO.UserDAO;
 import models.User;
-import org.hibernate.SessionFactory;
+import org.hibernate.Session;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -12,46 +12,55 @@ import static utils.HibernateSessionFactoryUtil.getSessionFactory;
 
 @Test(singleThreaded=true)
 public class UserTest {
-
-    private SessionFactory sessionFactory = null;
+    private Session session = null;
 
     @BeforeMethod
     public void setUp() throws Exception {
-        sessionFactory = getSessionFactory();
+        session = getSessionFactory().openSession();
     }
 
     @AfterMethod
     public void tearDown() throws Exception {
-        sessionFactory.close();
+        session.close();
     }
 
     @Test
     public void testSaveUpdateDelete() throws Exception {
-        UserDAO users = new UserDAO(sessionFactory);
+        UserDAO users = new UserDAO(session);
         List<User> l = users.findAll();
         Assert.assertEquals(l.size(), 7 );
         User user = new User(
                 "Буланцова",
                 "Марина",
                 "Геннадьевна",
-                "г.Москва, Ломомносовский проспект, д.27",
+                "г.Москва, Ломоносовский проспект, д.27",
                 "89779347100",
                 "marina_b@mail.ru",
                 "fsgvsgtsg",
                 false);
-        users.save(user);
+
+        session.getTransaction().begin();
+        Integer id_user = users.save(user);
+        session.getTransaction().commit();
+
         l = users.findAll();
         Assert.assertEquals(l.size(), 8 );
         Assert.assertEquals(l.get(0).getSurname(), "Буланцова" );
         Assert.assertEquals(l.get(0).getFirst_name(), "Марина" );
         Assert.assertEquals(l.get(0).getPatronymic(), "Геннадьевна" );
-        Assert.assertEquals(l.get(0).getAddress(), "г.Москва, Ломомносовский проспект, д.27" );
+        Assert.assertEquals(l.get(0).getAddress(), "г.Москва, Ломоносовский проспект, д.27" );
         Assert.assertEquals(l.get(0).getPhone_number(), "89779347100" );
         Assert.assertEquals(l.get(0).getE_mail(), "marina_b@mail.ru" );
         Assert.assertEquals(l.get(0).getPassword_hash(), "fsgvsgtsg" );
         Assert.assertEquals((boolean)l.get(0).getAdmin(), false );
 
-        users.delete(l.get(0));
+        user = users.getById(id_user);
+        System.out.println(user.toString());
+
+        session.getTransaction().begin();
+        users.delete(user);
+        session.getTransaction().commit();
+
         l = users.findAll();
         Assert.assertEquals(l.size(), 7 );
 
@@ -69,7 +78,7 @@ public class UserTest {
     }
 
     public void testFind() throws Exception {
-        UserDAO users = new UserDAO(sessionFactory);
+        UserDAO users = new UserDAO(session);
         List<User> l =  users.find(null,
                 "Валерия",
                 null,

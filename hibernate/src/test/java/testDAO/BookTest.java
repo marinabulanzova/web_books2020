@@ -2,7 +2,7 @@ package testDAO;
 
 import DAO.BookDAO;
 import models.Book;
-import org.hibernate.SessionFactory;
+import org.hibernate.Session;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -13,21 +13,21 @@ import static utils.HibernateSessionFactoryUtil.getSessionFactory;
 @Test(singleThreaded=true)
 public class BookTest {
 
-    private SessionFactory sessionFactory = null;
+    private Session session = null;
 
     @BeforeMethod
     public void setUp() throws Exception {
-        sessionFactory = getSessionFactory();
+        session = getSessionFactory().openSession();
     }
 
     @AfterMethod
     public void tearDown() throws Exception {
-        sessionFactory.close();
+        session.close();
     }
 
     @Test
     public void testSaveUpdateDelete() throws Exception {
-        BookDAO books = new BookDAO(sessionFactory);
+        BookDAO books = new BookDAO(session);
         List<Book> l = books.findAll();
         Assert.assertEquals(l.size(), 8);
         Book book = new Book("классика",
@@ -38,7 +38,11 @@ public class BookTest {
                 4,
                 "Твёрдая",
                 370.0);
+
+        session.getTransaction().begin();
         books.save(book);
+        session.getTransaction().commit();
+
         l = books.findAll();
         Assert.assertEquals(l.size(), 9);
         Assert.assertEquals(l.get(2).getTitle(), "Воскресенье");
@@ -50,8 +54,10 @@ public class BookTest {
         Assert.assertEquals(l.get(2).getCover(), "Твёрдая");
         Assert.assertEquals(l.get(2).getPrice(), 370.0);
 
+        session.getTransaction().begin();
         books.delete(l.get(2));
-        //System.out.println("length=" + l.get(1).getBasket_customerList().size() + "\n");
+        session.getTransaction().commit();
+
         l = books.findAll();
         Assert.assertEquals(l.size(), 8);
 
@@ -68,7 +74,7 @@ public class BookTest {
     }
 
     public void testFind() throws Exception {
-        BookDAO books = new BookDAO(sessionFactory);
+        BookDAO books = new BookDAO(session);
         List<Book> l = books.find(
                 "Вынос дела",
                 null,
@@ -85,7 +91,6 @@ public class BookTest {
         );
         Assert.assertEquals(l.size(), 1);
         Assert.assertEquals(l.get(0).getTitle(), "Вынос дела");
-        //System.out.println(l.get(0).toString());
 
         l = books.find(
                 null,
@@ -191,7 +196,6 @@ public class BookTest {
                 "Стивен Кинг"
         );
         Assert.assertEquals(l.size(), 1);
-
     }
 
 }

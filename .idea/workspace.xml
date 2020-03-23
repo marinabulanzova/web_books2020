@@ -2,61 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6473cb1-fd09-4918-acb6-910f747b0d08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hibernate/src/test/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/Basket_orderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/Book_authorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/TestAuthor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/createTableDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/createTableDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/dropDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/dropDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/fillDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/fillDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/hibernate.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/hibernate.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/AuthorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/AuthorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_customerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_customerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_orderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_orderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/BookDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Book_authorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Book_authorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/utils/HibernateSessionFactoryUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/utils/HibernateSessionFactoryUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/Basket_customerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/Basket_customerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/BookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/BookTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/OrderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/UserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/build.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/testng.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/AuthorDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/Basket_customerDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/Basket_orderDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/BookDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/Book_authorDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/OrderDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/UserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/META-INF/hibernate.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/hibernate.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Author.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Basket_customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Basket_order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Book$cover_type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Book.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Book_author.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/utils/HibernateSessionFactoryUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/test-classes/testDAO/Basket_customerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/test-classes/testDAO/BookTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/test-classes/testDAO/OrderTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/test-classes/testDAO/UserTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +204,7 @@
       <workItem from="1584689865432" duration="20132000" />
       <workItem from="1584861043558" duration="15522000" />
       <workItem from="1584884587198" duration="13675000" />
-      <workItem from="1584945574341" duration="39990000" />
+      <workItem from="1584945574341" duration="40594000" />
     </task>
     <servers />
   </component>

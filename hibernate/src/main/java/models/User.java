@@ -36,10 +36,10 @@ public class User {
     @Column (name = "admin")
     private Boolean admin;
 
-    @OneToMany(mappedBy = "id_user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Basket_customer> basket_customerList;
 
-    @OneToMany(mappedBy = "id_user", cascade = CascadeType.ALL/*, orphanRemoval = true*/)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL/*, orphanRemoval = true*//*, fetch = FetchType.EAGER*/)
     private List<Order> orders;
 
     public User() {}

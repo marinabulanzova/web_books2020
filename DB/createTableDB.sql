@@ -6,18 +6,18 @@ CREATE TABLE IF NOT EXISTS Authors  (
   name varchar(60) not null
 );
 
-CREATE TYPE cover_type as enum ('Твёрдая', 'Мягкая', 'Твёрдая тканевая', 'Кожаная');
+--CREATE TYPE cover_type as enum ('Твёрдая', 'Мягкая', 'Твёрдая_тканевая', 'Кожаная');
 
 -- "Книги" --
 CREATE TABLE IF NOT EXISTS Books (
   id_book serial primary key, -- номер книги
-  gеnre varchar(30) not null, -- жанр 
+  genre varchar(30) not null, -- жанр
   title varchar(50) not null, -- название
   publishing_house varchar(30) not null, -- издательство
   publication_year int not null, -- год публикации
   page_count int not null, -- количество страниц
   count_book int not null, -- количество экземпляров
-  cover cover_type not null, -- вид обложки
+  cover varchar(20) not null, -- вид обложки
   price numeric(6,2) not null -- цена
 );
 
@@ -27,8 +27,6 @@ CREATE TABLE IF NOT EXISTS Books_authors (
   id_book int not null, -- книга
   id_author int not null -- автор
 );
-
-CREATE TYPE status_user AS enum ('клиент', 'администратор');
 
 -- "Клиенты" --
 CREATE TABLE IF NOT EXISTS Users (
@@ -51,19 +49,17 @@ CREATE TABLE IF NOT EXISTS Basket_customer (
   count_book int not null -- количество экземпляров
 );
 
-CREATE TYPE order_status AS enum ('в обработке', 'собран', 'в пути', 'доставлен');
-
-CREATE TYPE payment_method AS enum ('картой', 'наличными');
+--CREATE TYPE order_status AS enum ('в обработке', 'собран', 'в пути', 'доставлен');
 
 -- "Заказы" --
 CREATE TABLE IF NOT EXISTS Orders (
   id_order serial primary key, -- номер заказа
   id_customer int not null, -- номер клиента
   delivery_address varchar(100), -- адрес доставки
-  payment payment_method not null, -- способ оплаты
+  payment_card boolean default false, -- оплата картой
   order_date timestamp not null, -- дата заказа
   delivery_date date not null, -- дата доставки
-  status order_status not null, -- текущий статус
+  status varchar(15) not null, -- текущий статус
   delivery_price numeric(6,2) default 0 -- стоимость доставки
 );
 

@@ -1,12 +1,21 @@
 package models;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+//import enumtype.PostgreSQLEnumType;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table (name = "Books")
-
+//@TypeDef(name = "pgsql_enum", typeClass = PostgreSQLEnumType.class)
 public class Book {
+    public enum cover_type {
+        Твёрдая,
+        Мягкая,
+        Твёрдая_тканевая,
+        Кожаная
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_book;
@@ -35,13 +44,13 @@ public class Book {
     @Column (name = "price", nullable = false)
     private Double price;
 
-    @OneToMany(mappedBy = "id_book", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
     private List <Book_author> book_authors;
 
-    @OneToMany(mappedBy = "id_book", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
     private List <Basket_customer> basket_customerList;
 
-    @OneToMany(mappedBy = "id_book", cascade = CascadeType.ALL/*, orphanRemoval = true*/)
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL/*, orphanRemoval = true*/)
     private List <Basket_order> basket_orderList;
 
     public Book() {}

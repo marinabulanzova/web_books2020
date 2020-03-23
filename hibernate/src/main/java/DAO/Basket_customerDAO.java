@@ -29,7 +29,7 @@ public class Basket_customerDAO {
     // для изменения количества экземпляров
     public void update(Basket_customer basket_c) {
         Session session = sessionFactory.openSession();
-        Transaction t = session.beginTransaction();
+        session.getTransaction().begin();;
 
         //basket_c.getBook().removeBasket_customerList(basket_c);
         //basket_c.getCustomer().removeBasket_customerList(basket_c);
@@ -37,19 +37,19 @@ public class Basket_customerDAO {
         //basket_c.getCustomer().addBasket_customerList(basket_c);
         //basket_c.getBook().addBasket_customerList(basket_c);
 
-        t.commit();
+        session.getTransaction().commit();
         session.close();
     }
     // убрать из корзины
     public void delete(Basket_customer basket_c) {
         Session session = sessionFactory.openSession();
-        Transaction t = session.beginTransaction();
+        session.getTransaction().begin();
 
         basket_c.getBook().removeBasket_customerList(basket_c);
         basket_c.getCustomer().removeBasket_customerList(basket_c);
         session.delete(basket_c);
 
-        t.commit();
+        session.getTransaction().commit();
         session.close();
     }
 

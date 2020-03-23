@@ -1,6 +1,8 @@
 package DAO;
 
+import models.Book;
 import models.Order;
+import models.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -17,69 +19,84 @@ public class OrderDAO {
 
     public Order getById(int id){
         Session session = sessionFactory.openSession();
+        session.getTransaction().begin();
+
         Order order = (Order) session.get(Order.class, id);
+
+        session.getTransaction().commit();
         session.close();
         return order;
     }
 
     public Integer save(Order order){
         Session session = sessionFactory.openSession();
-        Transaction t = session.beginTransaction();
+        session.getTransaction().begin();
 
         order.getCustomer().addOrder(order);
         Integer id = (Integer) session.save(order);
 
-        t.commit();
+        session.getTransaction().commit();
         session.close();
         return id;
     }
 
     public void update(Order order) {
         Session session = sessionFactory.openSession();
-        Transaction t = session.beginTransaction();
+        session.getTransaction().begin();
 
         //order.getCustomer().removeOrder(order);
         session.update(order);
         //order.getCustomer().addOrder(order);
 
-        t.commit();
+        session.getTransaction().commit();
         session.close();
     }
 
     public void delete(Order order) {
         Session session = sessionFactory.openSession();
-        Transaction t3 = session.beginTransaction();
+        session.getTransaction().begin();
 
         order.getCustomer().removeOrder(order);
         session.delete(order);
 
-        t3.commit();
+        session.getTransaction().commit();
         session.close();
     }
 
     public List<Order> findAll() {
         Session session = sessionFactory.openSession();
-        List<Order> list = (List<Order>)session.createQuery("From Order").list();
+        session.getTransaction().begin();
+
+        String test_query = "SELECT o FROM Order o ORDER BY order_date";
+        List<Order> list = (List<Order>)session.createQuery(test_query).getResultList();
+
+        session.getTransaction().commit();
         session.close();
         return list;
     }
 
     // поиск заказа по различным фильтрам
-    public List<Order> find(Integer id_customer, String delivery_address, String payment, Date min_o_date, Date max_o_date,
+    public List<Order> find(User customer, String delivery_address, Boolean payment_card, Date min_o_date, Date max_o_date,
                             Date min_d_date, Date max_d_date, String status, Double min_d_price, Double max_d_price) {
         Session session = sessionFactory.openSession();
+        session.getTransaction().begin();
+
         String text_query = "SELECT o FROM Order o";
-        if (id_customer != 0 || delivery_address != null || payment != null ||
+        if (customer != null || delivery_address != null || payment_card != null ||
                 min_o_date != null || max_o_date != null || min_d_date != null || max_d_date != null ||
                 status != null || min_d_price != 0 || max_d_price != 0) {
             text_query += " WHERE";
             Boolean flagAnd = false;
-            if (id_customer != null) {
-                text_query += (flagAnd ? " AND" : "") + " o.customer.id_customer = " + id_customer;
+            if (customer != null) {
+                text_query += (flagAnd ? " AND" : "") + " o.customer.id_customer = " + customer;
                 flagAnd = true;
             }
             if (delivery_address != null) {
                 text_query += (flagAnd ? " AND" : "") + " o.delivery_address = '" + delivery_address + "'";
+                flagAnd = true;
+            }
+            if (payment_card != null) {
+                text_query += (flagAnd ? " AND" : "") + " o.payment_card = '" + payment_card + "'";
                 flagAnd = true;
             }
             if (min_o_date != null) {
@@ -111,6 +128,10 @@ public class OrderDAO {
                 flagAnd = true;
             }
         }
-        return session.createQuery(text_query).getResultList();
+        text_query+=" ORDER BY order_date";
+        List<Order> list = (List<Order>)session.createQuery(text_query).getResultList();
+        session.getTransaction().commit();
+        session.close();
+        return list;
     }
 }

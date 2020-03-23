@@ -2,44 +2,34 @@ package testDAO;
 
 import DAO.BookDAO;
 import models.Book;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import java.util.List;
-
 import static utils.HibernateSessionFactoryUtil.getSessionFactory;
 
 @Test(singleThreaded=true)
 public class BookTest {
 
     private SessionFactory sessionFactory = null;
-    private Session session = null;
 
     @BeforeMethod
     public void setUp() throws Exception {
         sessionFactory = getSessionFactory();
-        session = sessionFactory.openSession();
-
     }
+
     @AfterMethod
     public void tearDown() throws Exception {
-        session.close();
         sessionFactory.close();
     }
 
     @Test
-    public void testSaveListDelete() throws Exception {
+    public void testSaveUpdateDelete() throws Exception {
         BookDAO books = new BookDAO(sessionFactory);
-        session.getTransaction().begin();
         List<Book> l = books.findAll();
         Assert.assertEquals(l.size(), 8);
-        session.getTransaction().commit();
-
-        session.getTransaction().begin();
         Book book = new Book("классика",
                 "Воскресенье",
                 "Просвещение",
@@ -47,25 +37,160 @@ public class BookTest {
                 467,
                 4,
                 "Твёрдая",
-                590.0);
+                370.0);
         books.save(book);
-        session.getTransaction().commit();
-
-        session.getTransaction().begin();
         l = books.findAll();
         Assert.assertEquals(l.size(), 9);
-        session.getTransaction().commit();
-        /*Assert.assertEquals(l.get(8).getTitle(), "Воскресенье");
-        session.getTransaction().commit();
+        Assert.assertEquals(l.get(2).getTitle(), "Воскресенье");
+        Assert.assertEquals(l.get(2).getGenre(), "классика");
+        Assert.assertEquals(l.get(2).getPublishing_house(), "Просвещение");
+        Assert.assertEquals((int)l.get(2).getPublication_year(), 2016);
+        Assert.assertEquals((int)l.get(2).getPage_count(), 467);
+        Assert.assertEquals((int)l.get(2).getCount_book(), 4);
+        Assert.assertEquals(l.get(2).getCover(), "Твёрдая");
+        Assert.assertEquals(l.get(2).getPrice(), 370.0);
 
-        session.getTransaction().begin();
-        books.delete(l.get(8));
-        session.getTransaction().commit();
-
-        session.getTransaction().begin();
+        books.delete(l.get(2));
+        //System.out.println("length=" + l.get(1).getBasket_customerList().size() + "\n");
         l = books.findAll();
         Assert.assertEquals(l.size(), 8);
-        session.getTransaction().commit();*/
+
+        Assert.assertEquals(l.get(7).getPrice(), 1700.0);
+        Assert.assertEquals((int)l.get(7).getId_book(), 1);
+        book = books.getById(1);
+        book.setPrice(1600.0);
+        books.update(book);
+        l = books.findAll();
+        Assert.assertEquals(l.get(7).getPrice(), 1600.0);
+        book = l.get(7);
+        book.setPrice(1700.0);
+        books.update(book);
+    }
+
+    public void testFind() throws Exception {
+        BookDAO books = new BookDAO(sessionFactory);
+        List<Book> l = books.find(
+                "Вынос дела",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        Assert.assertEquals(l.size(), 1);
+        Assert.assertEquals(l.get(0).getTitle(), "Вынос дела");
+        //System.out.println(l.get(0).toString());
+
+        l = books.find(
+                null,
+                "классика",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        Assert.assertEquals(l.size(), 2);
+        Assert.assertEquals(l.get(0).getGenre(), "классика");
+        Assert.assertEquals(l.get(1).getGenre(), "классика");
+
+        l = books.find(
+                null,
+                null,
+                "Просвещение",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        Assert.assertEquals(l.size(), 2);
+        Assert.assertEquals(l.get(0).getPublishing_house(), "Просвещение");
+        Assert.assertEquals(l.get(1).getPublishing_house(), "Просвещение");
+
+        l = books.find(
+                null,
+                null,
+                null,
+                2018,
+                2020,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        Assert.assertEquals(l.size(), 2);
+        Assert.assertEquals((int)l.get(0).getPublication_year(), 2018);
+        Assert.assertEquals((int)l.get(1).getPublication_year(), 2019);
+
+        l = books.find(
+                null,
+                null,
+                null,
+                null,
+                null,
+                1600,
+                2000,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        Assert.assertEquals(l.size(), 0);
+
+        l = books.find(
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                200.0,
+                450.0,
+                null
+        );
+        Assert.assertEquals(l.size(), 3);
+        Assert.assertEquals(l.get(0).getPrice(), 270.0);
+        Assert.assertEquals(l.get(1).getPrice(), 360.0);
+        Assert.assertEquals(l.get(2).getPrice(), 400.0);
+
+        l = books.find(
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "Стивен Кинг"
+        );
+        Assert.assertEquals(l.size(), 1);
 
     }
 

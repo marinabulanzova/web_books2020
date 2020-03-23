@@ -1,6 +1,5 @@
 package models;
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -21,8 +20,8 @@ public class Order {
     @Column(name = "delivery_address", nullable = true, length = 100)
     private String delivery_address;
 
-    @Column(name = "payment", nullable = false)
-    private String payment;
+    @Column(name = "payment_card", nullable = false)
+    private Boolean payment_card;
 
     @Column(name = "order_date", nullable = false)
     private Timestamp order_date;
@@ -36,16 +35,16 @@ public class Order {
     @Column(name = "delivery_price", nullable = false)
     private Double delivery_price;
 
-    @OneToMany(mappedBy = "id_order", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Basket_order> basket_orderList;
 
     public Order() {}
 
-    public Order(User customer, String delivery_address, String payment, Timestamp order_date,
+    public Order(User customer, String delivery_address, Boolean payment_card, Timestamp order_date,
                  Date delivery_date, String status, Double delivery_price) {
         this.customer = customer;
         this.delivery_address = delivery_address;
-        this.payment = payment;
+        this.payment_card = payment_card;
         this.order_date = order_date;
         this.delivery_date = delivery_date;
         this.status = status;
@@ -69,12 +68,12 @@ public class Order {
         this.delivery_address = delivery_address;
     }
 
-    public String getPayment() {
-        return payment;
+    public Boolean getPayment() {
+        return payment_card;
     }
 
-    public void setPayment(String payment) {
-        this.payment = payment;
+    public void setPayment(Boolean payment_card) {
+        this.payment_card = payment_card;
     }
 
     public Timestamp getOrder_date() {
@@ -162,7 +161,7 @@ public class Order {
                 "id_order=" + id_order +
                 ", customer=" + customer +
                 ", delivery_address='" + delivery_address + '\'' +
-                ", payment='" + payment + '\'' +
+                ", payment='" + payment_card + '\'' +
                 ", order_date=" + order_date +
                 ", delivery_date=" + delivery_date +
                 ", status='" + status + '\'' +

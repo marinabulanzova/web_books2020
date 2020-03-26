@@ -48,9 +48,7 @@ public class Basket_customerTest {
 
         session.getTransaction().begin();
         baskets.delete(b_c);
-        session.getTransaction().commit(); //javax.persistence.EntityNotFoundException: deleted object would be
-        //re-saved by cascade (remove deleted object from associations):
-        //[models.Basket_customer#4]
+        session.getTransaction().commit();
 
         customer = users.getById(3);
         l = customer.getBasket_customerList();

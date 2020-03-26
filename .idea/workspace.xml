@@ -2,79 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6473cb1-fd09-4918-acb6-910f747b0d08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_64.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_6_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_17.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_6_14.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/DAO/AuthorDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/DAO/Basket_customerDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/DAO/Basket_orderDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/DAO/BookDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/DAO/Book_authorDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/DAO/OrderDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/DAO/UserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/hibernate.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/models/Author.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/models/Basket_customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/models/Basket_order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/models/Book$cover_type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/models/Book.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/models/Book_author.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/models/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/models/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/testDAO/Basket_customerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/testDAO/Basket_orderTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/testDAO/BookTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/testDAO/Book_authorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/testDAO/OrderTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/testDAO/TestAuthor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/testDAO/UserTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BUILD/classes/utils/HibernateSessionFactoryUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/createTableDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/createTableDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/Suite/HibernateTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/Suite/HibernateTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/bullet_point.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/collapseall.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/emailable-report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/failed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/jquery-1.7.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/junitreports/TEST-testDAO.Basket_customerTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/junitreports/TEST-testDAO.Basket_orderTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/junitreports/TEST-testDAO.BookTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/junitreports/TEST-testDAO.Book_authorTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/junitreports/TEST-testDAO.OrderTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/junitreports/TEST-testDAO.TestAuthor.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/junitreports/TEST-testDAO.UserTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/navigator-bullet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/old/Suite/HibernateTest.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/old/Suite/classes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/old/Suite/groups.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/old/Suite/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/old/Suite/main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/old/Suite/methods-alphabetical.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/old/Suite/methods-not-run.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/old/Suite/methods.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/old/Suite/reporter-output.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/old/Suite/testng.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/old/Suite/toc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/old/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/passed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/skipped.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/testng-reports.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/testng-reports.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/testng-results.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TESTS/testng.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/Basket_customerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/Basket_customerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/Basket_orderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/Basket_orderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/BookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/BookTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/Book_authorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/Book_authorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/OrderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/TestAuthor.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/TestAuthor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/UserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/test/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -279,7 +208,8 @@
       <workItem from="1584884587198" duration="13675000" />
       <workItem from="1584945574341" duration="41063000" />
       <workItem from="1585138578244" duration="3936000" />
-      <workItem from="1585223050985" duration="14340000" />
+      <workItem from="1585223050985" duration="14959000" />
+      <workItem from="1585249645207" duration="110000" />
     </task>
     <servers />
   </component>
@@ -359,10 +289,10 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="379" y="61" key="antBuildFilePropertiesDialogDimension/65.24.1301.744@65.24.1301.744" timestamp="1584988198357" />
-    <state x="378" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1585223047563">
+    <state x="378" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1585249645473">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="378" y="211" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1585223047563" />
+    <state x="378" y="211" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1585249645473" />
     <state x="411" y="238" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584700010728">
       <screen x="65" y="24" width="1301" height="744" />
     </state>

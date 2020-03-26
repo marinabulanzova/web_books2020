@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name = "Suite">
-    <test name = "HibernateTest">
+    <test name = "HibernateTest" parallel="false">
         <classes>
             <class name = "testDAO.OrderTest"/>
             <class name = "testDAO.UserTest"/>

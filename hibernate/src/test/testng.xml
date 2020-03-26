@@ -4,13 +4,13 @@
 <suite name = "Suite">
     <test name = "HibernateTest">
         <classes>
-            <class name = "testDAO.BookTest"/>
             <class name = "testDAO.OrderTest"/>
             <class name = "testDAO.UserTest"/>
-            <class name = "testDAO.Basket_customerTest"/>
-            <class name = "testDAO.Basket_orderTest"/>
-            <class name = "testDAO.Book_authorTest"/>
             <class name = "testDAO.TestAuthor"/>
+            <class name = "testDAO.Basket_orderTest"/>
+            <class name = "testDAO.Basket_customerTest"/>
+            <class name = "testDAO.Book_authorTest"/>
+            <class name = "testDAO.BookTest"/>
         </classes>
     </test>
 </suite>

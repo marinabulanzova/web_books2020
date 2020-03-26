@@ -2,140 +2,140 @@
 <testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="2524" started-at="2020-03-23T18:53:29Z" finished-at="2020-03-23T18:53:32Z">
+  <suite name="Suite" duration-ms="2633" started-at="2020-03-26T16:52:08Z" finished-at="2020-03-26T16:52:11Z">
     <groups>
     </groups>
-    <test name="HibernateTest" duration-ms="2524" started-at="2020-03-23T18:53:29Z" finished-at="2020-03-23T18:53:32Z">
+    <test name="HibernateTest" duration-ms="2633" started-at="2020-03-26T16:52:08Z" finished-at="2020-03-26T16:52:11Z">
       <class name="testDAO.UserTest">
-        <test-method status="PASS" signature="testFind()[pri:0, instance:testDAO.UserTest@445b84c0]" name="testFind" duration-ms="27" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testFind -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.UserTest@445b84c0]" name="setUp" is-config="true" duration-ms="0" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.UserTest@2cfb4a64]" name="setUp" is-config="true" duration-ms="0" started-at="2020-03-26T19:52:10Z" finished-at="2020-03-26T19:52:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.UserTest@445b84c0]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
+        <test-method status="PASS" signature="testFindUser()[pri:0, instance:testDAO.UserTest@2cfb4a64]" name="testFindUser" duration-ms="26" started-at="2020-03-26T19:52:10Z" finished-at="2020-03-26T19:52:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFindUser -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.UserTest@2cfb4a64]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-03-26T19:52:10Z" finished-at="2020-03-26T19:52:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.UserTest@445b84c0]" name="setUp" is-config="true" duration-ms="1" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
+        <test-method status="PASS" signature="testSaveUpdateDeleteUser()[pri:2, instance:testDAO.UserTest@2cfb4a64]" name="testSaveUpdateDeleteUser" duration-ms="22" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSaveUpdateDeleteUser -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.UserTest@2cfb4a64]" name="setUp" is-config="true" duration-ms="0" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testSaveUpdateDelete()[pri:0, instance:testDAO.UserTest@445b84c0]" name="testSaveUpdateDelete" duration-ms="35" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSaveUpdateDelete -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.UserTest@445b84c0]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.UserTest@2cfb4a64]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- testDAO.UserTest -->
       <class name="testDAO.Basket_orderTest">
-        <test-method status="PASS" signature="testSaveDelete()[pri:0, instance:testDAO.Basket_orderTest@233c0b17]" name="testSaveDelete" duration-ms="34" started-at="2020-03-23T21:53:32Z" finished-at="2020-03-23T21:53:32Z">
+        <test-method status="PASS" signature="testSaveDeleteBasket_order()[pri:1, instance:testDAO.Basket_orderTest@4b6995df]" name="testSaveDeleteBasket_order" duration-ms="42" started-at="2020-03-26T19:52:10Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSaveDelete -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.Basket_orderTest@233c0b17]" name="setUp" is-config="true" duration-ms="0" started-at="2020-03-23T21:53:32Z" finished-at="2020-03-23T21:53:32Z">
+        </test-method> <!-- testSaveDeleteBasket_order -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.Basket_orderTest@4b6995df]" name="setUp" is-config="true" duration-ms="0" started-at="2020-03-26T19:52:10Z" finished-at="2020-03-26T19:52:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.Basket_orderTest@233c0b17]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-03-23T21:53:32Z" finished-at="2020-03-23T21:53:32Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.Basket_orderTest@4b6995df]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- testDAO.Basket_orderTest -->
       <class name="testDAO.TestAuthor">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.TestAuthor@7bb11784]" name="setUp" is-config="true" duration-ms="0" started-at="2020-03-23T21:53:32Z" finished-at="2020-03-23T21:53:32Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.TestAuthor@5474c6c]" name="setUp" is-config="true" duration-ms="0" started-at="2020-03-26T19:52:10Z" finished-at="2020-03-26T19:52:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testSaveUpdateDelete()[pri:0, instance:testDAO.TestAuthor@7bb11784]" name="testSaveUpdateDelete" duration-ms="23" started-at="2020-03-23T21:53:32Z" finished-at="2020-03-23T21:53:32Z">
+        <test-method status="PASS" signature="testSaveDeleteAuthor()[pri:1, instance:testDAO.TestAuthor@5474c6c]" name="testSaveDeleteAuthor" duration-ms="109" started-at="2020-03-26T19:52:10Z" finished-at="2020-03-26T19:52:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSaveUpdateDelete -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.TestAuthor@7bb11784]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-03-23T21:53:32Z" finished-at="2020-03-23T21:53:32Z">
+        </test-method> <!-- testSaveDeleteAuthor -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.TestAuthor@5474c6c]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-03-26T19:52:10Z" finished-at="2020-03-26T19:52:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- testDAO.TestAuthor -->
       <class name="testDAO.Basket_customerTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.Basket_customerTest@61a52fbd]" name="setUp" is-config="true" duration-ms="0" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.Basket_customerTest@2fc14f68]" name="setUp" is-config="true" duration-ms="0" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testSaveDelete()[pri:0, instance:testDAO.Basket_customerTest@61a52fbd]" name="testSaveDelete" duration-ms="29" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:32Z">
+        <test-method status="PASS" signature="testSaveDeleteBasket_customer()[pri:1, instance:testDAO.Basket_customerTest@2fc14f68]" name="testSaveDeleteBasket_customer" duration-ms="22" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSaveDelete -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.Basket_customerTest@61a52fbd]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-03-23T21:53:32Z" finished-at="2020-03-23T21:53:32Z">
+        </test-method> <!-- testSaveDeleteBasket_customer -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.Basket_customerTest@2fc14f68]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- testDAO.Basket_customerTest -->
       <class name="testDAO.Book_authorTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.Book_authorTest@63d4e2ba]" name="setUp" is-config="true" duration-ms="0" started-at="2020-03-23T21:53:32Z" finished-at="2020-03-23T21:53:32Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.Book_authorTest@591f989e]" name="setUp" is-config="true" duration-ms="0" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testSaveDelete()[pri:0, instance:testDAO.Book_authorTest@63d4e2ba]" name="testSaveDelete" duration-ms="30" started-at="2020-03-23T21:53:32Z" finished-at="2020-03-23T21:53:32Z">
+        <test-method status="PASS" signature="testSaveDeleteBook_author()[pri:1, instance:testDAO.Book_authorTest@591f989e]" name="testSaveDeleteBook_author" duration-ms="22" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSaveDelete -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.Book_authorTest@63d4e2ba]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-03-23T21:53:32Z" finished-at="2020-03-23T21:53:32Z">
+        </test-method> <!-- testSaveDeleteBook_author -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.Book_authorTest@591f989e]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- testDAO.Book_authorTest -->
       <class name="testDAO.OrderTest">
-        <test-method status="PASS" signature="testFind()[pri:0, instance:testDAO.OrderTest@61443d8f]" name="testFind" duration-ms="32" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testFind -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.OrderTest@61443d8f]" name="setUp" is-config="true" duration-ms="0" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.OrderTest@71f2a7d5]" name="setUp" is-config="true" duration-ms="1986" started-at="2020-03-26T19:52:08Z" finished-at="2020-03-26T19:52:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.OrderTest@61443d8f]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
+        <test-method status="PASS" signature="testFindOrder()[pri:0, instance:testDAO.OrderTest@71f2a7d5]" name="testFindOrder" duration-ms="248" started-at="2020-03-26T19:52:10Z" finished-at="2020-03-26T19:52:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFindOrder -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.OrderTest@71f2a7d5]" name="tearDown" is-config="true" duration-ms="3" started-at="2020-03-26T19:52:10Z" finished-at="2020-03-26T19:52:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.OrderTest@61443d8f]" name="setUp" is-config="true" duration-ms="1" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.OrderTest@71f2a7d5]" name="setUp" is-config="true" duration-ms="1" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testSaveUpdateDelete()[pri:0, instance:testDAO.OrderTest@61443d8f]" name="testSaveUpdateDelete" duration-ms="59" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
+        <test-method status="PASS" signature="testSaveUpdateDeleteOrder()[pri:2, instance:testDAO.OrderTest@71f2a7d5]" name="testSaveUpdateDeleteOrder" duration-ms="47" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSaveUpdateDelete -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.OrderTest@61443d8f]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
+        </test-method> <!-- testSaveUpdateDeleteOrder -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.OrderTest@71f2a7d5]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- testDAO.OrderTest -->
       <class name="testDAO.BookTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.BookTest@66048bfd]" name="setUp" is-config="true" duration-ms="1880" started-at="2020-03-23T21:53:29Z" finished-at="2020-03-23T21:53:31Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.BookTest@66048bfd]" name="setUp" is-config="true" duration-ms="1" started-at="2020-03-26T19:52:10Z" finished-at="2020-03-26T19:52:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testFind()[pri:0, instance:testDAO.BookTest@66048bfd]" name="testFind" duration-ms="242" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
+        <test-method status="PASS" signature="testFindBook()[pri:0, instance:testDAO.BookTest@66048bfd]" name="testFindBook" duration-ms="40" started-at="2020-03-26T19:52:10Z" finished-at="2020-03-26T19:52:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFind -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.BookTest@66048bfd]" name="tearDown" is-config="true" duration-ms="2" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
+        </test-method> <!-- testFindBook -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.BookTest@66048bfd]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-03-26T19:52:10Z" finished-at="2020-03-26T19:52:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.BookTest@66048bfd]" name="setUp" is-config="true" duration-ms="0" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testDAO.BookTest@66048bfd]" name="setUp" is-config="true" duration-ms="1" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testSaveUpdateDelete()[pri:0, instance:testDAO.BookTest@66048bfd]" name="testSaveUpdateDelete" duration-ms="97" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
+        <test-method status="PASS" signature="testSaveUpdateDeleteBook()[pri:2, instance:testDAO.BookTest@66048bfd]" name="testSaveUpdateDeleteBook" duration-ms="31" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSaveUpdateDelete -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.BookTest@66048bfd]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-03-23T21:53:31Z" finished-at="2020-03-23T21:53:31Z">
+        </test-method> <!-- testSaveUpdateDeleteBook -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testDAO.BookTest@66048bfd]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-03-26T19:52:11Z" finished-at="2020-03-26T19:52:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

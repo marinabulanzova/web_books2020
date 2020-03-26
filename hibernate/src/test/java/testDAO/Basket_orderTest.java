@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import java.util.List;
 import static utils.HibernateSessionFactoryUtil.getSessionFactory;
 
-@Test(singleThreaded=true)
 public class Basket_orderTest {
     private Session session = null;
 
@@ -24,8 +23,8 @@ public class Basket_orderTest {
         session.close();
     }
 
-    @Test
-    public void testSaveDelete() throws Exception {
+    @Test(priority = 1)
+    public void testSaveDeleteBasket_order() throws Exception {
         Basket_orderDAO baskets = new Basket_orderDAO(session);
         OrderDAO orders = new OrderDAO(session);
         BookDAO books = new BookDAO(session);

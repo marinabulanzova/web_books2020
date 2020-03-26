@@ -14,7 +14,6 @@ import org.testng.annotations.Test;
 import java.util.List;
 import static utils.HibernateSessionFactoryUtil.getSessionFactory;
 
-@Test(singleThreaded=true)
 public class Basket_customerTest {
     private Session session = null;
 
@@ -28,8 +27,8 @@ public class Basket_customerTest {
         session.close();
     }
 
-    @Test
-    public void testSaveDelete() throws Exception {
+    @Test(priority = 1)
+    public void testSaveDeleteBasket_customer() throws Exception {
         Basket_customerDAO baskets = new Basket_customerDAO(session);
         UserDAO users = new UserDAO(session);
         BookDAO books = new BookDAO(session);
@@ -49,7 +48,9 @@ public class Basket_customerTest {
 
         session.getTransaction().begin();
         baskets.delete(b_c);
-        session.getTransaction().commit();
+        session.getTransaction().commit(); //javax.persistence.EntityNotFoundException: deleted object would be
+        //re-saved by cascade (remove deleted object from associations):
+        //[models.Basket_customer#4]
 
         customer = users.getById(3);
         l = customer.getBasket_customerList();

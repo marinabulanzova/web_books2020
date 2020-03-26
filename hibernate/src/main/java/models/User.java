@@ -39,7 +39,7 @@ public class User {
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Basket_customer> basket_customerList;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "customer", cascade={CascadeType.REFRESH, CascadeType.MERGE}, orphanRemoval = false)
     private List<Order> orders;
 
     public User() {}

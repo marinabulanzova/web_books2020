@@ -11,8 +11,6 @@ import org.testng.annotations.Test;
 import java.util.List;
 import static utils.HibernateSessionFactoryUtil.getSessionFactory;
 
-@Test(singleThreaded=true)
-
 public class TestAuthor {
     private Session session = null;
 
@@ -26,8 +24,8 @@ public class TestAuthor {
         session.close();
     }
 
-    @Test
-    public void testSaveUpdateDelete() throws Exception {
+    @Test(priority = 1)
+    public void testSaveDeleteAuthor() throws Exception {
         AuthorDAO authors = new AuthorDAO(session);
         List<Author> l = authors.findAll();
         Assert.assertEquals(l.size(), 9 );

@@ -70,27 +70,27 @@ CREATE TABLE IF NOT EXISTS Order_basket (
 
 ALTER TABLE Orders ADD
 	foreign key (id_customer)
-	references Users(id_user); 
+	references Users(id_user) on delete set null;
 
 ALTER TABLE Order_basket ADD 
 	foreign key (id_book)
-	references Books(id_book),
+	references Books(id_book) on delete set null,
     ADD
 	foreign key (id_order) 
-	references Orders(id_order);
+	references Orders(id_order) on delete cascade ;
 
 ALTER TABLE Books_authors ADD 
 	foreign key (id_book)
-	references Books(id_book),
+	references Books(id_book) on delete cascade,
     ADD
 	foreign key (id_author) 
-	references Authors(id_author);
+	references Authors(id_author) on delete cascade;
 
 ALTER TABLE Basket_customer ADD 
 	foreign key (id_book)
-	references Books(id_book),
+	references Books(id_book) on delete cascade,
     ADD
 	foreign key (id_customer) 
-	references Users(id_user);
+	references Users(id_user) on delete cascade;
 
 

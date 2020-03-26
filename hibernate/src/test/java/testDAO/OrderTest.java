@@ -15,7 +15,6 @@ import java.sql.Timestamp;
 import java.util.List;
 import static utils.HibernateSessionFactoryUtil.getSessionFactory;
 
-@Test(singleThreaded=true)
 public class OrderTest {
     private Session session = null;
 
@@ -29,8 +28,8 @@ public class OrderTest {
         session.close();
     }
 
-    @Test
-    public void testSaveUpdateDelete() throws Exception {
+    @Test(priority = 2)
+    public void testSaveUpdateDeleteOrder() throws Exception {
         OrderDAO orders = new OrderDAO(session);
         List<Order> l = orders.findAll();
         Assert.assertEquals(l.size(), 7 );
@@ -79,7 +78,8 @@ public class OrderTest {
         orders.update(order);
     }
 
-    public void testFind() throws Exception {
+    @Test(priority = 0)
+    public void testFindOrder() throws Exception {
         OrderDAO orders = new OrderDAO(session);
         UserDAO users = new UserDAO(session);
 

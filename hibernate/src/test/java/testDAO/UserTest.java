@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import java.util.List;
 import static utils.HibernateSessionFactoryUtil.getSessionFactory;
 
-@Test(singleThreaded=true)
 public class UserTest {
     private Session session = null;
 
@@ -24,8 +23,8 @@ public class UserTest {
         session.close();
     }
 
-    @Test
-    public void testSaveUpdateDelete() throws Exception {
+    @Test(priority = 2)
+    public void testSaveUpdateDeleteUser() throws Exception {
         UserDAO users = new UserDAO(session);
         List<User> l = users.findAll();
         Assert.assertEquals(l.size(), 7 );
@@ -77,7 +76,8 @@ public class UserTest {
         users.update(user);
     }
 
-    public void testFind() throws Exception {
+    @Test(priority = 0)
+    public void testFindUser() throws Exception {
         UserDAO users = new UserDAO(session);
         List<User> l =  users.find(null,
                 "Валерия",

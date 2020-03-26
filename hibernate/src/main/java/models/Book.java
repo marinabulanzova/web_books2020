@@ -42,13 +42,14 @@ public class Book {
     @Column (name = "price", nullable = false)
     private Double price;
 
+    //cascade={CascadeType.REFRESH, CascadeType.MERGE}, orphanRemoval = false
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
     private List <Book_author> book_authors;
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
     private List <Basket_customer> basket_customerList;
 
-    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "book", cascade={CascadeType.REFRESH, CascadeType.MERGE}, orphanRemoval = false)
     private List <Basket_order> basket_orderList;
 
     public Book() {}

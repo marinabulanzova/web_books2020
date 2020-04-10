@@ -1,7 +1,5 @@
 package testDAO;
-import DAO.Basket_customerDAO;
-import DAO.BookDAO;
-import DAO.UserDAO;
+import DAO.*;
 import models.Basket_customer;
 import models.Book;
 import models.User;

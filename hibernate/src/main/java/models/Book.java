@@ -1,6 +1,4 @@
 package models;
-import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,12 +6,6 @@ import java.util.List;
 @Entity
 @Table (name = "Books")
 public class Book {
-    public enum cover_type {
-        Твёрдая,
-        Мягкая,
-        Твёрдая_тканевая,
-        Кожаная
-    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_book;

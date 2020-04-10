@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="org.springframework:spring-orm:5.2.5.RELEASE" type="repository">
+    <properties maven-id="org.springframework:spring-orm:5.2.5.RELEASE" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/spring-orm-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-beans-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-core-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-jcl-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-jdbc-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-tx-5.2.5.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

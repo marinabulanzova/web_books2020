@@ -1,6 +1,6 @@
 package testDAO;
 
-import DAO.BookDAO;
+import DAO.*;
 import models.Book;
 import org.hibernate.Session;
 import org.testng.Assert;

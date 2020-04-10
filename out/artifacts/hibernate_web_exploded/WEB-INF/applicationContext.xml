@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+  http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:property-placeholder location="classpath:database.properties"/>
+    <context:annotation-config/>
+    <context:component-scan base-package="java"/>
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${postgresql.driver}"/>
+        <property name="url" value="${postgresql.localhost}"/>
+        <property name="username" value="${postgresql.user}"/>
+        <property name="password" value="${postgresql.password}"/>
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties" >
+            <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="show_sql">${hibernate.show_sql}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+            </props>
+        </property>
+        <property name="annotatedClasses">
+            <list>
+                <value>models.Book</value>
+                <value>models.User</value>
+                <value>models.Order</value>
+                <value>models.Author</value>
+                <value>models.Book_author</value>
+                <value>models.Basket_order</value>
+                <value>models.Basket_customer</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="bookDAO" class="DAO.BookDAO"/>
+    <bean id="userDAO" class="DAO.UserDAO"/>
+    <bean id="authorDAO" class="DAO.AuthorDAO"/>
+    <bean id="orderDAO" class="DAO.OrderDAO"/>
+    <bean id="book_authorDAO" class="DAO.Book_authorDAO"/>
+    <bean id="basket_orderDAO" class="DAO.Basket_orderDAO"/>
+    <bean id="basket_customerDAO" class="DAO.Basket_customerDAO"/>
+
+    <bean id="service" class = "com.BillingCenter.services.Services"/> -->
+
+</beans>

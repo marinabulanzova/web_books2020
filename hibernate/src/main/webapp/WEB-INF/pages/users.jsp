@@ -1,30 +1,31 @@
-<%@ page language="java" contentType="text/html; UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<title>Клиенты</title>
-<body>
-<h2>Таблица клиентов</h2><br>
-<table id="table" border="1px" >
-    <tr>
-        <th>Фамилия</th>
-        <th>Имя</th>
-        <th>e_mail</th>
-        <th>номер телефона</th>
-        <th>адрес</th>
-        <tr><tr>
 
-    </tr>
-    <c:forEach items="${UsersList}" var = "user">
-        <tr>
-            <td><c:out value="${user.surname}"/></td>
-            <td><c:out value="${user.first_name}"/></td>
-            <td><c:out value="${user.e_mail}"/></td>
-            <td><c:out value="${user.phone_number}"/></td>
-            <td><c:out value="${user.address}"/></td>
-        </tr>
-    </c:forEach>
-</table>
+<head>
+    <link rel="stylesheet" href="<c:url value="/resources/css/styles.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/css/Oswald.css" />">
+    <title>Информация о клиентах</title>
+</head>
+
+<body>
+<%@ include file="header.jsp" %>
+<aside>
+    <nav>
+        <ul class="aside-menu">
+            <li><a href="/users">Информация о книгах</a></li>
+            <li class="active">Информация о клиентах</li>
+            <li><a href="/orders">Информация о заказах</a></li>
+            <li class="submenu"><a href="/users/add">Регистрация</a></li>
+            <li class="submenu"><a href="/users/login">Вход</a></li>
+        </ul>
+    </nav>
+</aside>
+
+<div id="heading">
+    <h1>Информация о клиентах</h1>
+</div>
+<%@ include file="users/form.jsp" %>
 </body>
+
 </html>

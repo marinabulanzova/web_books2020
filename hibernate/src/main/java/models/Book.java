@@ -47,7 +47,7 @@ public class Book {
     public Book() {}
 
     public Book(String genre, String title, String publishing_house, Integer publication_year,
-                Integer page_count, Integer count_book, String cover, Double prise) {
+                Integer page_count, Integer count_book, String cover, Double price) {
         this.genre = genre;
         this.title = title;
         this.publication_year = publication_year;
@@ -55,7 +55,7 @@ public class Book {
         this.page_count = page_count;
         this.count_book = count_book;
         this.cover = cover;
-        this.price = prise;
+        this.price = price;
         basket_orderList = new ArrayList();
         basket_customerList = new ArrayList();
         book_authors = new ArrayList();

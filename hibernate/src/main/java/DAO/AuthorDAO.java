@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import java.util.List;
 
 public class AuthorDAO {
+
     private Session session;
 
     public AuthorDAO(Session session) {
@@ -31,4 +32,12 @@ public class AuthorDAO {
         List<Author> list = (List<Author>)session.createQuery(test_query).getResultList();
         return list;
     }
+
+    public List<Author> find(String name) {
+        String test_query = "SELECT a FROM Author a where name = '" +  name + "' order by name";
+        List<Author> list = (List<Author>)session.createQuery(test_query).getResultList();
+        return list;
+    }
+
+
 }

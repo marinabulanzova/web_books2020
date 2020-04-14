@@ -72,12 +72,17 @@
             <tr>
                 <td>${book.genre}</td>
                 <td>${book.title}</td>
-                <td>${book.cover}</td>
+                <td>
+                    <c:forEach items = "${book.book_authors}" var="author" >
+                        ${author.author.name}
+                        <br>
+                    </c:forEach>
+                </td>
                 <td>${book.publishing_house}</td>
                 <td>${book.price}</td>
                 <td>
                     <form name="more_detailed" id="book_more_detailed" action="/books/detailed" method="get">
-                        <button class="watch" title="Подробная информация о книге" name="book" value="${book.id_book}" type="submit">  👁 </button>
+                        <button class="watch" title="Подробная информация о книге" name="id" value="${book.id_book}" type="submit">  👁 </button>
                     </form>
                 </td>
             </tr>

@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS Basket_customer (
 -- "Заказы" --
 CREATE TABLE IF NOT EXISTS Orders (
   id_order serial primary key, -- номер заказа
-  id_customer int not null, -- номер клиента
+  id_customer int, -- номер клиента
   delivery_address varchar(100), -- адрес доставки
   payment_card boolean default false, -- оплата картой
   order_date timestamp not null, -- дата заказа
@@ -63,9 +63,9 @@ CREATE TABLE IF NOT EXISTS Orders (
 CREATE TABLE IF NOT EXISTS Order_basket (
   id serial primary key,
   id_order int not null, -- номер заказа
-  id_book int not null, -- номер книги
-  count_book int not null, -- количество книг
-  price numeric(6,2) not null -- цена на момент заказа
+  id_book int, -- номер книги
+  price numeric(6,2) not null,-- цена на момент заказа
+  count_book int not null -- количество книг
 );
 
 ALTER TABLE Orders ADD

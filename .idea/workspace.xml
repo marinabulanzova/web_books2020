@@ -7,49 +7,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6473cb1-fd09-4918-acb6-910f747b0d08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_springframework_spring_context_4_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_springframework_spring_jdbc_4_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_springframework_spring_orm_4_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_springframework_spring_webmvc_4_2_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/java/Controllers/BookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books/form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/add_edit_section.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/detailed.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/edit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/search_results.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/resources/css/Oswald.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/resources/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/main/java/Controllers/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books/add.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books/add_edit_section.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books/detailed.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books/search_results.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/orders.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/hibernate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/hibernate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/createTableDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/createTableDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/fillDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/fillDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/Controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/Controllers/BookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/Controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/AuthorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/AuthorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/resources/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_orderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/DAO/Basket_orderDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books/form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/detailed.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/resources/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/Controllers/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/Controllers/BookController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/classes/Controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/Controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/AuthorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/DAO/AuthorDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/models/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/models/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/DAO/Basket_orderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/DAO/Basket_orderDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/web_books.war" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/Controllers/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/Controllers/BookController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/Controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/Controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/DAO/AuthorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/DAO/AuthorDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/models/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/models/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/DAO/Basket_orderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/DAO/Basket_orderDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/books.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/books.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/books/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/books/form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/resources/css/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,15 +110,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF" />
+      <recent name="$PROJECT_DIR$/DB" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books" />
       <recent name="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/hibernate/src/main/resources" />
       <recent name="$PROJECT_DIR$/hibernate/src/test" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF" />
-      <recent name="$PROJECT_DIR$/DB" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.53">
@@ -392,7 +382,7 @@
     <option name="viewStates">
       <list>
         <serviceView>
-          <option name="contentProportion" value="0.1182708" />
+          <option name="contentProportion" value="0.2553018" />
           <treeState>
             <expand>
               <path>
@@ -402,11 +392,6 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -463,6 +448,8 @@
       <workItem from="1586630907339" duration="8058000" />
       <workItem from="1586680677269" duration="7671000" />
       <workItem from="1586712547782" duration="9711000" />
+      <workItem from="1586792556095" duration="13505000" />
+      <workItem from="1586856319636" duration="10813000" />
     </task>
     <servers />
   </component>
@@ -490,10 +477,10 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="183" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.24.1301.744@65.24.1301.744" timestamp="1586717706826" />
-    <state x="413" y="188" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584875211094">
+    <state x="413" y="188" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586857528240">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="413" y="188" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1301.744@65.24.1301.744" timestamp="1584875211094" />
+    <state x="413" y="188" key="#com.intellij.fileTypes.FileTypeChooser/65.24.1301.744@65.24.1301.744" timestamp="1586857528240" />
     <state x="810" y="144" key="#com.intellij.ide.util.MemberChooser" timestamp="1584972821319">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
@@ -534,54 +521,54 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state width="1080" height="543" key="GridCell.Tab.-1.right/65.24.1301.744@65.24.1301.744" timestamp="1586606471462" />
-    <state width="1080" height="2" key="GridCell.Tab.0.bottom" timestamp="1586722409301">
+    <state width="912" height="21" key="GridCell.Tab.0.bottom" timestamp="1586867558474">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1080" height="2" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1586722409301" />
-    <state width="1080" height="2" key="GridCell.Tab.0.center" timestamp="1586722409299">
+    <state width="912" height="21" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1586867558474" />
+    <state width="912" height="21" key="GridCell.Tab.0.center" timestamp="1586867558473">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1080" height="2" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1586722409298" />
-    <state width="1080" height="2" key="GridCell.Tab.0.left" timestamp="1586722409297">
+    <state width="912" height="21" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1586867558473" />
+    <state width="912" height="21" key="GridCell.Tab.0.left" timestamp="1586867558472">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1080" height="2" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1586722409297" />
-    <state width="1080" height="2" key="GridCell.Tab.0.right" timestamp="1586722409300">
+    <state width="912" height="21" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1586867558472" />
+    <state width="912" height="21" key="GridCell.Tab.0.right" timestamp="1586867558473">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1080" height="2" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1586722409300" />
-    <state width="1080" height="2" key="GridCell.Tab.1.bottom" timestamp="1586722409305">
+    <state width="912" height="21" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1586867558473" />
+    <state width="912" height="21" key="GridCell.Tab.1.bottom" timestamp="1586867558482">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1080" height="2" key="GridCell.Tab.1.bottom/65.24.1301.744@65.24.1301.744" timestamp="1586722409305" />
-    <state width="1080" height="2" key="GridCell.Tab.1.center" timestamp="1586722409304">
+    <state width="912" height="21" key="GridCell.Tab.1.bottom/65.24.1301.744@65.24.1301.744" timestamp="1586867558482" />
+    <state width="912" height="21" key="GridCell.Tab.1.center" timestamp="1586867558480">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1080" height="2" key="GridCell.Tab.1.center/65.24.1301.744@65.24.1301.744" timestamp="1586722409304" />
-    <state width="1080" height="2" key="GridCell.Tab.1.left" timestamp="1586722409303">
+    <state width="912" height="21" key="GridCell.Tab.1.center/65.24.1301.744@65.24.1301.744" timestamp="1586867558480" />
+    <state width="912" height="21" key="GridCell.Tab.1.left" timestamp="1586867558478">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1080" height="2" key="GridCell.Tab.1.left/65.24.1301.744@65.24.1301.744" timestamp="1586722409303" />
-    <state width="1080" height="2" key="GridCell.Tab.1.right" timestamp="1586722409304">
+    <state width="912" height="21" key="GridCell.Tab.1.left/65.24.1301.744@65.24.1301.744" timestamp="1586867558478" />
+    <state width="912" height="21" key="GridCell.Tab.1.right" timestamp="1586867558481">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1080" height="2" key="GridCell.Tab.1.right/65.24.1301.744@65.24.1301.744" timestamp="1586722409304" />
-    <state width="1080" height="2" key="GridCell.Tab.2.bottom" timestamp="1586722409308">
+    <state width="912" height="21" key="GridCell.Tab.1.right/65.24.1301.744@65.24.1301.744" timestamp="1586867558481" />
+    <state width="912" height="21" key="GridCell.Tab.2.bottom" timestamp="1586867558478">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1080" height="2" key="GridCell.Tab.2.bottom/65.24.1301.744@65.24.1301.744" timestamp="1586722409308" />
-    <state width="1080" height="2" key="GridCell.Tab.2.center" timestamp="1586722409307">
+    <state width="912" height="21" key="GridCell.Tab.2.bottom/65.24.1301.744@65.24.1301.744" timestamp="1586867558478" />
+    <state width="912" height="21" key="GridCell.Tab.2.center" timestamp="1586867558476">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1080" height="2" key="GridCell.Tab.2.center/65.24.1301.744@65.24.1301.744" timestamp="1586722409307" />
-    <state width="1080" height="2" key="GridCell.Tab.2.left" timestamp="1586722409306">
+    <state width="912" height="21" key="GridCell.Tab.2.center/65.24.1301.744@65.24.1301.744" timestamp="1586867558476" />
+    <state width="912" height="21" key="GridCell.Tab.2.left" timestamp="1586867558474">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1080" height="2" key="GridCell.Tab.2.left/65.24.1301.744@65.24.1301.744" timestamp="1586722409306" />
-    <state width="1080" height="2" key="GridCell.Tab.2.right" timestamp="1586722409307">
+    <state width="912" height="21" key="GridCell.Tab.2.left/65.24.1301.744@65.24.1301.744" timestamp="1586867558474" />
+    <state width="912" height="21" key="GridCell.Tab.2.right" timestamp="1586867558477">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1080" height="2" key="GridCell.Tab.2.right/65.24.1301.744@65.24.1301.744" timestamp="1586722409307" />
+    <state width="912" height="21" key="GridCell.Tab.2.right/65.24.1301.744@65.24.1301.744" timestamp="1586867558477" />
     <state width="1044" height="105" key="GridCell.Tab.3.bottom" timestamp="1586513562647">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
@@ -630,14 +617,18 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="379" y="61" key="antBuildFilePropertiesDialogDimension/65.24.1301.744@65.24.1301.744" timestamp="1584988198357" />
-    <state x="378" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1586712546630">
+    <state x="378" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1586856320017">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="378" y="211" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1586712546630" />
+    <state x="378" y="211" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1586856320017" />
     <state x="668" y="234" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1586604088487">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="668" y="234" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/65.24.1301.744@65.24.1301.744" timestamp="1586604088487" />
+    <state x="65" y="24" width="710" height="744" key="find.popup" timestamp="1586804875807">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="65" y="24" width="710" height="744" key="find.popup/65.24.1301.744@65.24.1301.744" timestamp="1586804875807" />
     <state x="65" y="24" key="new project wizard" timestamp="1583948211848">
       <screen x="65" y="24" width="1301" height="744" />
     </state>

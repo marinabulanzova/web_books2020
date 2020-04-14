@@ -53,7 +53,7 @@ public class UserController {
         model.addAttribute("patronymic", patronymic);
         model.addAttribute("address", address);
         model.addAttribute("e_mail", e_mail);
-        model.addAttribute("phone_number", surname);
+        model.addAttribute("phone_number", phone_number);
         model.addAttribute("admin", false);
 
         return "users/search_results";
@@ -74,7 +74,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/users/edit", method = RequestMethod.POST)
-    public String edit_client(@RequestParam Integer id,
+    public String edit_user(@RequestParam Integer id,
                               ModelMap model) {
         Session session = factory.openSession();
         UserDAO users = new UserDAO(session);
@@ -139,8 +139,8 @@ public class UserController {
         return "users";
     }
 
-    @RequestMapping(value = "/users/rm", method = RequestMethod.DELETE)
-    public String remove_client(@RequestParam Integer id,
+    @RequestMapping(value = "/users/rm", method = RequestMethod.POST)
+    public String remove_user(@RequestParam Integer id,
                                 ModelMap model) {
         Session session = factory.openSession();
         UserDAO users = new UserDAO(session);
@@ -153,7 +153,7 @@ public class UserController {
         return "users";
     }
 
-    @RequestMapping(value = "/users/detailed", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/users/detailed", method = RequestMethod.GET)
     public String detailed_user(@RequestParam Integer id,
                                 ModelMap model) {
         Session session = factory.openSession();
@@ -166,6 +166,7 @@ public class UserController {
         model.addAttribute("address", user.getAddress());
         model.addAttribute("phone_number", user.getPhone_number());
         model.addAttribute("e_mail", user.getE_mail());
+        model.addAttribute("OrdersList", user.getOrders());
         return "users/detailed";
     }
 

@@ -3,7 +3,6 @@ import DAO.*;
 import models.Author;
 import models.Book;
 import models.Book_author;
-import models.User;
 import org.hibernate.Session;
 
 import org.hibernate.SessionFactory;
@@ -57,11 +56,23 @@ public class BookController {
         model.addAttribute("BooksList",
                 books.find(title, genre, publishing_house, min_p_year, max_p_year, min_p_count, max_p_count,
                         count, cover, min_price, max_price, name_author));
+        model.addAttribute("title", title);
+        model.addAttribute("genre", genre);
+        model.addAttribute("publishing_house", publishing_house);
+        model.addAttribute("min_p_year", min_p_year);
+        model.addAttribute("max_p_year", max_p_year);
+        model.addAttribute("min_p_count", min_p_count);
+        model.addAttribute("max_p_count", max_p_count);
+        model.addAttribute("min_price", min_price);
+        model.addAttribute("max_price", max_price);
+        model.addAttribute("count", count);
+        model.addAttribute("cover", cover);
+        model.addAttribute("name_author", name_author);
         return "books/search_results";
     }
 
     @RequestMapping(value = "/books/add", method = RequestMethod.GET)
-    public String user_add(ModelMap model) {
+    public String book_add(ModelMap model) {
         return "books/add";
     }
 
@@ -159,8 +170,8 @@ public class BookController {
         return "books";
     }
 
-    @RequestMapping(value = "/books/rm", method = RequestMethod.DELETE)
-    public String remove_client(@RequestParam Integer id,
+    @RequestMapping(value = "/books/rm", method = RequestMethod.POST)
+    public String remove_book(@RequestParam Integer id,
                                 ModelMap model) {
         Session session = factory.openSession();
         BookDAO books = new BookDAO(session);
@@ -170,11 +181,11 @@ public class BookController {
         session.getTransaction().commit();
 
         model.addAttribute("BooksList", books.findAll());
-        return "books/rm";
+        return "books";
     }
 
-    @RequestMapping(value = "/books/detailed", method = RequestMethod.DELETE)
-    public String detailed_user(@RequestParam Integer id,
+    @RequestMapping(value = "/books/detailed", method = RequestMethod.GET)
+    public String detailed_book(@RequestParam Integer id,
                                 ModelMap model) {
         Session session = factory.openSession();
         BookDAO books = new BookDAO(session);
@@ -188,6 +199,7 @@ public class BookController {
         model.addAttribute("count_book", book.getCount_book());
         model.addAttribute("cover", book.getCover());
         model.addAttribute("price", book.getPrice());
+        model.addAttribute("book_authors", book.getBook_authors());
         return "books/detailed";
     }
 }

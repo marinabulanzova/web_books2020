@@ -17,6 +17,7 @@
             <li class="active">Информация о книгах</li>
             <li><a href="/users">Информация о клиентах</a></li>
             <li><a href="/orders">Информация о заказах</a></li>
+            <li class="submenu"><a href="/books/add">Добавить новую книгу</a></li>
             <li class="submenu"><a href="/users/add">Регистрация</a></li>
             <li class="submenu"><a href="/users/login">Вход</a></li>
         </ul>

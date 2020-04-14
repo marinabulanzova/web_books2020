@@ -13,7 +13,7 @@
 <aside>
     <nav>
         <ul class="aside-menu">
-            <li><a href="/users">Информация о книгах</a></li>
+            <li><a href="/books">Информация о книгах</a></li>
             <li class="active">Информация о клиентах</li>
             <li><a href="/orders">Информация о заказах</a></li>
             <li class="submenu"><a href="/users/add">Регистрация</a></li>

@@ -26,7 +26,7 @@
             </label>
             <label>
                 e-mail
-                <input class="medium" type="text" name="e_mail" placeholder="Любой" <c:if test="${e_mail != null}"> value="${e_mail}" </c:if>>
+                <input class="medium" type="email" name="e_mail" placeholder="Любой" <c:if test="${e_mail != null}"> value="${e_mail}" </c:if>>
                 <br>
             </label>
             <button type="submit"> Искать 🔎</button>
@@ -35,8 +35,6 @@
         <tr>
             <th>Фамилия</th>
             <th>Имя</th>
-            <th>Отчество</th>
-            <th>Адрес</th>
             <th>Телефон</th>
             <th>e-mail</th>
             <th>Подробнее</th>
@@ -45,13 +43,11 @@
             <tr>
                 <td>${user.surname}</td>
                 <td>${user.first_name}</td>
-                <td>${user.patronymic}</td>
-                <td>${user.address}</td>
                 <td>${user.phone_number}</td>
                 <td>${user.e_mail}</td>
                 <td>
                     <form name="more_detailed" id="user_more_detailed" action="/users/detailed" method="get">
-                        <button class="watch" title="Смотреть" name="user" value="${user.id_user}" type="submit"> 👁 </button>
+                        <button class="watch" title="Смотреть" name="id" value="${user.id_user}" type="submit"> 👁 </button>
                     </form>
                 </td>
             </tr>

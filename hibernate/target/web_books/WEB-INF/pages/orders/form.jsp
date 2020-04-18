@@ -12,9 +12,11 @@
             <br>
         </label>
         <label>
+            <input type="checkbox" name="payment_card" title="Оплата картой"  <c:if test="${payment_card != null && payment_card.equals(true)}"> value = "${true}" checked </c:if>
+            <c:if test="${payment_card == null}"> value = "${false}" </c:if>>
             Оплата картой
-            <input class="medium" type="text" name="payment_card" placeholder="Любой" <c:if test="${payment_card != null}"> value="${payment_card}" </c:if>>
         </label>
+        <br>
         <label>
             Статус:
             <input class="short" type="text" name="status" placeholder="Любой" <c:if test="${status != null}"> value="${status}" </c:if>>
@@ -40,11 +42,11 @@
         </label>
         <label>
             Стоимость от:
-            <input class="short" type="number" name="min_d_price" placeholder="Любой" <c:if test="${min_d_price != null}"> value="${min_d_price}" </c:if>>
+            <input class="short" type="number" step="0.01" name="min_d_price" placeholder="Любой" <c:if test="${min_d_price != null}"> value="${min_d_price}" </c:if>>
         </label>
         <label>
             до:
-            <input class="short" type="number" name="max_d_price" placeholder="Любой" <c:if test="${max_d_price != null}"> value="${cover}" </c:if>>
+            <input class="short" type="number" step="0.01" name="max_d_price" placeholder="Любой" <c:if test="${max_d_price != null}"> value="${cover}" </c:if>>
             <br>
         </label>
 

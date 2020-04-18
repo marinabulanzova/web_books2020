@@ -18,7 +18,7 @@
             <li><a href="/users">Информация о клиентах</a></li>
             <li class="active"> Информация о заказах </li>
             <li class="submenu"><a href="/users/add">Регистрация</a></li>
-            <li class="submenu"><a href="/users/login">Вход</a></li>
+            <li class="submenu"><a href="/login">Вход</a></li>
         </ul>
     </nav>
 </aside>

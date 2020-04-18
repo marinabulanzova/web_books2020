@@ -9,9 +9,16 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.xml.bind.DatatypeConverter;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.List;
 import java.util.Random;
 
 
@@ -64,15 +71,6 @@ public class UserController {
         return "users/add";
     }
 
-    String generate_hash(String password) {
-        StringBuilder s = new StringBuilder();
-        Random random = new Random();
-        for (int i = 0; i < 50; i++) {
-            s.append((char)(random.nextInt(26)+97));
-        }
-        return s.toString();
-    }
-
     @RequestMapping(value = "/users/edit", method = RequestMethod.POST)
     public String edit_user(@RequestParam Integer id,
                               ModelMap model) {
@@ -89,17 +87,35 @@ public class UserController {
         return "users/edit";
     }
 
+    String generate_hash(String Password) throws NoSuchAlgorithmException {
+        MessageDigest digest = MessageDigest.getInstance("MD5");
+        digest.update(Password.getBytes());
+        byte[] result = digest.digest();
+        return DatatypeConverter.printBase64Binary(result);
+    }
+
     @RequestMapping(value = "/users/edit_done", method = RequestMethod.POST)
     public String edit_done(Integer id,
                             @RequestParam String surname, @RequestParam String first_name,
                             @RequestParam String patronymic, @RequestParam String address,
                             @RequestParam String phone_number, @RequestParam String e_mail,
-                            @RequestParam String password, ModelMap model) {
+                            @RequestParam String password, ModelMap model) throws NoSuchAlgorithmException {
         Session session = factory.openSession();
         UserDAO users = new UserDAO(session);
-
-        if (first_name.equals("") || phone_number.equals("") || e_mail.equals("")) {
-            model.addAttribute("error", true);
+        boolean number = false;
+        boolean email = false;
+        if (first_name.equals("") || phone_number.equals("") || e_mail.equals("")  || password.equals("") ||
+                (number = users.find(null, null, null, null, phone_number, null, null).size() > 0 )||
+                (email = users.find(null, null, null, null, null, e_mail, null).size() > 0 )
+        ) {
+            if(first_name.equals("") || phone_number.equals("") || e_mail.equals(""))
+                model.addAttribute("error", true);
+            if(number) {
+                model.addAttribute("error_number", true);
+            }
+            if (email) {
+                model.addAttribute("error_email", true);
+            }
             model.addAttribute("surname", surname);
             model.addAttribute("first_name", first_name);
             model.addAttribute("patronymic", patronymic);
@@ -130,8 +146,7 @@ public class UserController {
             String password_hash = generate_hash(password);
             User user = new User(surname, first_name, patronymic, address, phone_number, e_mail, password_hash, false);
             session.getTransaction().begin();
-            session.save(user);
-            session.flush();
+            Integer id_user = (Integer) session.save(user);
             session.getTransaction().commit();
         }
 
@@ -170,4 +185,38 @@ public class UserController {
         return "users/detailed";
     }
 
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(ModelMap model) {
+        return "users/login";
+    }
+
+    @RequestMapping(value = "/login/check", method = RequestMethod.GET)
+    public String login_check(@RequestParam String e_mail, @RequestParam String password,
+                        ModelMap model) throws NoSuchAlgorithmException {
+        if (password.equals("") || e_mail.equals("")) {
+            model.addAttribute("error", true);
+            model.addAttribute("e_mail", e_mail);
+            model.addAttribute("password", password);
+            return "users/login";
+        }
+        Session session = factory.openSession();
+        UserDAO users = new UserDAO(session);
+        List<User> list = users.find(null, null, null, null, null, e_mail, null);
+        if (list.size() == 0) {
+            model.addAttribute("error_email", true);
+            model.addAttribute("e_mail", e_mail);
+            model.addAttribute("password", password);
+            return "users/login";
+        }
+        if(list.get(0).getPassword_hash() != generate_hash(password)) {
+            model.addAttribute("error_password", true);
+            model.addAttribute("e_mail", e_mail);
+            model.addAttribute("password", password);
+            return "users/login";
+        } else {
+            model.addAttribute("id_user", list.get(0).getId_user());
+            model.addAttribute("admin", list.get(0).getAdmin());
+            return "books";
+        }
+    }
 }

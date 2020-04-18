@@ -11,31 +11,45 @@
 <body>
 <%@ include file="../header.jsp" %>
 
-
-<div id="heading">
     <h2>Подробная информация о книге</h2>
-    <h3>Жанр: ${genre} </h3>
-    <h3>Название: ${title} </h3>
-    <h3> Авторы:
+    <td>Жанр: <td>
+    <td> ${genre} </td>
+    <br>
+    <td>Название: </td>
+    <td> ${title} </td>
+    <br>
+    <td> Авторы: </td>
+    <td>
         <c:forEach items = "${book_authors}" var="author" >
             ${author.author.name}
         </c:forEach>
-    </h3>
-    <h3>Издательство: ${publishing_house} </h3>
-    <h3>Год издания: ${publication_year} </h3>
-    <h3>Количество страниц: ${page_count}</h3>
-    <h3>Количество экземпляров: ${count_book}</h3>
-    <h3>Тип обложки: ${cover} </h3>
-    <h3>Стоимость: ${price} </h3>
+    </td>
+    <br>
+    <td>Издательство: </td>
+    <td> ${publishing_house} </td>
+    <br>
+    <td>Год издания: </td>
+    <td>${publication_year} </td>
+    <br>
+    <td>Количество страниц:</td>
+    <td> ${page_count}</td>
+    <br>
+    <td> Количество экземпляров: </td>
+    <td> ${count_book}</td>
+    <br>
+    <td>Тип обложки: </td>
+    <td> ${cover} </td>
+    <br>
+    <td>Стоимость: </td>
+    <td> ${price} </td>
+    <br>
     <form name="edit_book" id="edit_book_form" action="/books/edit" method="post">
-        <button class="edit" title="Редактировать данные" name="id" value="${id}" type="submit">Редактировать 📝 </button>
+        <button id="edit" class="edit" title="Редактировать данные" name="id" value="${id}" type="submit">Редактировать 📝 </button>
     </form>
     <form name="remove_book" id="remove_book_form" action="/books/rm" method="post">
-        <button class="edit" title="Удалить информацию о книге" name="id" value="${id}" type="submit"> Удалить ❌ </button>
+        <button id="remove" class="edit" title="Удалить информацию о книге" name="id" value="${id}" type="submit"> Удалить ❌ </button>
     </form>
 
-</div>
-</div>
 
 </body>
 

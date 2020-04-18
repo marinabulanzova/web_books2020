@@ -4,7 +4,16 @@
     <c:if test="${error != null}">
         <p class="error">Пожалуйста, заполните все обязательные поля</p>
     </c:if>
-    <form name="client_info_edit" action="/users/edit_done" method="post">
+
+    <c:if test="${error_number != null}">
+        <p class="error">Пользователь с такие номером телефона уже существует</p>
+    </c:if>
+
+    <c:if test="${error_email != null}">
+        <p class="error">Пользователь с таким e_mail уже существует</p>
+    </c:if>
+
+    <form name="client_info_edit" modelAttribute="user" action="/users/edit_done" method="post">
         <label>
             Фамилия
             <input class="medium" type="text" name="surname" <c:if test="${surname != null}"> value="${surname}" </c:if>>
@@ -37,9 +46,9 @@
         <br>
         <label>
             Пароль
-            <input class="medium" type="password" name="password" placeholder="Необходимо заполнить это поле" <c:if test="${password != null}"> value="${password}" </c:if>>
+            <input class="medium" type="password" name="password_hash" placeholder="Необходимо заполнить это поле" <c:if test="${password_hash != null}"> value="${password_hash}" </c:if>>
         </label>
         <br>
-        <button type="submit" <c:if test="${id != null}">name="id" value="${id}" </c:if>> Готово ✅</button>
+        <button type="submit"  <c:if test="${id != null}">name="id" value="${id}" </c:if>> Готово ✅</button>
     </form>
 </section>

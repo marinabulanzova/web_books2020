@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 import java.util.ArrayList;
 
-
 @Controller
 public class BookController {
     @Autowired
@@ -32,10 +31,10 @@ public class BookController {
     @RequestMapping(value = "/books/search", method = RequestMethod.GET)
     public String findAll(@RequestParam String title, @RequestParam String genre,
                           @RequestParam String publishing_house,
-                          @RequestParam Integer min_p_year, @RequestParam Integer max_p_year,
-                          @RequestParam Integer min_p_count, @RequestParam Integer max_p_count,
-                          @RequestParam Integer count, @RequestParam String cover,
-                          @RequestParam Double min_price, @RequestParam Double max_price,
+                          @RequestParam String min_p_year, @RequestParam String max_p_year,
+                          @RequestParam String min_p_count, @RequestParam String max_p_count,
+                          @RequestParam String count, @RequestParam String cover,
+                          @RequestParam String min_price, @RequestParam String max_price,
                           @RequestParam String name_author, ModelMap model) {
         Session session = factory.openSession();
         BookDAO books = new BookDAO(session);
@@ -43,19 +42,19 @@ public class BookController {
         if (title.equals("")) title = null;
         if (genre.equals("")) genre = null;
         if (publishing_house.equals("")) publishing_house = null;
-        if (min_p_year.equals("")) min_p_year = null;
-        if (max_p_year.equals(""))  max_p_year = null;
-        if (min_p_count.equals("")) min_p_count = null;
-        if (max_p_count.equals(""))  max_p_count = null;
-        if (min_price.equals("")) min_price = null;
-        if (max_price.equals(""))  max_price = null;
-        if (count.equals("")) count = null;
+        Integer min_p_y = (min_p_year.equals("")) ? null : Integer.parseInt(min_p_year);
+        Integer max_p_y = (max_p_year.equals("")) ? null : Integer.parseInt(max_p_year);
+        Integer min_p_c = (min_p_count.equals("")) ? null : Integer.parseInt(min_p_count);
+        Integer max_p_c = (max_p_count.equals("")) ? null : Integer.parseInt(max_p_count);
+        Double min_p = (min_price.equals("")) ? null : Double.parseDouble(min_price);
+        Double max_p = (max_price.equals("")) ? null : Double.parseDouble(max_price);
+        Integer c = (count.equals("")) ? null : Integer.parseInt(count);
         if (cover.equals(""))  cover = null;
         if (name_author.equals("")) name_author = null;
 
         model.addAttribute("BooksList",
-                books.find(title, genre, publishing_house, min_p_year, max_p_year, min_p_count, max_p_count,
-                        count, cover, min_price, max_price, name_author));
+                books.find(title, genre, publishing_house, min_p_y, max_p_y, min_p_c, max_p_c,
+                        c, cover, min_p, max_p, name_author));
         model.addAttribute("title", title);
         model.addAttribute("genre", genre);
         model.addAttribute("publishing_house", publishing_house);

@@ -5,7 +5,7 @@
 <head>
     <link rel="stylesheet" href="<c:url value="/resources/css/styles.css" />">
     <link rel="stylesheet" href="<c:url value="/resources/css/Oswald.css" />">
-    <title> Редактирование информации о книге</title>
+    <title>Редактирование информации о книге</title>
 </head>
 
 <body>

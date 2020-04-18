@@ -20,10 +20,16 @@
             <value>.jsp</value>
         </property>
     </bean>
-    <!--
+
     <mvc:resources mapping="/resources/**" location="/resources/"
                    cache-period="31556926"/>
 
     <mvc:annotation-driven />
-    -->
+
+    <!-- <mvc:annotation-driven>
+        <mvc:argument-resolvers>
+            <bean class="org.springframework.security.web.bind.support.AuthenticationPrincipalArgumentResolver" />
+        </mvc:argument-resolvers>
+    </mvc:annotation-driven> -->
+
 </beans>

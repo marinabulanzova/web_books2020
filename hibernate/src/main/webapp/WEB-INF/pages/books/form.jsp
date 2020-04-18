@@ -22,7 +22,7 @@
         </label>
         <label>
             год издания от:
-            <input class="long" type="number" name="min_p_year" placeholder="Любой" <c:if test="${min_p_year != null}"> value="${min_p_year}" </c:if>>
+            <input class="short" type="number" name="min_p_year" placeholder="Любой" <c:if test="${min_p_year != null}"> value="${min_p_year}" </c:if>>
         </label>
         <label>
             до:
@@ -49,43 +49,50 @@
         </label>
         <label>
             стоимость от:
-            <input class="short" type="number" name="min_price" placeholder="Любой" <c:if test="${min_price != null}"> value="${min_price}" </c:if>>
+            <input class="short" type="number" step="0.01" name="min_price" placeholder="Любой" <c:if test="${min_price != null}"> value="${min_price}" </c:if>>
         </label>
         <label>
             до:
-            <input class="short" type="number" name="max_price" placeholder="Любой" <c:if test="${max_price != null}"> value="${max_price}" </c:if>>
+            <input class="short" type="number" step="0.01" name="max_price" placeholder="Любой" <c:if test="${max_price != null}"> value="${max_price}" </c:if>>
             <br>
         </label>
         <button type="submit"> Искать 🔎</button>
     </form>
 
-    <table border="1" bgcolor="#faebd7">
-        <tr>
-            <th>Жанр</th>
-            <th>Название</th>
-            <th>Авторы</th>
-            <th>издательство</th>
-            <th>стоимость</th>
-            <th>Подробнее</th>
-        </tr>
-        <c:forEach items="${BooksList}" var="book">
+    <c:if test="${BooksList.size() == 0}">
+        Книг с такими пареметрами не найдено, перепроверьте правильность введённых данных
+    </c:if>
+    <c:if test="${BooksList.size() > 0}">
+        <table id="tableBooks" border="1" bgcolor="#faebd7">
             <tr>
-                <td>${book.genre}</td>
-                <td>${book.title}</td>
-                <td>
-                    <c:forEach items = "${book.book_authors}" var="author" >
-                        ${author.author.name}
-                        <br>
-                    </c:forEach>
-                </td>
-                <td>${book.publishing_house}</td>
-                <td>${book.price}</td>
-                <td>
-                    <form name="more_detailed" id="book_more_detailed" action="/books/detailed" method="get">
-                        <button class="watch" title="Подробная информация о книге" name="id" value="${book.id_book}" type="submit">  👁 </button>
-                    </form>
-                </td>
+                <th>Жанр</th>
+                <th>Название</th>
+                <th>Авторы</th>
+                <th>Издательство</th>
+                <th>стоимость</th>
+                <th>Подробнее</th>
             </tr>
-        </c:forEach>
-    </table>
+            <c:forEach items="${BooksList}" var="book">
+                <tr>
+                    <td>${book.genre}</td>
+                    <td>${book.title}</td>
+                    <td>
+                        <c:forEach items = "${book.book_authors}" var="author" >
+                            ${author.author.name}
+                            <br>
+                        </c:forEach>
+                    </td>
+                    <td>${book.publishing_house}</td>
+                    <td>${book.price}</td>
+                    <!-- <td>
+                        <form name="more_detailed" id="book_more_detailed" action="/books/detailed" method="get">
+                            <button class="watch" id="detailed" title="Подробная информация о книге" name="id" value="{book.id_book}" type="submit">  👁 </button>
+                        </form>
+                    </td> -->
+                    <td><span><a href="/books/detailed?id=${book.id_book}">Подробнее</a></span></td>
+                </tr>
+            </c:forEach>
+        </table>
+    </c:if>
+
 </section>

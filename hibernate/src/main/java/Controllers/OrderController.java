@@ -7,14 +7,17 @@ import models.Order;
 import org.hibernate.Session;
 
 import org.hibernate.SessionFactory;
+import org.omg.PortableInterceptor.ServerRequestInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import java.text.ParseException;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.Random;
 
 @Controller
@@ -31,30 +34,39 @@ public class OrderController {
     }
 
     @RequestMapping(value = "/orders/search", method = RequestMethod.GET)
-    public String list(@RequestParam Integer customer, @RequestParam String delivery_address,
-                       @RequestParam Boolean payment_card,
-                       @RequestParam Date min_o_date, @RequestParam Date max_o_date,
-                       @RequestParam Date min_d_date, @RequestParam Date max_d_date,
+    public String list(@RequestParam String customer, @RequestParam String delivery_address,
+                       @RequestParam(required = false) Boolean payment_card,
+                       @RequestParam String min_o_date, @RequestParam String max_o_date,
+                       @RequestParam String min_d_date, @RequestParam String max_d_date,
                        @RequestParam String status,
-                       @RequestParam Double min_d_price, @RequestParam Double max_d_price,
+                       @RequestParam String min_d_price, @RequestParam String max_d_price,
                        ModelMap model) {
         Session session = factory.openSession();
         OrderDAO orders = new OrderDAO(session);
-        UserDAO users= new UserDAO(session);
-        if (customer.equals("")) customer = null;
+        Integer cust = (customer.equals("")) ? null : Integer.parseInt(customer);
         if (delivery_address.equals("")) delivery_address = null;
-        if (payment_card.equals("")) payment_card = null;
-        if (min_o_date.equals("")) min_o_date = null;
-        if (max_o_date.equals(""))  max_o_date = null;
-        if (min_d_date.equals("")) min_d_date = null;
-        if (max_d_date.equals("")) max_d_date = null;
+        //if (payment_card.equals("")) payment_card = null;
         if (status.equals("")) status = null;
-        if (min_d_price.equals(""))  min_d_price = null;
-        if (max_d_price.equals("")) min_d_date = null;
+        Double min_d_p = (min_d_price.equals("")) ? null : Double.parseDouble(min_d_price);
+        Double max_d_p = (max_d_price.equals("")) ? null : Double.parseDouble(max_d_price);
+        Date min_o_d = null;
+        if (!min_o_date.equals("")) min_o_d = get_sql_date(min_o_date);
+        Date max_o_d = null;
+        if (!max_o_date.equals("")) max_o_d = get_sql_date(max_o_date);
+        Date min_d_d = null;
+        if (!min_d_date.equals("")) min_d_d = get_sql_date(min_d_date);
+        Date max_d_d = null;
+        if (!max_d_date.equals("")) max_d_d = get_sql_date(max_d_date);
+
+        /*
+        Date min_o_d = (min_o_date.equals("")) ? null : get_sql_date(min_o_date);
+        Date max_o_d = (max_o_date.equals("")) ? null : get_sql_date(max_o_date);
+        Date min_d_d = (min_d_date.equals("")) ? null : get_sql_date(min_d_date);
+        Date max_d_d = (max_d_date.equals("")) ? null : get_sql_date(max_d_date);*/
 
         model.addAttribute("OrdersList",
-                orders.find(customer, delivery_address, payment_card, min_o_date, max_o_date,
-                        min_d_date, max_d_date, status, min_d_price, max_d_price));
+                orders.find(cust, delivery_address, payment_card, min_o_d, max_o_d,
+                        min_d_d, max_d_d, status, min_d_p, max_d_p));
         model.addAttribute("id_customer", customer);
         model.addAttribute("delivery_address", delivery_address);
         model.addAttribute("min_o_date", min_o_date);
@@ -87,19 +99,17 @@ public class OrderController {
 
     @RequestMapping(value = "/orders/edit_done", method = RequestMethod.POST)
     public String edit_done(Integer id,
-                            @RequestParam Date delivery_date, @RequestParam String status, ModelMap model) {
+                            @RequestParam String delivery_date, @RequestParam String status, ModelMap model) {
         Session session = factory.openSession();
         OrderDAO orders = new OrderDAO(session);
-
         if (delivery_date.equals("") || status.equals("")) {
             model.addAttribute("error", true);
             model.addAttribute("delivery_date", delivery_date );
             model.addAttribute("status", status);
             return "orders/edit";
         }
-
         Order order = orders.getById(id);
-        order.setDelivery_date(delivery_date);
+        order.setDelivery_date(get_sql_date(delivery_date));
         order.setStatus(status);
         session.getTransaction().begin();
         orders.update(order);
@@ -142,5 +152,17 @@ public class OrderController {
         model.addAttribute("full_price", full_price);
         model.addAttribute("BooksList", order.getBasket_orderList());
         return "orders/detailed";
+    }
+
+    java.sql.Date get_sql_date(String date) {
+        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+        java.util.Date parsed = null;
+            try {
+            parsed = format.parse(date);
+        } catch (ParseException e1) {
+            e1.printStackTrace();
+        }
+        java.sql.Date d_date = new java.sql.Date(parsed.getTime());
+        return d_date;
     }
 }

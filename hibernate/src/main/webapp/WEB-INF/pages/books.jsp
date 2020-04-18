@@ -19,7 +19,7 @@
             <li><a href="/orders">Информация о заказах</a></li>
             <li class="submenu"><a href="/books/add">Добавить новую книгу</a></li>
             <li class="submenu"><a href="/users/add">Регистрация</a></li>
-            <li class="submenu"><a href="/users/login">Вход</a></li>
+            <li class="submenu"><a href="/login">Вход</a></li>
         </ul>
     </nav>
 </aside>

@@ -10,10 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import utils.UserValidator;
 
 import javax.xml.bind.DatatypeConverter;
 import java.security.MessageDigest;
@@ -66,7 +64,7 @@ public class UserController {
         return "users/search_results";
     }
 
-    @RequestMapping(value = "/users/add", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/users/add", method = RequestMethod.GET)
     public String user_add(ModelMap model) {
         return "users/add";
     }
@@ -152,7 +150,7 @@ public class UserController {
 
         model.addAttribute("UsersList", users.findAll());
         return "users";
-    }
+    }*/
 
     @RequestMapping(value = "/users/rm", method = RequestMethod.POST)
     public String remove_user(@RequestParam Integer id,
@@ -185,12 +183,12 @@ public class UserController {
         return "users/detailed";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(ModelMap model) {
         return "users/login";
-    }
+    }*/
 
-    @RequestMapping(value = "/login/check", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/login/check", method = RequestMethod.GET)
     public String login_check(@RequestParam String e_mail, @RequestParam String password,
                         ModelMap model) throws NoSuchAlgorithmException {
         if (password.equals("") || e_mail.equals("")) {
@@ -218,5 +216,50 @@ public class UserController {
             model.addAttribute("admin", list.get(0).getAdmin());
             return "books";
         }
+    }*/
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String register_get() {
+        return "/register";
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String register_post(@ModelAttribute /*@Valid  hibernate_validator*/User user, ModelMap model) {
+        Session session = factory.openSession();
+        UserDAO users = new UserDAO(session);
+        boolean number = false;
+        boolean email = false;
+        if (user.getFirst_name().equals("") || user.getPhone_number().equals("") || user.getE_mail().equals("") || user.getPassword_hash().equals("") ||
+                (number = users.find(null, null, null, null, user.getPhone_number(), null, null).size() > 0) ||
+                (email = users.find(null, null, null, null, null, user.getE_mail(), null).size() > 0)
+        ) {
+            if (user.getFirst_name().equals("") || user.getPhone_number().equals("") || user.getE_mail().equals(""))
+                model.addAttribute("error", true);
+            if (number) {
+                model.addAttribute("error_number", true);
+            }
+            if (email) {
+                model.addAttribute("error_email", true);
+            }
+            model.addAttribute("surname", user.getSurname());
+            model.addAttribute("first_name", user.getFirst_name());
+            model.addAttribute("patronymic", user.getPatronymic());
+            model.addAttribute("address", user.getAddress());
+            model.addAttribute("phone_number", user.getPhone_number());
+            model.addAttribute("e_mail", user.getE_mail());
+            return "/register";
+        }
+        users.save(user);
+        return "redirect:/login";
+    }
+
+    @RequestMapping("/login")
+    public String login(@RequestParam(name = "error", required = false) Boolean error, ModelMap model) {
+        if (Boolean.TRUE.equals(error)) {
+            model.addAttribute("error", true);
+        }
+        return "login";
     }
 }
+
+

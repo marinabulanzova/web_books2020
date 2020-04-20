@@ -13,7 +13,7 @@
         <p class="error">Пользователь с таким e_mail уже существует</p>
     </c:if>
 
-    <form name="client_info_edit" modelAttribute="user" action="/users/edit_done" method="post">
+    <form name="client_info_edit" modelAttribute="user" action="/register" method="post">
         <label>
             Фамилия
             <input class="medium" type="text" name="surname" <c:if test="${surname != null}"> value="${surname}" </c:if>>

@@ -2,36 +2,55 @@ package DAO;
 
 import models.Book;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.List;
 
 public class BookDAO {
-    private Session session;
 
-    public BookDAO(Session session) {
+    @Autowired
+    private SessionFactory sessionFactory;
+    //private Session session;
+
+    /*public BookDAO(Session session) {
         this.session = session;
+    }*/
+
+    public BookDAO() {
     }
 
     public Book getById(int id){
+        Session session = sessionFactory.openSession();
         Book book = (Book) session.get(Book.class, id);
+        session.close();
         return book;
     }
 
     public Integer save(Book book) {
+        Session session = sessionFactory.openSession();
         Integer id = (Integer) session.save(book);
+        session.close();
         return id;
     }
 
     public void update(Book book) {
+        Session session = sessionFactory.openSession();
         session.update(book);
+        session.close();
     }
 
     public void delete(Book book) {
+        Session session = sessionFactory.openSession();
         session.delete(book);
+        session.close();
     }
 
     public List<Book> findAll() {
+        Session session = sessionFactory.openSession();
         String test_query = "SELECT b FROM Book b order by price";
         List<Book> list = (List<Book>)session.createQuery(test_query).getResultList();
+        session.close();
         return list;
     }
 
@@ -39,7 +58,6 @@ public class BookDAO {
    public List<Book> find(String title, String genre, String publishing_house, Integer min_p_year, Integer max_p_year,
                           Integer min_p_count, Integer max_p_count, Integer count, String cover, Double min_price, Double max_price,
                           String name_author) {
-
        String text_query = "SELECT b FROM Book b";
        Boolean flagAnd = false;
        Boolean flagWhere = true;
@@ -102,7 +120,9 @@ public class BookDAO {
            }
        }
        text_query+=" ORDER BY price";
+       Session session = sessionFactory.openSession();
        List<Book> list = (List<Book>)session.createQuery(text_query).getResultList();
+       session.close();
        return list;
    }
 }

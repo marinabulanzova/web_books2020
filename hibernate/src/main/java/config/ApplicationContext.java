@@ -1,5 +1,6 @@
 package config;
 
+import DAO.*;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +26,7 @@ import java.util.Properties;
 @Configuration
 @ComponentScan("config")
 @ComponentScan("Controllers")
-@ComponentScan("authentication")
+//@ComponentScan("authentication")
 //@ComponentScan("validator")
 @EnableTransactionManagement
 @PropertySource("/WEB-INF/database.properties")
@@ -109,6 +110,41 @@ public class ApplicationContext {
     @Bean(name = "transactionManager")
     public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
         return new HibernateTransactionManager(sessionFactory);
+    }
+
+    @Bean(name = "books")
+    public BookDAO bookDAO() {
+        return new BookDAO();
+    }
+
+    @Bean(name = "authors_dao")
+    public Book_authorDAO book_authorDAO() {
+        return new Book_authorDAO();
+    }
+
+    @Bean(name = "users")
+    public UserDAO userDAO() {
+        return new UserDAO();
+    }
+
+    @Bean(name = "authors")
+    public AuthorDAO authorDAO() {
+        return new AuthorDAO();
+    }
+
+    @Bean(name = "orders")
+    public OrderDAO orderDAO() {
+        return new OrderDAO();
+    }
+
+    @Bean(name = "basket_orderDAO")
+    public Basket_orderDAO Basket_orderDAO() {
+        return new Basket_orderDAO();
+    }
+
+    @Bean(name = "Basket_customerDAO")
+    public Basket_customerDAO Basket_customerDAO() {
+        return new Basket_customerDAO();
     }
 }
 

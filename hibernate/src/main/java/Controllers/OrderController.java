@@ -14,6 +14,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.jws.Oneway;
 import java.text.ParseException;
 
 import java.sql.Date;
@@ -22,13 +24,15 @@ import java.util.Random;
 
 @Controller
 public class OrderController {
+    /*@Autowired
+    SessionFactory factory;*/
     @Autowired
-    SessionFactory factory;
+    private OrderDAO orders;
 
     @RequestMapping(value = "/orders", method = RequestMethod.GET)
     public String findAll(ModelMap model) {
-        Session session = factory.openSession();
-        OrderDAO orders = new OrderDAO(session);
+        /*Session session = factory.openSession();
+        OrderDAO orders = new OrderDAO(session);*/
         model.addAttribute("OrdersList", orders.findAll());
         return "orders";
     }
@@ -41,8 +45,8 @@ public class OrderController {
                        @RequestParam String status,
                        @RequestParam String min_d_price, @RequestParam String max_d_price,
                        ModelMap model) {
-        Session session = factory.openSession();
-        OrderDAO orders = new OrderDAO(session);
+        /*Session session = factory.openSession();
+        OrderDAO orders = new OrderDAO(session);*/
         Integer cust = (customer.equals("")) ? null : Integer.parseInt(customer);
         if (delivery_address.equals("")) delivery_address = null;
         //if (payment_card.equals("")) payment_card = null;
@@ -88,8 +92,8 @@ public class OrderController {
     @RequestMapping(value = "/orders/edit", method = RequestMethod.POST)
     public String edit_order(@RequestParam Integer id,
                             ModelMap model) {
-        Session session = factory.openSession();
-        OrderDAO orders = new OrderDAO(session);
+        /*Session session = factory.openSession();
+        OrderDAO orders = new OrderDAO(session);*/
         Order order = orders.getById(id);
         model.addAttribute("id", id);
         model.addAttribute("delivery_date", order.getDelivery_date());
@@ -100,8 +104,8 @@ public class OrderController {
     @RequestMapping(value = "/orders/edit_done", method = RequestMethod.POST)
     public String edit_done(Integer id,
                             @RequestParam String delivery_date, @RequestParam String status, ModelMap model) {
-        Session session = factory.openSession();
-        OrderDAO orders = new OrderDAO(session);
+        /*Session session = factory.openSession();
+        OrderDAO orders = new OrderDAO(session);*/
         if (delivery_date.equals("") || status.equals("")) {
             model.addAttribute("error", true);
             model.addAttribute("delivery_date", delivery_date );
@@ -111,9 +115,9 @@ public class OrderController {
         Order order = orders.getById(id);
         order.setDelivery_date(get_sql_date(delivery_date));
         order.setStatus(status);
-        session.getTransaction().begin();
+        //session.getTransaction().begin();
         orders.update(order);
-        session.getTransaction().commit();
+        //session.getTransaction().commit();
         model.addAttribute("OrdersList", orders.findAll());
         return "orders";
     }
@@ -121,12 +125,12 @@ public class OrderController {
     @RequestMapping(value = "/orders/rm", method = RequestMethod.POST)
     public String remove_order(@RequestParam Integer id,
                               ModelMap model) {
-        Session session = factory.openSession();
-        OrderDAO orders = new OrderDAO(session);
+        /*Session session = factory.openSession();
+        OrderDAO orders = new OrderDAO(session);*/
 
-        session.getTransaction().begin();
+        //session.getTransaction().begin();
         orders.delete(orders.getById(id));
-        session.getTransaction().commit();
+        //session.getTransaction().commit();
 
         model.addAttribute("OrdersList", orders.findAll());
         return "orders";
@@ -135,8 +139,8 @@ public class OrderController {
     @RequestMapping(value = "/orders/detailed", method = RequestMethod.GET)
     public String detailed_order(@RequestParam Integer id,
                                 ModelMap model) {
-        Session session = factory.openSession();
-        OrderDAO orders = new OrderDAO(session);
+        /*Session session = factory.openSession();
+        OrderDAO orders = new OrderDAO(session);*/
         Order order = orders.getById(id);
         model.addAttribute("id", id);
         model.addAttribute("customer", order.getCustomer());

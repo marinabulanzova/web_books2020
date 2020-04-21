@@ -2,7 +2,7 @@ package Controllers;
 
 
 import DAO.*;
-//import config.SecurityConfig;
+import config.SecurityConfig;
 import models.User;
 import org.hibernate.Session;
 
@@ -18,6 +18,9 @@ import javax.servlet.http.HttpServletRequest;
 public class UserController {
     @Autowired
     SessionFactory factory;
+
+    /*@Autowired
+    private PasswordEncoder passwordEncoder;*/
 
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String findAll(ModelMap model) {
@@ -214,7 +217,7 @@ public class UserController {
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String register_get() {
-        return "/register";
+        return "register";
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -241,27 +244,29 @@ public class UserController {
             model.addAttribute("address", user.getAddress());
             model.addAttribute("phone_number", user.getPhone_number());
             model.addAttribute("e_mail", user.getE_mail());
-            return "/register";
+            return "register";
         }
-        //user.setPassword_hash(SecurityConfig.passwordEncoder().encode(user.getPassword_hash()));
+        user.setPassword_hash(SecurityConfig.passwordEncoder().encode(user.getPassword_hash()));
+        //user.setPassword_hash(PasswordEncoder.encode(user.getPassword_hash()));
         users.save(user);
-        return "redirect:/login";
+        return "login";
     }
 
-    /*@RequestMapping("/login")
+    @RequestMapping("/login")
     public String login(@RequestParam(name = "error", required = false) Boolean error, ModelMap model) {
         if (Boolean.TRUE.equals(error)) {
             model.addAttribute("error", true);
         }
         return "login";
-    }*/
+    }
+    /*
     @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
     public String login(HttpServletRequest request, ModelMap model) {
         if (request.getUserPrincipal() != null) {
             return "redirect:/books";
         }
         return "login";
-    }
+    }*/
 }
 
 

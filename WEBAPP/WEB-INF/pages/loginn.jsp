@@ -28,7 +28,7 @@
         <p class="error">Пользователь с таким e_mail не существует</p>
     </c:if>
 
-    <form name="user_info_edit" action="/login/check" method="get">
+    <form name="user_info_edit" action = "${pageContext.request.contextPath}/j_spring_security_check" method="post">
         <label>
             e-mail
             <input class="medium" type="text" name="e_mail" placeholder="Необходимо заполнить это поле" <c:if test="${e_mail != null}"> value="${e_mail}" </c:if>>
@@ -39,7 +39,7 @@
             <input class="medium" type="password" name="password" placeholder="Необходимо заполнить это поле" <c:if test="${password != null}"> value="${password}" </c:if>>
         </label>
         <br>
-        <button type="submit" <c:if test="${id_user != null}">name="id_user" value="${id_user}" </c:if>> Войти ✅</button>
+        <button type="submit" > Войти ✅</button>
     </form>
 </section>
 

@@ -8,9 +8,46 @@
   <component name="ChangeListManager">
     <list default="true" id="a6473cb1-fd09-4918-acb6-910f747b0d08" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD/classes/Controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BUILD/classes/Controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/Controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/Controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/loginn.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/loginn.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/loginn.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/loginn.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WEBAPP/bookstore.war" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/bookstore.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/classes/Controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/classes/Controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/classes/authentication/DBAuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/classes/authentication/DBAuthenticationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/classes/config/AppInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/classes/config/AppInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/classes/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/classes/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/loginn.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/config/local-password" beforeDir="false" afterPath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/config/local-password" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/config/pid" beforeDir="false" afterPath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/config/pid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/config/pid.prev" beforeDir="false" afterPath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/config/pid.prev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/generated/policy/Web_books/Web_books/granted.policy" beforeDir="false" afterPath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/generated/policy/Web_books/Web_books/granted.policy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/logs/server.log" beforeDir="false" afterPath="$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/logs/server.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/Controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/authentication/DBAuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/authentication/DBAuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/config/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/config/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/loginn.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/Controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/Controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/authentication/DBAuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/authentication/DBAuthenticationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/config/AppInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/config/AppInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/config/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hibernate/target/web_books.war" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/Controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/Controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/authentication/DBAuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/authentication/DBAuthenticationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/config/AppInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/config/AppInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/loginn.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -393,7 +430,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -458,7 +495,7 @@
       <workItem from="1587289362708" duration="28289000" />
       <workItem from="1587367928373" duration="19842000" />
       <workItem from="1587415683570" duration="10943000" />
-      <workItem from="1587458973405" duration="18819000" />
+      <workItem from="1587458973405" duration="29886000" />
     </task>
     <servers />
   </component>
@@ -530,70 +567,70 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state width="1080" height="543" key="GridCell.Tab.-1.right/65.24.1301.744@65.24.1301.744" timestamp="1586606471462" />
-    <state width="1085" height="3" key="GridCell.Tab.0.bottom" timestamp="1587490187352">
+    <state width="1085" height="2" key="GridCell.Tab.0.bottom" timestamp="1587503030092">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="3" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1587490187352" />
-    <state width="1085" height="3" key="GridCell.Tab.0.center" timestamp="1587490187349">
+    <state width="1085" height="2" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1587503030092" />
+    <state width="1085" height="2" key="GridCell.Tab.0.center" timestamp="1587503030090">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="3" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1587490187349" />
-    <state width="1085" height="3" key="GridCell.Tab.0.left" timestamp="1587490187348">
+    <state width="1085" height="2" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1587503030090" />
+    <state width="1085" height="2" key="GridCell.Tab.0.left" timestamp="1587503030090">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="3" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1587490187348" />
-    <state width="1085" height="3" key="GridCell.Tab.0.right" timestamp="1587490187351">
+    <state width="1085" height="2" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1587503030090" />
+    <state width="1085" height="2" key="GridCell.Tab.0.right" timestamp="1587503030091">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="3" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1587490187351" />
-    <state width="1085" height="3" key="GridCell.Tab.1.bottom" timestamp="1587490187354">
+    <state width="1085" height="2" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1587503030091" />
+    <state width="1085" height="2" key="GridCell.Tab.1.bottom" timestamp="1587503030094">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="3" key="GridCell.Tab.1.bottom/65.24.1301.744@65.24.1301.744" timestamp="1587490187354" />
-    <state width="1085" height="3" key="GridCell.Tab.1.center" timestamp="1587490187353">
+    <state width="1085" height="2" key="GridCell.Tab.1.bottom/65.24.1301.744@65.24.1301.744" timestamp="1587503030094" />
+    <state width="1085" height="2" key="GridCell.Tab.1.center" timestamp="1587503030093">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="3" key="GridCell.Tab.1.center/65.24.1301.744@65.24.1301.744" timestamp="1587490187353" />
-    <state width="1085" height="3" key="GridCell.Tab.1.left" timestamp="1587490187352">
+    <state width="1085" height="2" key="GridCell.Tab.1.center/65.24.1301.744@65.24.1301.744" timestamp="1587503030093" />
+    <state width="1085" height="2" key="GridCell.Tab.1.left" timestamp="1587503030093">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="3" key="GridCell.Tab.1.left/65.24.1301.744@65.24.1301.744" timestamp="1587490187352" />
-    <state width="1085" height="3" key="GridCell.Tab.1.right" timestamp="1587490187353">
+    <state width="1085" height="2" key="GridCell.Tab.1.left/65.24.1301.744@65.24.1301.744" timestamp="1587503030093" />
+    <state width="1085" height="2" key="GridCell.Tab.1.right" timestamp="1587503030094">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="3" key="GridCell.Tab.1.right/65.24.1301.744@65.24.1301.744" timestamp="1587490187353" />
-    <state width="1085" height="3" key="GridCell.Tab.2.bottom" timestamp="1587490187355">
+    <state width="1085" height="2" key="GridCell.Tab.1.right/65.24.1301.744@65.24.1301.744" timestamp="1587503030094" />
+    <state width="1085" height="2" key="GridCell.Tab.2.bottom" timestamp="1587503030095">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="3" key="GridCell.Tab.2.bottom/65.24.1301.744@65.24.1301.744" timestamp="1587490187355" />
-    <state width="1085" height="3" key="GridCell.Tab.2.center" timestamp="1587490187354">
+    <state width="1085" height="2" key="GridCell.Tab.2.bottom/65.24.1301.744@65.24.1301.744" timestamp="1587503030095" />
+    <state width="1085" height="2" key="GridCell.Tab.2.center" timestamp="1587503030095">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="3" key="GridCell.Tab.2.center/65.24.1301.744@65.24.1301.744" timestamp="1587490187354" />
-    <state width="1085" height="3" key="GridCell.Tab.2.left" timestamp="1587490187354">
+    <state width="1085" height="2" key="GridCell.Tab.2.center/65.24.1301.744@65.24.1301.744" timestamp="1587503030095" />
+    <state width="1085" height="2" key="GridCell.Tab.2.left" timestamp="1587503030094">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="3" key="GridCell.Tab.2.left/65.24.1301.744@65.24.1301.744" timestamp="1587490187354" />
-    <state width="1085" height="3" key="GridCell.Tab.2.right" timestamp="1587490187355">
+    <state width="1085" height="2" key="GridCell.Tab.2.left/65.24.1301.744@65.24.1301.744" timestamp="1587503030094" />
+    <state width="1085" height="2" key="GridCell.Tab.2.right" timestamp="1587503030095">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="3" key="GridCell.Tab.2.right/65.24.1301.744@65.24.1301.744" timestamp="1587490187355" />
-    <state width="1046" height="439" key="GridCell.Tab.3.bottom" timestamp="1587414807912">
+    <state width="1085" height="2" key="GridCell.Tab.2.right/65.24.1301.744@65.24.1301.744" timestamp="1587503030095" />
+    <state width="1085" height="2" key="GridCell.Tab.3.bottom" timestamp="1587497582849">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1046" height="439" key="GridCell.Tab.3.bottom/65.24.1301.744@65.24.1301.744" timestamp="1587414807912" />
-    <state width="1046" height="439" key="GridCell.Tab.3.center" timestamp="1587414807911">
+    <state width="1085" height="2" key="GridCell.Tab.3.bottom/65.24.1301.744@65.24.1301.744" timestamp="1587497582849" />
+    <state width="1085" height="2" key="GridCell.Tab.3.center" timestamp="1587497582847">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1046" height="439" key="GridCell.Tab.3.center/65.24.1301.744@65.24.1301.744" timestamp="1587414807911" />
-    <state width="1046" height="439" key="GridCell.Tab.3.left" timestamp="1587414807910">
+    <state width="1085" height="2" key="GridCell.Tab.3.center/65.24.1301.744@65.24.1301.744" timestamp="1587497582847" />
+    <state width="1085" height="2" key="GridCell.Tab.3.left" timestamp="1587497582847">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1046" height="439" key="GridCell.Tab.3.left/65.24.1301.744@65.24.1301.744" timestamp="1587414807910" />
-    <state width="1046" height="439" key="GridCell.Tab.3.right" timestamp="1587414807912">
+    <state width="1085" height="2" key="GridCell.Tab.3.left/65.24.1301.744@65.24.1301.744" timestamp="1587497582847" />
+    <state width="1085" height="2" key="GridCell.Tab.3.right" timestamp="1587497582847">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1046" height="439" key="GridCell.Tab.3.right/65.24.1301.744@65.24.1301.744" timestamp="1587414807912" />
+    <state width="1085" height="2" key="GridCell.Tab.3.right/65.24.1301.744@65.24.1301.744" timestamp="1587497582847" />
     <state width="1046" height="439" key="GridCell.Tab.4.bottom" timestamp="1587414807111">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
@@ -646,6 +683,10 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="378" y="168" key="run.anything.popup/65.24.1301.744@65.24.1301.744" timestamp="1584873111661" />
+    <state x="378" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1587495433190">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="378" y="89" width="672" height="678" key="search.everywhere.popup/65.24.1301.744@65.24.1301.744" timestamp="1587495433190" />
     <state x="441" y="38" key="spring file set editor" timestamp="1586510178931">
       <screen x="65" y="24" width="1301" height="744" />
     </state>

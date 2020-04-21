@@ -1,7 +1,7 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+
 <head>
     <link rel="stylesheet" href="<c:url value="/resources/css/styles.css" />">
     <link rel="stylesheet" href="<c:url value="/resources/css/Oswald.css" />">
@@ -15,37 +15,25 @@
     <h1>Вход</h1>
 </div>
 
-<form method = "POST"
-      action = "${pageContext.request.contextPath}/j_spring_security_check">
-    <table align = "center">
-        <tr>
-            <td>Электронная почта</td>
-            <td>
-                <label>
-                    <input name = "e_mail" type = "email"/>
-                </label>
-            </td>
-        </tr>
+<section>
+    <c:if test="${error != null}">
+        <p class="error"> неверно указан логин или пароль</p>
+    </c:if>
 
-        <tr>
-            <td>Пароль</td>
-            <td>
-                <label>
-                    <input type = "password" name = "password"/>
-                </label>
-            </td>
-        </tr>
-
-        <tr>
-            <td>&nbsp;</td>
-            <td>
-                <label>
-                    <input type = "submit" value = "Вход"/>
-                </label>
-            </td>
-        </tr>
-    </table>
-</form>
+    <form name="user_info_edit" action = "${pageContext.request.contextPath}/j_spring_security_check" method="post">
+        <label>
+            e-mail
+            <input class="medium" type="text" name="e_mail" placeholder="Необходимо заполнить это поле" <c:if test="${e_mail != null}"> value="${e_mail}" </c:if>>
+        </label>
+        <br>
+        <label>
+            Пароль
+            <input class="medium" type="password" name="password" placeholder="Необходимо заполнить это поле" <c:if test="${password != null}"> value="${password}" </c:if>>
+        </label>
+        <br>
+        <button type="submit" > Войти ✅</button>
+    </form>
+</section>
 
 </body>
 </html>

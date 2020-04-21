@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="dialect">
+            org.hibernate.dialect.PostgreSQL9Dialect
+        </property>
+        <property name="connection.url">jdbc:postgresql://localhost:5433/web_bookstore</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.username">marina</property>
+        <property name="connection.password">1929</property>
+        <property name="show_sql">true</property>
+
+        <property name="connection.pool_size">
+            1
+        </property>
+
+        <mapping class="models.Book"/>
+        <mapping class="models.User"/>
+        <mapping class="models.Author"/>
+        <mapping class="models.Basket_customer"/>
+        <mapping class="models.Basket_order"/>
+        <mapping class="models.Order"/>
+        <mapping class="models.Book_author"/>
+
+    </session-factory>
+</hibernate-configuration>

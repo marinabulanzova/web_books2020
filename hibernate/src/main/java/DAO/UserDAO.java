@@ -11,49 +11,37 @@ import java.util.List;
 
 
 public class UserDAO {
-    //private  Session session;
+    private  Session session;
 
-    /*public UserDAO(Session session) {
+    public UserDAO(Session session) {
         this.session = session;
-    }*/
-    @Autowired
-    SessionFactory sessionFactory;
+    }
 
     public UserDAO() {
     }
 
     public User getById(int id){
-        Session session = sessionFactory.openSession();
         User user = (User) session.get(User.class, id);
-        session.close();
         return user;
 
     }
 
     public Integer save(User user){
-        Session session = sessionFactory.openSession();
         Integer id = (Integer) session.save(user);
-        session.close();
         return id;
     }
 
     public void update(User user) {
-        Session session = sessionFactory.openSession();
         session.update(user);
-        session.close();
     }
 
     public void delete(User user) {
-        Session session = sessionFactory.openSession();
         session.remove(user);
-        session.close();
     }
 
     public List<User> findAll() {
-        Session session = sessionFactory.openSession();
         String test_query = "SELECT u FROM User u ORDER BY surname";
         List<User> list = (List<User>)session.createQuery(test_query).getResultList();
-        session.close();
         return list;
     }
 
@@ -96,9 +84,7 @@ public class UserDAO {
             }
         }
         text_query+=" ORDER BY surname";
-        Session session = sessionFactory.openSession();
         List<User> list = (List<User>)session.createQuery(text_query).getResultList();
-        session.close();
         return list;
     }
 

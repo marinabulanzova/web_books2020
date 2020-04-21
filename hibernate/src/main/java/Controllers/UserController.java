@@ -2,24 +2,27 @@ package Controllers;
 
 
 import DAO.*;
+//import config.SecurityConfig;
 import models.User;
+import org.hibernate.Session;
 
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import javax.servlet.http.HttpServletRequest;
 
 
 @Controller
 public class UserController {
-    /*@Autowired
-    SessionFactory factory;*/
-    @Autowired UserDAO users;
+    @Autowired
+    SessionFactory factory;
 
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String findAll(ModelMap model) {
-        /*Session session = factory.openSession();
-        UserDAO users = new UserDAO(session);*/
+        Session session = factory.openSession();
+        UserDAO users = new UserDAO(session);
         model.addAttribute("UsersList", users.findAll());
         return "users";
     }
@@ -33,8 +36,8 @@ public class UserController {
     public String list(@RequestParam String surname, @RequestParam String first_name,
                        @RequestParam String patronymic, @RequestParam String address,
                        @RequestParam String phone_number, @RequestParam String e_mail, ModelMap model) {
-        /*Session session = factory.openSession();
-        UserDAO users = new UserDAO(session);*/
+        Session session = factory.openSession();
+        UserDAO users = new UserDAO(session);
         if (surname.equals("")) surname = null;
         if (first_name.equals("")) first_name = null;
         if (patronymic.equals("")) patronymic = null;
@@ -146,12 +149,12 @@ public class UserController {
     @RequestMapping(value = "/users/rm", method = RequestMethod.POST)
     public String remove_user(@RequestParam Integer id,
                                 ModelMap model) {
-        /*Session session = factory.openSession();
-        UserDAO users = new UserDAO(session);*/
+        Session session = factory.openSession();
+        UserDAO users = new UserDAO(session);
 
-        //session.getTransaction().begin();
+        session.getTransaction().begin();
         users.delete(users.getById(id));
-        //session.getTransaction().commit();
+        session.getTransaction().commit();
 
         model.addAttribute("UsersList", users.findAll());
         return "users";
@@ -160,8 +163,8 @@ public class UserController {
     @RequestMapping(value = "/users/detailed", method = RequestMethod.GET)
     public String detailed_user(@RequestParam Integer id,
                                 ModelMap model) {
-        /*Session session = factory.openSession();
-        UserDAO users = new UserDAO(session);*/
+        Session session = factory.openSession();
+        UserDAO users = new UserDAO(session);
         User user = users.getById(id);
         model.addAttribute("id", id);
         model.addAttribute("surname", user.getSurname());
@@ -216,8 +219,8 @@ public class UserController {
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String register_post(@ModelAttribute /*@Valid  hibernate_validator*/User user, ModelMap model) {
-        /*Session session = factory.openSession();
-        UserDAO users = new UserDAO(session);*/
+        Session session = factory.openSession();
+        UserDAO users = new UserDAO(session);
         boolean number = false;
         boolean email = false;
         if (user.getFirst_name().equals("") || user.getPhone_number().equals("") || user.getE_mail().equals("") || user.getPassword_hash().equals("") ||
@@ -240,14 +243,22 @@ public class UserController {
             model.addAttribute("e_mail", user.getE_mail());
             return "/register";
         }
+        //user.setPassword_hash(SecurityConfig.passwordEncoder().encode(user.getPassword_hash()));
         users.save(user);
         return "redirect:/login";
     }
 
-    @RequestMapping("/login")
+    /*@RequestMapping("/login")
     public String login(@RequestParam(name = "error", required = false) Boolean error, ModelMap model) {
         if (Boolean.TRUE.equals(error)) {
             model.addAttribute("error", true);
+        }
+        return "login";
+    }*/
+    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
+    public String login(HttpServletRequest request, ModelMap model) {
+        if (request.getUserPrincipal() != null) {
+            return "redirect:/books";
         }
         return "login";
     }

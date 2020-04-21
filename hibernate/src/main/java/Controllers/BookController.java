@@ -18,17 +18,12 @@ import java.util.ArrayList;
 @Controller
 public class BookController {
     @Autowired
-    private BookDAO books;
-
-    @Autowired
-    private AuthorDAO authors_dao;
-    /*@Autowired
-    SessionFactory factory;*/
+    SessionFactory factory;
 
     @RequestMapping(value = "/books", method = RequestMethod.GET)
     public String findAll(ModelMap model) {
-        /*Session session = factory.openSession();
-        BookDAO books = new BookDAO(session);*/
+        Session session = factory.openSession();
+        BookDAO books = new BookDAO(session);
         model.addAttribute("BooksList", books.findAll());
         return "books";
     }
@@ -41,8 +36,8 @@ public class BookController {
                           @RequestParam String count, @RequestParam String cover,
                           @RequestParam String min_price, @RequestParam String max_price,
                           @RequestParam String name_author, ModelMap model) {
-        /*Session session = factory.openSession();
-        BookDAO books = new BookDAO(session);*/
+        Session session = factory.openSession();
+        BookDAO books = new BookDAO(session);
 
         if (title.equals("")) title = null;
         if (genre.equals("")) genre = null;
@@ -83,8 +78,8 @@ public class BookController {
     @RequestMapping(value = "/books/edit", method = RequestMethod.POST)
     public String edit_book(@RequestParam Integer id,
                               ModelMap model) {
-        /*Session session = factory.openSession();
-        BookDAO books = new BookDAO(session);*/
+        Session session = factory.openSession();
+        BookDAO books = new BookDAO(session);
         Book book = books.getById(id);
         model.addAttribute("id", id);
         model.addAttribute("title", book.getTitle());
@@ -105,8 +100,8 @@ public class BookController {
                             @RequestParam String publishing_house, @RequestParam Integer publication_year,
                             @RequestParam Integer page_count, @RequestParam Integer count_book,
                             @RequestParam String cover, @RequestParam Double price, @RequestParam List<String> authors, ModelMap model) {
-        /*Session session = factory.openSession();
-        BookDAO books = new BookDAO(session);*/
+        Session session = factory.openSession();
+        BookDAO books = new BookDAO(session);
         if (title.equals("")) {
             model.addAttribute("error", true);
             model.addAttribute("title", title);
@@ -139,21 +134,21 @@ public class BookController {
         } else {
             book = new Book(genre, title, publishing_house, publication_year,
                     page_count, count_book, cover, price);
-            //session.getTransaction().begin();
+            session.getTransaction().begin();
             books.save(book);
-            //session.getTransaction().commit();
+            session.getTransaction().commit();
         }
         List<Book_author> book_authors = new ArrayList();
         List<Author> author;
         Author a;
-        //AuthorDAO authors_dao = new AuthorDAO(session);
+        AuthorDAO authors_dao = new AuthorDAO(session);
         for (String name : authors) {
             author = authors_dao.find(name);
             if (author.size() == 0) {
                 a = new Author(name);
-                //session.getTransaction().begin();
+                session.getTransaction().begin();
                 authors_dao.save(a);
-                //session.getTransaction().commit();
+                session.getTransaction().commit();
             } else {
                 a = author.get(0);
             }
@@ -162,13 +157,13 @@ public class BookController {
         }
         book.setBook_authors(book_authors);
 
-        //session.getTransaction().begin();
+        session.getTransaction().begin();
         if(id != null) {
             books.update(book);
         } else {
             books.save(book);
         }
-        //session.getTransaction().commit();
+        session.getTransaction().commit();
 
         model.addAttribute("BooksList", books.findAll());
         return "books";
@@ -177,12 +172,12 @@ public class BookController {
     @RequestMapping(value = "/books/rm", method = RequestMethod.POST)
     public String remove_book(@RequestParam Integer id,
                                 ModelMap model) {
-        /*Session session = factory.openSession();
-        BookDAO books = new BookDAO(session);*/
+        Session session = factory.openSession();
+        BookDAO books = new BookDAO(session);
 
-        //session.getTransaction().begin();
+        session.getTransaction().begin();
         books.delete(books.getById(id));
-        //session.getTransaction().commit();
+        session.getTransaction().commit();
 
         model.addAttribute("BooksList", books.findAll());
         return "books";
@@ -191,8 +186,8 @@ public class BookController {
     @RequestMapping(value = "/books/detailed", method = RequestMethod.GET)
     public String detailed_book(@RequestParam Integer id,
                                 ModelMap model) {
-        /*Session session = factory.openSession();
-        BookDAO books = new BookDAO(session);*/
+        Session session = factory.openSession();
+        BookDAO books = new BookDAO(session);
         Book book = books.getById(id);
         model.addAttribute("id", id);
         model.addAttribute("title", book.getTitle());

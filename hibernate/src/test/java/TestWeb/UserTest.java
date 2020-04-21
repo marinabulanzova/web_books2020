@@ -29,6 +29,6 @@ public class UserTest {
         element.sendKeys("детектив");
         element = driver.findElement(By.id("edit"));
         element.click();
-        //driver.quit();
+        driver.quit();
     }
 }

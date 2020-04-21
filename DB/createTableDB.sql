@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS Users (
   address varchar(100), -- адрес
   phone_number varchar(11) unique not null, -- номер телефона
   e_mail varchar(30) unique not null, -- адрес электронной почты
-  password_hash varchar(50) not null, -- хэш пароля
+  password_hash varchar(60) not null, -- хэш пароля
   admin boolean default false
 );
 

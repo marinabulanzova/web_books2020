@@ -10,50 +10,39 @@ import java.sql.Date;
 import java.util.List;
 
 public class OrderDAO {
-    @Autowired
-    SessionFactory sessionFactory;
-    //private Session session;
 
-    /*public OrderDAO(Session session) {
+    private Session session;
+
+    public OrderDAO(Session session) {
         this.session = session;
-    }*/
+    }
 
     public OrderDAO() {
     }
 
     public Order getById(int id) {
-        Session session = sessionFactory.openSession();
         Order order = (Order) session.get(Order.class, id);
-        session.close();
         return order;
     }
 
     public Integer save(Order order) {
-        Session session = sessionFactory.openSession();
         order.getCustomer().addOrder(order);
         Integer id = (Integer) session.save(order);
-        session.close();
         return id;
     }
 
     public void update(Order order) {
-        Session session = sessionFactory.openSession();
         session.update(order);
-        session.close();
     }
 
     public void delete(Order order) {
-        Session session = sessionFactory.openSession();
         session.delete(order);
         order.getCustomer().removeOrder(order);
-        session.close();
     }
 
     public List<Order> findAll() {
-        Session session = sessionFactory.openSession();
         String test_query = "SELECT o FROM Order o ORDER BY order_date";
         List<Order> list = (List<Order>)session.createQuery(test_query).getResultList();
-        session.close();
         return list;
     }
 
@@ -108,10 +97,8 @@ public class OrderDAO {
                 flagAnd = true;
             }
         }
-        Session session = sessionFactory.openSession();
         text_query+=" ORDER BY order_date";
         List<Order> list = (List<Order>)session.createQuery(text_query).getResultList();
-        session.close();
         return list;
     }
 }

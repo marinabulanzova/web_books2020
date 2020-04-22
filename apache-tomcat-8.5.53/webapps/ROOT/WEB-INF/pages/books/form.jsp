@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <section>
-    <form name="search_by_private_information" action="/books/search" method="get">
+    <form name="search_by_private_information" modelAtribute="userSearch" action="/search_books" method="get">
         <label>
             Название
             <input class="medium" type="text" name="title" placeholder="Любой" <c:if test="${title != null}"> value="${title}" </c:if>>
@@ -60,7 +60,7 @@
     </form>
 
     <c:if test="${BooksList.size() == 0}">
-        Книг с такими пареметрами не найдено, перепроверьте правильность введённых данных
+        Книг с такими пареметрами не найдено
     </c:if>
     <c:if test="${BooksList.size() > 0}">
         <table id="tableBooks" border="1" bgcolor="#faebd7">
@@ -89,7 +89,7 @@
                             <button class="watch" id="detailed" title="Подробная информация о книге" name="id" value="{book.id_book}" type="submit">  👁 </button>
                         </form>
                     </td> -->
-                    <td><span><a href="/books/detailed?id=${book.id_book}">Подробнее</a></span></td>
+                    <td><span><a href="/detailed_books?id=${book.id_book}">Подробнее</a></span></td>
                 </tr>
             </c:forEach>
         </table>

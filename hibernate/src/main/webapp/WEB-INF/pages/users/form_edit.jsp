@@ -1,0 +1,57 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<section>
+    <c:if test="${error != null}">
+    <p class="error">Пожалуйста, заполните все обязательные поля</p>
+    </c:if>
+
+    <c:if test="${error_number != null}">
+    <p class="error">Пользователь с такие номером телефона уже существует</p>
+    </c:if>
+
+    <c:if test="${error_email != null}">
+    <p class="error">Пользователь с таким e_mail уже существует</p>
+    </c:if>
+
+    <form name="client_info_edit" modelAttribute="userForm" action="/users/edit" method="post">
+        <label>
+            Фамилия
+            <input class="medium" type="text" name="surname" <c:if test="${surname != null}"> value="${surname}" </c:if>>
+        </label>
+        <br>
+        <label>
+            Имя
+            <input class="medium" type="text" name="first_name" placeholder="Необходимо заполнить это поле" <c:if test="${first_name != null}"> value="${first_name}" </c:if>>
+        </label>
+        <br>
+        <label>
+            Отчество
+            <input class="medium" type="text" name="patronymic" <c:if test="${patronymic != null}"> value="${patronymic}" </c:if>>
+        </label>
+        <br>
+        <label>
+            Адрес
+            <input class="long" type="text" name="address" <c:if test="${address != null}"> value="${address}" </c:if>>
+        </label>
+        <br>
+        <label>
+            Номер телефона
+            <input class="short" type="text" name="phone_number" placeholder="Необходимо заполнить это поле" <c:if test="${phone_number != null}"> value="${phone_number}" </c:if>>
+        </label>
+        <br>
+        <label>
+            e-mail
+            <input class="medium" type="text" name="e_mail" placeholder="Необходимо заполнить это поле" <c:if test="${e_mail != null}"> value="${e_mail}" </c:if>>
+        </label>
+        <br>
+        <label>
+            Старый пароль
+            <input class="medium" type="password" name="old_password" placeholder="Необходимо заполнить это поле">
+        </label>
+        <label>
+            Новый пароль
+            <input class="medium" type="password" name="new_password" placeholder="Необходимо заполнить это поле">
+        </label>
+        <br>
+        <button type="submit"  <c:if test="${id != null}">name="id" value="${id}" </c:if>> Готово ✅</button>
+    </form>

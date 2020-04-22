@@ -15,6 +15,6 @@
     <h1>Регистрация</h1>
 </div>
 
-<%@ include file="users/add_edit_section.jsp" %>
+<%@ include file="users/form_register.jsp" %>
 </body>
 </html>

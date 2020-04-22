@@ -24,7 +24,7 @@
 </aside>
 
 <div id="heading">
-    <h1>Результаты поиска</h1>
+    <h1>Результаты поиска книг</h1>
 </div>
 <%@ include file="form.jsp" %>
 </body>

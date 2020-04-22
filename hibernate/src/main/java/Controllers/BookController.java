@@ -1,17 +1,24 @@
 package Controllers;
 import DAO.*;
+import form.BookSearch;
 import models.Author;
+import models.Basket_customer;
 import models.Book;
 import models.Book_author;
 import org.hibernate.Session;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -20,62 +27,45 @@ public class BookController {
     @Autowired
     SessionFactory factory;
 
-    @RequestMapping(value = "/books", method = RequestMethod.GET)
-    public String findAll(ModelMap model) {
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String findAll(HttpServletRequest request, ModelMap model) {
         Session session = factory.openSession();
         BookDAO books = new BookDAO(session);
+        if (request.getUserPrincipal() != null) {
+            /*models.User user = (models.User)request.getUserPrincipal();
+            model.addAttribute("id", user.getId_user());
+            model.addAttribute("admin", user.getAdmin());*/
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            models.User user = (models.User)auth.getPrincipal();
+            model.addAttribute("id", user.getId_user());
+            model.addAttribute("admin", user.getAdmin());
+        }
+        /*Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        models.User user = (models.User)auth.getPrincipal();
+        model.addAttribute("auth", user.getId_user());*/
         model.addAttribute("BooksList", books.findAll());
         return "books";
     }
 
-    @RequestMapping(value = "/books/search", method = RequestMethod.GET)
-    public String findAll(@RequestParam String title, @RequestParam String genre,
-                          @RequestParam String publishing_house,
-                          @RequestParam String min_p_year, @RequestParam String max_p_year,
-                          @RequestParam String min_p_count, @RequestParam String max_p_count,
-                          @RequestParam String count, @RequestParam String cover,
-                          @RequestParam String min_price, @RequestParam String max_price,
-                          @RequestParam String name_author, ModelMap model) {
+    @RequestMapping(value = "/search_books", method = RequestMethod.GET)
+    public String find(@ModelAttribute BookSearch book_search, ModelMap model) {
         Session session = factory.openSession();
         BookDAO books = new BookDAO(session);
-
-        if (title.equals("")) title = null;
-        if (genre.equals("")) genre = null;
-        if (publishing_house.equals("")) publishing_house = null;
-        Integer min_p_y = (min_p_year.equals("")) ? null : Integer.parseInt(min_p_year);
-        Integer max_p_y = (max_p_year.equals("")) ? null : Integer.parseInt(max_p_year);
-        Integer min_p_c = (min_p_count.equals("")) ? null : Integer.parseInt(min_p_count);
-        Integer max_p_c = (max_p_count.equals("")) ? null : Integer.parseInt(max_p_count);
-        Double min_p = (min_price.equals("")) ? null : Double.parseDouble(min_price);
-        Double max_p = (max_price.equals("")) ? null : Double.parseDouble(max_price);
-        Integer c = (count.equals("")) ? null : Integer.parseInt(count);
-        if (cover.equals(""))  cover = null;
-        if (name_author.equals("")) name_author = null;
-
         model.addAttribute("BooksList",
-                books.find(title, genre, publishing_house, min_p_y, max_p_y, min_p_c, max_p_c,
-                        c, cover, min_p, max_p, name_author));
-        model.addAttribute("title", title);
-        model.addAttribute("genre", genre);
-        model.addAttribute("publishing_house", publishing_house);
-        model.addAttribute("min_p_year", min_p_year);
-        model.addAttribute("max_p_year", max_p_year);
-        model.addAttribute("min_p_count", min_p_count);
-        model.addAttribute("max_p_count", max_p_count);
-        model.addAttribute("min_price", min_price);
-        model.addAttribute("max_price", max_price);
-        model.addAttribute("count", count);
-        model.addAttribute("cover", cover);
-        model.addAttribute("name_author", name_author);
+                books.find(book_search.getTitle(), book_search.getGenre(), book_search.getPublishing_house(),
+                        book_search.getMin_p_year(),book_search.getMax_p_year(), book_search.getMin_p_count(),
+                        book_search.getMax_p_count(), book_search.getCount(), book_search.getCover(), book_search.getMax_price(),
+                        book_search.getMin_price(), book_search.getName_author()));
+        model.addAttribute("book", book_search);
         return "books/search_results";
     }
 
-    @RequestMapping(value = "/books/add", method = RequestMethod.GET)
+    @RequestMapping(value = "/add_books", method = RequestMethod.GET)
     public String book_add(ModelMap model) {
         return "books/add";
     }
 
-    @RequestMapping(value = "/books/edit", method = RequestMethod.POST)
+    @RequestMapping(value = "/edit_books", method = RequestMethod.POST)
     public String edit_book(@RequestParam Integer id,
                               ModelMap model) {
         Session session = factory.openSession();
@@ -94,7 +84,7 @@ public class BookController {
         return "books/edit";
     }
 
-    @RequestMapping(value = "/books/edit_done", method = RequestMethod.POST)
+    @RequestMapping(value = "/edit_done", method = RequestMethod.POST)
     public String edit_done(Integer id,
                             @RequestParam String title, @RequestParam String genre,
                             @RequestParam String publishing_house, @RequestParam Integer publication_year,
@@ -169,7 +159,7 @@ public class BookController {
         return "books";
     }
 
-    @RequestMapping(value = "/books/rm", method = RequestMethod.POST)
+    @RequestMapping(value = "/rm_book", method = RequestMethod.POST)
     public String remove_book(@RequestParam Integer id,
                                 ModelMap model) {
         Session session = factory.openSession();
@@ -183,7 +173,7 @@ public class BookController {
         return "books";
     }
 
-    @RequestMapping(value = "/books/detailed", method = RequestMethod.GET)
+    @RequestMapping(value = "/detailed_books", method = RequestMethod.GET)
     public String detailed_book(@RequestParam Integer id,
                                 ModelMap model) {
         Session session = factory.openSession();
@@ -200,5 +190,20 @@ public class BookController {
         model.addAttribute("price", book.getPrice());
         model.addAttribute("book_authors", book.getBook_authors());
         return "books/detailed";
+    }
+
+    @RequestMapping(value = "/add_basket", method = RequestMethod.POST)
+    public String add_basket(@RequestParam Integer id, @RequestParam Integer count, ModelMap model) {
+        Session session = factory.openSession();
+        BookDAO books = new BookDAO(session);
+        Basket_customerDAO basket = new Basket_customerDAO(session);
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        models.User user = (models.User)auth.getPrincipal();
+        Basket_customer b_c = new Basket_customer(books.getById(id), user, count);
+        session.getTransaction().begin();
+        basket.save(b_c);
+        session.getTransaction().commit();
+        model.addAttribute("id", id);
+        return "books";
     }
 }

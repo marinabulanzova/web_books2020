@@ -3,11 +3,14 @@ package Controllers;
 
 import DAO.*;
 import config.SecurityConfig;
+import form.UserForm;
 import models.User;
 import org.hibernate.Session;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -28,11 +31,6 @@ public class UserController {
         UserDAO users = new UserDAO(session);
         model.addAttribute("UsersList", users.findAll());
         return "users";
-    }
-
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
-        public String hello() {
-        return "index";
     }
 
     @RequestMapping(value = "/users/search", method = RequestMethod.GET)
@@ -64,7 +62,7 @@ public class UserController {
     /*@RequestMapping(value = "/users/add", method = RequestMethod.GET)
     public String user_add(ModelMap model) {
         return "users/add";
-    }
+    }*/
 
     @RequestMapping(value = "/users/edit", method = RequestMethod.POST)
     public String edit_user(@RequestParam Integer id,
@@ -82,28 +80,18 @@ public class UserController {
         return "users/edit";
     }
 
-    String generate_hash(String Password) throws NoSuchAlgorithmException {
-        MessageDigest digest = MessageDigest.getInstance("MD5");
-        digest.update(Password.getBytes());
-        byte[] result = digest.digest();
-        return DatatypeConverter.printBase64Binary(result);
-    }
-
     @RequestMapping(value = "/users/edit_done", method = RequestMethod.POST)
-    public String edit_done(Integer id,
-                            @RequestParam String surname, @RequestParam String first_name,
-                            @RequestParam String patronymic, @RequestParam String address,
-                            @RequestParam String phone_number, @RequestParam String e_mail,
-                            @RequestParam String password, ModelMap model) throws NoSuchAlgorithmException {
+    public String edit_done(HttpServletRequest request, @RequestParam(required = false) Integer id,
+                            @ModelAttribute UserForm userForm, ModelMap model)  {
         Session session = factory.openSession();
         UserDAO users = new UserDAO(session);
         boolean number = false;
         boolean email = false;
-        if (first_name.equals("") || phone_number.equals("") || e_mail.equals("")  || password.equals("") ||
-                (number = users.find(null, null, null, null, phone_number, null, null).size() > 0 )||
-                (email = users.find(null, null, null, null, null, e_mail, null).size() > 0 )
+        if (userForm.getFirst_name().equals("") || userForm.getE_mail().equals("") || userForm.getPhone_number().equals("") ||
+                (number = users.find(null, null, null, null, userForm.getPhone_number(), null, null).size() > 0 )||
+                (email = users.find(null, null, null, null, null, userForm.getE_mail(), null).size() > 0 )
         ) {
-            if(first_name.equals("") || phone_number.equals("") || e_mail.equals(""))
+            if(userForm.getFirst_name().equals("") || userForm.getE_mail().equals("") ||  userForm.getPhone_number().equals(""))
                 model.addAttribute("error", true);
             if(number) {
                 model.addAttribute("error_number", true);
@@ -111,43 +99,31 @@ public class UserController {
             if (email) {
                 model.addAttribute("error_email", true);
             }
-            model.addAttribute("surname", surname);
-            model.addAttribute("first_name", first_name);
-            model.addAttribute("patronymic", patronymic);
-            model.addAttribute("address", address);
-            model.addAttribute("phone_number", phone_number);
-            model.addAttribute("e_mail", e_mail);
-
-            if (id != null) {
-                model.addAttribute("id", id);
-                return "users/edit";
-            } else {
-                return "users/add";
-            }
+            model.addAttribute("userForm", userForm);
+            model.addAttribute("id", id);
+            return "users/edit";
         }
 
+        User user;
         if (id != null) {
-            session.getTransaction().begin();
-            User user = users.getById(id);
-            user.setSurname(surname);
-            user.setFirst_name(first_name);
-            user.setPatronymic(patronymic);
-            user.setAddress(address);
-            user.setPhone_number(phone_number);
-            user.setE_mail(e_mail);
-            users.update(user);
-            session.getTransaction().commit();
+            user = users.getById(id);
         } else {
-            String password_hash = generate_hash(password);
-            User user = new User(surname, first_name, patronymic, address, phone_number, e_mail, password_hash, false);
-            session.getTransaction().begin();
-            Integer id_user = (Integer) session.save(user);
-            session.getTransaction().commit();
+            user = (models.User) request.getUserPrincipal();
         }
-
-        model.addAttribute("UsersList", users.findAll());
-        return "users";
-    }*/
+        user.setSurname(userForm.getSurname());
+        user.setFirst_name(userForm.getFirst_name());
+        user.setPatronymic(userForm.getPatronymic());
+        user.setAddress(userForm.getAddress());
+        user.setPhone_number(userForm.getPhone_number());
+        user.setE_mail(userForm.getE_mail());
+        session.getTransaction().begin();
+        users.update(user);
+        session.getTransaction().commit();
+        if(id != null) {
+            return"users/detailed";
+        }
+        return "account";
+    }
 
     @RequestMapping(value = "/users/rm", method = RequestMethod.POST)
     public String remove_user(@RequestParam Integer id,
@@ -164,12 +140,18 @@ public class UserController {
     }
 
     @RequestMapping(value = "/users/detailed", method = RequestMethod.GET)
-    public String detailed_user(@RequestParam Integer id,
+    public String detailed_user(@RequestParam(required = false) Integer id,
                                 ModelMap model) {
         Session session = factory.openSession();
         UserDAO users = new UserDAO(session);
-        User user = users.getById(id);
-        model.addAttribute("id", id);
+        User user;
+        if (id != null) {
+            user = users.getById(id);
+        } else {
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            user = (models.User)auth.getPrincipal();
+        }
+        model.addAttribute("id", user.getId_user());
         model.addAttribute("surname", user.getSurname());
         model.addAttribute("first_name", user.getFirst_name());
         model.addAttribute("patronymic", user.getPatronymic());
@@ -179,41 +161,6 @@ public class UserController {
         model.addAttribute("OrdersList", user.getOrders());
         return "users/detailed";
     }
-
-    /*@RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login(ModelMap model) {
-        return "users/login";
-    }*/
-
-    /*@RequestMapping(value = "/login/check", method = RequestMethod.GET)
-    public String login_check(@RequestParam String e_mail, @RequestParam String password,
-                        ModelMap model) throws NoSuchAlgorithmException {
-        if (password.equals("") || e_mail.equals("")) {
-            model.addAttribute("error", true);
-            model.addAttribute("e_mail", e_mail);
-            model.addAttribute("password", password);
-            return "users/login";
-        }
-        Session session = factory.openSession();
-        UserDAO users = new UserDAO(session);
-        List<User> list = users.find(null, null, null, null, null, e_mail, null);
-        if (list.size() == 0) {
-            model.addAttribute("error_email", true);
-            model.addAttribute("e_mail", e_mail);
-            model.addAttribute("password", password);
-            return "users/login";
-        }
-        if(list.get(0).getPassword_hash() != generate_hash(password)) {
-            model.addAttribute("error_password", true);
-            model.addAttribute("e_mail", e_mail);
-            model.addAttribute("password", password);
-            return "users/login";
-        } else {
-            model.addAttribute("id_user", list.get(0).getId_user());
-            model.addAttribute("admin", list.get(0).getAdmin());
-            return "books";
-        }
-    }*/
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String register_get() {
@@ -248,6 +195,7 @@ public class UserController {
         }
         user.setPassword_hash(SecurityConfig.passwordEncoder().encode(user.getPassword_hash()));
         //user.setPassword_hash(PasswordEncoder.encode(user.getPassword_hash()));
+        user.setAdmin(false);
         users.save(user);
         return "login";
     }

@@ -25,7 +25,7 @@
 <div id="heading">
     <h1>Результаты поиска</h1>
 </div>
-<%@ include file="form.jsp" %>
+<%@ include file="form_search.jsp" %>
 </body>
 
 </html>

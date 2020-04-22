@@ -23,19 +23,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/login", "/register").anonymous()
-                .antMatchers("/books").authenticated()
+                .antMatchers("/login", "/register", "/search_books", "/detailed_books").anonymous()
+                //.antMatchers("/books").authenticated()
+                .antMatchers("add_book", "edit_books", "rm_books", "edit_done").access("hasAnyAuthority('ADMIN')")
+                .antMatchers("/add_basket").access("hasAnyAuthority('USER')")
                 .and().csrf().disable()
                 .formLogin()
                 .loginPage("/login")
+                //.defaultSuccessUrl("/login")
                 .loginProcessingUrl("/j_spring_security_check")
                 .failureUrl("/login?error=true")
                 .usernameParameter("e_mail")
                 .passwordParameter("password")
                 .and()
                 .exceptionHandling()
-                .accessDeniedPage("/users")
-                .and().logout();
+                .accessDeniedPage("/")
+                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/");
     }
 
     @Override

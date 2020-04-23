@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <section>
-    <form name="search_by_private_information" modelAtribute="userSearch" action="/search_books" method="get">
+    <form name="search_by_private_information" action="/search_books" method="get">
         <label>
             Название
             <input class="medium" type="text" name="title" placeholder="Любой" <c:if test="${title != null}"> value="${title}" </c:if>>
@@ -9,7 +9,6 @@
         <label>
             Автор
             <input class="short" type="text" name="name_author" placeholder="Любой" <c:if test="${name_author != null}"> value="${name_author}" </c:if>>
-            <br>
         </label>
         <label>
             Жанр
@@ -18,7 +17,6 @@
         <label>
             Издательство
             <input class="medium" type="text" name="publishing_house" placeholder="Любой" <c:if test="${publishing_house != null}"> value="${publishing_house}" </c:if>>
-            <br>
         </label>
         <label>
             год издания от:
@@ -27,7 +25,6 @@
         <label>
             до:
             <input class="short" type="number" name="max_p_year" placeholder="Любой" <c:if test="${max_p_year != null}"> value="${max_p_year}" </c:if>>
-            <br>
         </label>
         <label>
             количество страниц от:
@@ -36,7 +33,6 @@
         <label>
             до:
             <input class="short" type="number" name="max_p_count" placeholder="Любой" <c:if test="${max_p_count != null}"> value="${max_p_count}" </c:if>>
-            <br>
         </label>
         <label>
             количестов экзампляров(не менее)
@@ -45,7 +41,6 @@
         <label>
             тип обложки
             <input class="short" type="text" name="cover" placeholder="Любой" <c:if test="${cover != null}"> value="${cover}" </c:if>>
-            <br>
         </label>
         <label>
             стоимость от:
@@ -54,7 +49,6 @@
         <label>
             до:
             <input class="short" type="number" step="0.01" name="max_price" placeholder="Любой" <c:if test="${max_price != null}"> value="${max_price}" </c:if>>
-            <br>
         </label>
         <button type="submit"> Искать 🔎</button>
     </form>

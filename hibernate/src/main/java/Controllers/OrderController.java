@@ -2,7 +2,9 @@ package Controllers;
 
 
 import DAO.*;
+import form.OrderSearch;
 import models.Basket_order;
+import models.Book;
 import models.Order;
 import org.hibernate.Session;
 
@@ -11,9 +13,12 @@ import org.omg.PortableInterceptor.ServerRequestInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.persistence.criteria.CriteriaBuilder;
 import java.text.ParseException;
 
 import java.sql.Date;
@@ -33,8 +38,8 @@ public class OrderController {
         return "orders";
     }
 
-    @RequestMapping(value = "/orders/search", method = RequestMethod.GET)
-    public String list(@RequestParam String customer, @RequestParam String delivery_address,
+    @RequestMapping(value = "/search_orders", method = RequestMethod.GET)
+    public String list(@RequestParam String delivery_address,
                        @RequestParam(required = false) Boolean payment_card,
                        @RequestParam String min_o_date, @RequestParam String max_o_date,
                        @RequestParam String min_d_date, @RequestParam String max_d_date,
@@ -43,9 +48,7 @@ public class OrderController {
                        ModelMap model) {
         Session session = factory.openSession();
         OrderDAO orders = new OrderDAO(session);
-        Integer cust = (customer.equals("")) ? null : Integer.parseInt(customer);
         if (delivery_address.equals("")) delivery_address = null;
-        //if (payment_card.equals("")) payment_card = null;
         if (status.equals("")) status = null;
         Double min_d_p = (min_d_price.equals("")) ? null : Double.parseDouble(min_d_price);
         Double max_d_p = (max_d_price.equals("")) ? null : Double.parseDouble(max_d_price);
@@ -58,16 +61,15 @@ public class OrderController {
         Date max_d_d = null;
         if (!max_d_date.equals("")) max_d_d = get_sql_date(max_d_date);
 
-        /*
-        Date min_o_d = (min_o_date.equals("")) ? null : get_sql_date(min_o_date);
+
+        /*Date min_o_d = (min_o_date.equals("")) ? null : get_sql_date(min_o_date);
         Date max_o_d = (max_o_date.equals("")) ? null : get_sql_date(max_o_date);
         Date min_d_d = (min_d_date.equals("")) ? null : get_sql_date(min_d_date);
         Date max_d_d = (max_d_date.equals("")) ? null : get_sql_date(max_d_date);*/
 
         model.addAttribute("OrdersList",
-                orders.find(cust, delivery_address, payment_card, min_o_d, max_o_d,
+                orders.find(null, delivery_address, payment_card, min_o_d, max_o_d,
                         min_d_d, max_d_d, status, min_d_p, max_d_p));
-        model.addAttribute("id_customer", customer);
         model.addAttribute("delivery_address", delivery_address);
         model.addAttribute("min_o_date", min_o_date);
         model.addAttribute("max_o_date", max_o_date);
@@ -79,13 +81,8 @@ public class OrderController {
 
         return "orders/search_results";
     }
-    // только для пользователей как пункт оформить заказ
-    /*@RequestMapping(value = "/orders/add", method = RequestMethod.GET)
-    public String user_add(ModelMap model) {
-        return "orders/add";
-    }*/
 
-    @RequestMapping(value = "/orders/edit", method = RequestMethod.POST)
+    @RequestMapping(value = "/edit_orders", method = RequestMethod.POST)
     public String edit_order(@RequestParam Integer id,
                             ModelMap model) {
         Session session = factory.openSession();
@@ -97,7 +94,7 @@ public class OrderController {
         return "orders/edit";
     }
 
-    @RequestMapping(value = "/orders/edit_done", method = RequestMethod.POST)
+    @RequestMapping(value = "/edit_done_orders", method = RequestMethod.POST)
     public String edit_done(Integer id,
                             @RequestParam String delivery_date, @RequestParam String status, ModelMap model) {
         Session session = factory.openSession();
@@ -118,7 +115,7 @@ public class OrderController {
         return "orders";
     }
 
-    @RequestMapping(value = "/orders/rm", method = RequestMethod.POST)
+    @RequestMapping(value = "/rm_orders", method = RequestMethod.POST)
     public String remove_order(@RequestParam Integer id,
                               ModelMap model) {
         Session session = factory.openSession();
@@ -132,23 +129,17 @@ public class OrderController {
         return "orders";
     }
 
-    @RequestMapping(value = "/orders/detailed", method = RequestMethod.GET)
+    @RequestMapping(value = "/detailed_orders", method = RequestMethod.GET)
     public String detailed_order(@RequestParam Integer id,
                                 ModelMap model) {
         Session session = factory.openSession();
         OrderDAO orders = new OrderDAO(session);
         Order order = orders.getById(id);
-        model.addAttribute("id", id);
-        model.addAttribute("customer", order.getCustomer());
-        model.addAttribute("delivery_address", order.getDelivery_address());
-        model.addAttribute("payment_metod", order.getPayment());
-        model.addAttribute("order_date", order.getOrder_date());
-        model.addAttribute("delivery_date", order.getDelivery_date());
-        model.addAttribute("status", order.getStatus());
         double full_price = 0;
         for(Basket_order b_o : order.getBasket_orderList()) {
             full_price+=b_o.getPrice()*b_o.getCount_book();
         }
+        model.addAttribute("order", order);
         model.addAttribute("full_price", full_price);
         model.addAttribute("BooksList", order.getBasket_orderList());
         return "orders/detailed";

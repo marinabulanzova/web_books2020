@@ -32,31 +32,73 @@ public class BookController {
         Session session = factory.openSession();
         BookDAO books = new BookDAO(session);
         if (request.getUserPrincipal() != null) {
-            /*models.User user = (models.User)request.getUserPrincipal();
-            model.addAttribute("id", user.getId_user());
-            model.addAttribute("admin", user.getAdmin());*/
             Authentication auth = SecurityContextHolder.getContext().getAuthentication();
             models.User user = (models.User)auth.getPrincipal();
             model.addAttribute("id", user.getId_user());
             model.addAttribute("admin", user.getAdmin());
         }
-        /*Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        models.User user = (models.User)auth.getPrincipal();
-        model.addAttribute("auth", user.getId_user());*/
         model.addAttribute("BooksList", books.findAll());
         return "books";
     }
 
-    @RequestMapping(value = "/search_books", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/search_books", method = RequestMethod.GET)
     public String find(@ModelAttribute BookSearch book_search, ModelMap model) {
         Session session = factory.openSession();
         BookDAO books = new BookDAO(session);
+        if(book_search.getTitle() == "") book_search.setTitle(null);
+        if(book_search.getGenre() == "") book_search.setGenre(null);
+        if(book_search.getCover() == "") book_search.setCover(null);
+        if(book_search.getName_author() == "") book_search.setName_author(null);
+        if(book_search.getPublishing_house() == "") book_search.setPublishing_house(null);
         model.addAttribute("BooksList",
                 books.find(book_search.getTitle(), book_search.getGenre(), book_search.getPublishing_house(),
                         book_search.getMin_p_year(),book_search.getMax_p_year(), book_search.getMin_p_count(),
                         book_search.getMax_p_count(), book_search.getCount(), book_search.getCover(), book_search.getMax_price(),
                         book_search.getMin_price(), book_search.getName_author()));
         model.addAttribute("book", book_search);
+        return "books/search_results";
+    }*/
+
+
+    @RequestMapping(value = "/search_books", method = RequestMethod.GET)
+    public String findAll(@RequestParam String title, @RequestParam String genre,
+                          @RequestParam String publishing_house,
+                          @RequestParam String min_p_year, @RequestParam String max_p_year,
+                          @RequestParam String min_p_count, @RequestParam String max_p_count,
+                          @RequestParam String count, @RequestParam String cover,
+                          @RequestParam String min_price, @RequestParam String max_price,
+                          @RequestParam String name_author, ModelMap model) {
+        Session session = factory.openSession();
+        BookDAO books = new BookDAO(session);
+
+        if (title.equals("")) title = null;
+        if (genre.equals("")) genre = null;
+        if (publishing_house.equals("")) publishing_house = null;
+        Integer min_p_y = (min_p_year.equals("")) ? null : Integer.parseInt(min_p_year);
+        Integer max_p_y = (max_p_year.equals("")) ? null : Integer.parseInt(max_p_year);
+        Integer min_p_c = (min_p_count.equals("")) ? null : Integer.parseInt(min_p_count);
+        Integer max_p_c = (max_p_count.equals("")) ? null : Integer.parseInt(max_p_count);
+        Double min_p = (min_price.equals("")) ? null : Double.parseDouble(min_price);
+        Double max_p = (max_price.equals("")) ? null : Double.parseDouble(max_price);
+        Integer c = (count.equals("")) ? null : Integer.parseInt(count);
+        if (cover.equals(""))  cover = null;
+        if (name_author.equals("")) name_author = null;
+
+        model.addAttribute("BooksList",
+                books.find(title, genre, publishing_house, min_p_y, max_p_y, min_p_c, max_p_c,
+                        c, cover, min_p, max_p, name_author));
+        model.addAttribute("title", title);
+        model.addAttribute("genre", genre);
+        model.addAttribute("publishing_house", publishing_house);
+        model.addAttribute("min_p_year", min_p_year);
+        model.addAttribute("max_p_year", max_p_year);
+        model.addAttribute("min_p_count", min_p_count);
+        model.addAttribute("max_p_count", max_p_count);
+        model.addAttribute("min_price", min_price);
+        model.addAttribute("max_price", max_price);
+        model.addAttribute("count", count);
+        model.addAttribute("cover", cover);
+        model.addAttribute("name_author", name_author);
         return "books/search_results";
     }
 
@@ -159,7 +201,7 @@ public class BookController {
         return "books";
     }
 
-    @RequestMapping(value = "/rm_book", method = RequestMethod.POST)
+    @RequestMapping(value = "/rm_books", method = RequestMethod.POST)
     public String remove_book(@RequestParam Integer id,
                                 ModelMap model) {
         Session session = factory.openSession();
@@ -174,12 +216,12 @@ public class BookController {
     }
 
     @RequestMapping(value = "/detailed_books", method = RequestMethod.GET)
-    public String detailed_book(@RequestParam Integer id,
+    public String detailed_book(HttpServletRequest request, @RequestParam Integer id,
                                 ModelMap model) {
         Session session = factory.openSession();
         BookDAO books = new BookDAO(session);
         Book book = books.getById(id);
-        model.addAttribute("id", id);
+        /*model.addAttribute("id", id);
         model.addAttribute("title", book.getTitle());
         model.addAttribute("genre", book.getGenre());
         model.addAttribute("publishing_house", book.getPublishing_house());
@@ -188,22 +230,29 @@ public class BookController {
         model.addAttribute("count_book", book.getCount_book());
         model.addAttribute("cover", book.getCover());
         model.addAttribute("price", book.getPrice());
-        model.addAttribute("book_authors", book.getBook_authors());
+        model.addAttribute("book_authors", book.getBook_authors());*/
+        model.addAttribute("book", book);
+        if (request.getUserPrincipal() != null) {
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            models.User user = (models.User)auth.getPrincipal();
+            model.addAttribute("admin", user.getAdmin());
+        }
         return "books/detailed";
     }
 
     @RequestMapping(value = "/add_basket", method = RequestMethod.POST)
-    public String add_basket(@RequestParam Integer id, @RequestParam Integer count, ModelMap model) {
+    public String add_basket(HttpServletRequest request, @RequestParam Integer id, @RequestParam String count, ModelMap model) {
         Session session = factory.openSession();
         BookDAO books = new BookDAO(session);
+        Integer c = (count.equals("")) ? 1 : Integer.parseInt(count);
         Basket_customerDAO basket = new Basket_customerDAO(session);
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         models.User user = (models.User)auth.getPrincipal();
-        Basket_customer b_c = new Basket_customer(books.getById(id), user, count);
+        Basket_customer b_c = new Basket_customer(books.getById(id), user, c);
         session.getTransaction().begin();
         basket.save(b_c);
         session.getTransaction().commit();
         model.addAttribute("id", id);
-        return "books";
+        return "redirect:books";
     }
 }

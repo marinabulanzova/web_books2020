@@ -4,7 +4,7 @@
     <c:if test="${error != null}">
         <p class="error">Пожалуйста, заполните все обязательные поля</p>
     </c:if>
-    <form name="book_info_edit" action="/books/edit_done" method="post">
+    <form name="book_info_edit" action="/edit_done" method="post">
         <label>
             Жанр
             <input class="medium" type="text" name="genre" <c:if test="${ganre != null}"> value="${ganre}" </c:if>>

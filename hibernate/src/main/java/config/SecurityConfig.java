@@ -23,10 +23,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/login", "/register", "/search_books", "/detailed_books").anonymous()
+                .antMatchers("/login", "/register").anonymous()
+                .antMatchers( "/search_books", "/detailed_books").permitAll()
                 //.antMatchers("/books").authenticated()
-                .antMatchers("add_book", "edit_books", "rm_books", "edit_done").access("hasAnyAuthority('ADMIN')")
+                .antMatchers("/add_book", "/edit_books", "/rm_books", "/edit_done_orders", "/orders", "/search_orders", "/edit_orders", "rm_orders").access("hasAnyAuthority('ADMIN')")
                 .antMatchers("/add_basket").access("hasAnyAuthority('USER')")
+                //.antMatchers("/detailed_books", "search_books").access("hasAnyAuthority('USER', 'ADMIN')")
                 .and().csrf().disable()
                 .formLogin()
                 .loginPage("/login")

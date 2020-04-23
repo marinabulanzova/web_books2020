@@ -2,9 +2,10 @@ package Controllers;
 
 
 import DAO.*;
+import com.sun.org.apache.regexp.internal.RE;
 import config.SecurityConfig;
 import form.UserForm;
-import models.User;
+import models.*;
 import org.hibernate.Session;
 
 import org.hibernate.SessionFactory;
@@ -14,7 +15,12 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+
+import javax.persistence.PreRemove;
+import javax.print.attribute.standard.OrientationRequested;
 import javax.servlet.http.HttpServletRequest;
+import java.sql.Timestamp;
+import java.util.Date;
 
 
 @Controller
@@ -207,14 +213,55 @@ public class UserController {
         }
         return "login";
     }
-    /*
-    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
-    public String login(HttpServletRequest request, ModelMap model) {
-        if (request.getUserPrincipal() != null) {
-            return "redirect:/books";
+
+    @RequestMapping(value = "/basket", method = RequestMethod.GET)
+    public String basket(ModelMap model) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        models.User user = (models.User)auth.getPrincipal();
+        model.addAttribute("BooksList", user.getBasket_customerList());
+        return "users/basket";
+    }
+
+    @RequestMapping(value = "/rm_book_basket", method = RequestMethod.POST)
+    public String remove_book(@RequestParam Integer id,
+                              ModelMap model) {
+        Session session = factory.openSession();
+        Basket_customerDAO basket_customers = new Basket_customerDAO(session);
+
+        session.getTransaction().begin();
+        basket_customers.delete(basket_customers.getById(id));
+        session.getTransaction().commit();
+
+        return "redirect:users/basket";
+    }
+
+
+    @RequestMapping(value = "/add_orders", method = RequestMethod.POST)
+    public String add_order(@RequestParam String delivery_address, @RequestParam Boolean payment_card,
+                            ModelMap model) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        models.User user = (models.User)auth.getPrincipal();
+        Session session = factory.openSession();
+        Basket_orderDAO basket_orders = new Basket_orderDAO(session);
+        Basket_customerDAO basket_customers = new Basket_customerDAO(session);
+        OrderDAO orders = new OrderDAO(session);
+        Boolean payment = payment_card ? payment_card : false;
+        Order order = new Order(user, delivery_address, payment,new Timestamp(System.currentTimeMillis()), null, "в обработке", null);
+        session.getTransaction().begin();
+        for(Basket_customer b_c : user.getBasket_customerList()) {
+            Basket_order b_o = new Basket_order( b_c.getBook(), order,  b_c.getCount_book(), b_c.getBook().getPrice());
+            basket_customers.delete(b_c);
+            basket_orders.save(b_o);
         }
-        return "login";
-    }*/
+        orders.save(order);
+        session.getTransaction().commit();
+        return "redirect:/users/basket";
+    }
+
+    @RequestMapping(value = "/account", method = RequestMethod.GET)
+    String account(ModelMap model) {
+        return "users/detailed";
+    }
 }
 
 

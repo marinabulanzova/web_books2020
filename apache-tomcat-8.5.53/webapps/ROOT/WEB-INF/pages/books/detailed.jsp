@@ -12,44 +12,59 @@
 <%@ include file="../header.jsp" %>
 
     <h2>Подробная информация о книге</h2>
+    <br>
     <td>Жанр: <td>
-    <td> ${genre} </td>
+    <td> ${book.genre} </td>
     <br>
     <td>Название: </td>
-    <td> ${title} </td>
+    <td> ${book.title} </td>
     <br>
     <td> Авторы: </td>
     <td>
-        <c:forEach items = "${book_authors}" var="author" >
+        <c:forEach items = "${book.book_authors}" var="author" >
             ${author.author.name}
         </c:forEach>
     </td>
     <br>
     <td>Издательство: </td>
-    <td> ${publishing_house} </td>
+    <td> ${book.publishing_house} </td>
     <br>
     <td>Год издания: </td>
-    <td>${publication_year} </td>
+    <td>${book.publication_year} </td>
     <br>
     <td>Количество страниц:</td>
-    <td> ${page_count}</td>
+    <td> ${book.page_count}</td>
     <br>
     <td> Количество экземпляров: </td>
-    <td> ${count_book}</td>
+    <td> ${book.count_book}</td>
     <br>
     <td>Тип обложки: </td>
-    <td> ${cover} </td>
+    <td> ${book.cover} </td>
     <br>
     <td>Стоимость: </td>
-    <td> ${price} </td>
+    <td> ${book.price} </td>
     <br>
-    <form name="edit_book" id="edit_book_form" action="/books/edit" method="post">
-        <button id="edit" class="edit" title="Редактировать данные" name="id" value="${id}" type="submit">Редактировать 📝 </button>
-    </form>
-    <form name="remove_book" id="remove_book_form" action="/books/rm" method="post">
-        <button id="remove" class="edit" title="Удалить информацию о книге" name="id" value="${id}" type="submit"> Удалить ❌ </button>
-    </form>
+    <c:if test="${admin == true}" >
+        <form name="edit_book" id="edit_book_form" action="/edit_books" method="post">
+            <button id="edit" class="edit" title="Редактировать данные" name="id" value="${book.id_book}" type="submit">Редактировать 📝 </button>
+        </form>
 
+        <form name="remove_book" id="remove_book_form" action="/rm_books" method="post">
+            <button id="remove" class="edit" title="Удалить информацию о книге" name="id" value="${book.id_book}" type="submit"> Удалить ❌ </button>
+        </form>
+    </c:if>
+
+
+    <c:if test="${admin == false}" >
+        <br>
+        <form name="search_by_private_information" action="/add_basket" method="post">
+            <label>
+                Необходимое количество экземпляров
+                <input class="medium" type="number" name="count" placeholder="не больше количества экземпляров книги" >
+            </label>
+            <button type="submit" name="id" value="${book.id_book}"> Добавить в корзину </button>
+        </form>
+    </c:if>
 
 </body>
 

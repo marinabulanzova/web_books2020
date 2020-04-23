@@ -1,6 +1,7 @@
 package DAO;
 
 import models.Basket_customer;
+import models.Book;
 import org.hibernate.Session;
 
 
@@ -11,6 +12,10 @@ public class Basket_customerDAO {
         this.session = session;
     }
 
+    public Basket_customer getById(int id){
+        Basket_customer b_c = (Basket_customer) session.get(Basket_customer.class, id);
+        return b_c;
+    }
     // добавить в корзину
     public Integer save(Basket_customer basket_c){
         basket_c.getCustomer().addBasket_customerList(basket_c);

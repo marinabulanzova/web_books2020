@@ -41,27 +41,8 @@ public class BookController {
         return "books";
     }
 
-    /*@RequestMapping(value = "/search_books", method = RequestMethod.GET)
-    public String find(@ModelAttribute BookSearch book_search, ModelMap model) {
-        Session session = factory.openSession();
-        BookDAO books = new BookDAO(session);
-        if(book_search.getTitle() == "") book_search.setTitle(null);
-        if(book_search.getGenre() == "") book_search.setGenre(null);
-        if(book_search.getCover() == "") book_search.setCover(null);
-        if(book_search.getName_author() == "") book_search.setName_author(null);
-        if(book_search.getPublishing_house() == "") book_search.setPublishing_house(null);
-        model.addAttribute("BooksList",
-                books.find(book_search.getTitle(), book_search.getGenre(), book_search.getPublishing_house(),
-                        book_search.getMin_p_year(),book_search.getMax_p_year(), book_search.getMin_p_count(),
-                        book_search.getMax_p_count(), book_search.getCount(), book_search.getCover(), book_search.getMax_price(),
-                        book_search.getMin_price(), book_search.getName_author()));
-        model.addAttribute("book", book_search);
-        return "books/search_results";
-    }*/
-
-
     @RequestMapping(value = "/search_books", method = RequestMethod.GET)
-    public String findAll(@RequestParam String title, @RequestParam String genre,
+    public String findAll(HttpServletRequest request, @RequestParam String title, @RequestParam String genre,
                           @RequestParam String publishing_house,
                           @RequestParam String min_p_year, @RequestParam String max_p_year,
                           @RequestParam String min_p_count, @RequestParam String max_p_count,
@@ -70,7 +51,12 @@ public class BookController {
                           @RequestParam String name_author, ModelMap model) {
         Session session = factory.openSession();
         BookDAO books = new BookDAO(session);
-
+        if (request.getUserPrincipal() != null) {
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            models.User user = (models.User)auth.getPrincipal();
+            model.addAttribute("id", user.getId_user());
+            model.addAttribute("admin", user.getAdmin());
+        }
         if (title.equals("")) title = null;
         if (genre.equals("")) genre = null;
         if (publishing_house.equals("")) publishing_house = null;

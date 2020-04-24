@@ -26,9 +26,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login", "/register").anonymous()
                 .antMatchers( "/search_books", "/detailed_books").permitAll()
                 //.antMatchers("/books").authenticated()
-                .antMatchers("/add_book", "/edit_books", "/rm_books", "/edit_done_orders", "/orders", "/search_orders", "/edit_orders", "rm_orders").access("hasAnyAuthority('ADMIN')")
-                .antMatchers("/add_basket").access("hasAnyAuthority('USER')")
-                //.antMatchers("/detailed_books", "search_books").access("hasAnyAuthority('USER', 'ADMIN')")
+                .antMatchers("/add_book", "/edit_books", "/rm_books", "/edit_done_orders", "/orders",
+                        "/search_orders", "/edit_orders", "rm_orders", "/users", "/detailed_users", "/search_users", "rm_users").access("hasAnyAuthority('ADMIN')")
+                .antMatchers("/add_basket", "/basket", "rm_basket", "my_orders").access("hasAnyAuthority('USER')")
+                .antMatchers("/account", "/edit_account", "/rm_account").access("hasAnyAuthority('USER', 'ADMIN')")
                 .and().csrf().disable()
                 .formLogin()
                 .loginPage("/login")

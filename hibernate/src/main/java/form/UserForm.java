@@ -13,6 +13,15 @@ public class UserForm {
     public UserForm() {
     }
 
+    public UserForm(String surname, String first_name, String patronymic, String address, String phone_number, String e_mail) {
+        this.surname = surname;
+        this.first_name = first_name;
+        this.patronymic = patronymic;
+        this.address = address;
+        this.phone_number = phone_number;
+        this.e_mail = e_mail;
+    }
+
     public String getSurname() {
         return surname;
     }

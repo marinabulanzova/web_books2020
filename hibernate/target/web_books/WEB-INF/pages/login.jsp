@@ -11,6 +11,17 @@
 
 <body>
 <%@ include file="header.jsp" %>
+
+<aside>
+    <nav>
+        <ul class="aside-menu">
+            <li><a href="/">Информация о книгах</a></li>
+            <li class="submenu"><a href="/register">Регистрация</a></li>
+            <li class="active">Вход</li>
+        </ul>
+    </nav>
+</aside>
+
 <div id="heading">
     <h1>Вход</h1>
 </div>

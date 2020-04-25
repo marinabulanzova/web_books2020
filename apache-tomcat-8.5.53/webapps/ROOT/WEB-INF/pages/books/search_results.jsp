@@ -78,7 +78,7 @@
         </label>
         <button type="submit"> Искать 🔎</button>
     </form>
-
+    <br>
     <c:if test="${BooksList.size() == 0}">
         Книг с такими пареметрами не найдено
     </c:if>

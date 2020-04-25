@@ -67,6 +67,7 @@
         </label>
         <br>
         Заполнять следующие поля только в случае изменения пароля
+        <br>
         <label>
             Старый пароль
             <input class="medium" type="password" name="old_password" placeholder="Необходимо заполнить это поле">
@@ -77,7 +78,7 @@
             <input class="medium" type="password" name="new_password" placeholder="Необходимо заполнить это поле">
         </label>
         <br>
-        <button type="submit"> Редактировать ✅</button>
+        <button type="submit" name="id" value="${userForm.id_user}"> Редактировать ✅</button>
     </form>
 </body>
 

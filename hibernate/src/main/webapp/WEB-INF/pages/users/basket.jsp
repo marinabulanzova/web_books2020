@@ -14,8 +14,8 @@
 <aside>
     <nav>
         <ul class="aside-menu">
-            <li><a hpet="/account">Профиль </a></li>
-            <li><a hpet="/my_orders">Мои заказы</a></li>
+            <li><a href="/account">Профиль </a></li>
+            <li><a href="/my_orders">Мои заказы</a></li>
             <li class="active ">Корзина</li>
             <li class="submenu"><a href="/logout">Выход</a></li>
         </ul>
@@ -23,10 +23,11 @@
 </aside>
 
 <div id="heading">
+    <h2> Корзина </h2>
     <c:if test="${BooksList.size() == 0}">
         В корзине нет ни одной книги
     </c:if>
-    <c:if test="${BooksList.size() > 0}">
+    <c:if test="${BooksList.size() != 0}">
         <h2> Книги в корзине: </h2>
         <table border="1" bgcolor="#faebd7">
             <tr>

@@ -9,7 +9,6 @@
 </head>
 
 <body>
-<%@ include file="../header.jsp" %>
 <aside>
     <nav>
         <ul class="aside-menu">
@@ -56,28 +55,35 @@
         </label>
         <button type="submit"> Искать 🔎</button>
     </form>
-    <table border="1" bgcolor="#d8bfd8">
-        <tr>
-            <th>Фамилия</th>
-            <th>Имя</th>
-            <th>Телефон</th>
-            <th>e-mail</th>
-            <th>Подробнее</th>
-        </tr>
-        <c:forEach items="${UsersList}" var="user">
+    <br>
+    <c:if test="${UsersList.size() == 0}" >
+        <h2> По данным параметрам клиентов не найдено</h2>
+    </c:if>
+
+    <c:if test="${UsersList.size() != 0}" >
+        <table border="1" bgcolor="#d8bfd8">
             <tr>
-                <td>${user.surname}</td>
-                <td>${user.first_name}</td>
-                <td>${user.phone_number}</td>
-                <td>${user.e_mail}</td>
-                <td>
-                    <form name="more_detailed" id="user_more_detailed" action="/detailed_users" method="get">
-                        <button class="watch" title="Смотреть" name="id" value="${user.id_user}" type="submit"> 👁 </button>
-                    </form>
-                </td>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Телефон</th>
+                <th>e-mail</th>
+                <th>Подробнее</th>
             </tr>
-        </c:forEach>
-    </table>
+            <c:forEach items="${UsersList}" var="user">
+                <tr>
+                    <td>${user.surname}</td>
+                    <td>${user.first_name}</td>
+                    <td>${user.phone_number}</td>
+                    <td>${user.e_mail}</td>
+                    <td>
+                        <form name="more_detailed" id="user_more_detailed" action="/detailed_users" method="get">
+                            <button class="watch" title="Смотреть" name="id" value="${user.id_user}" type="submit"> 👁 </button>
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+    </c:if>
 </section>
 
 </body>

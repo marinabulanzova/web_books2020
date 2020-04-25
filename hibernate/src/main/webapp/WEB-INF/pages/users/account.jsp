@@ -30,12 +30,12 @@
     <h3>Адрес: ${user.address} </h3>
     <h3>e_mail: ${user.e_mail}</h3>
     <h3>Номер телефона: ${user.phone_number} </h3>
-    <form name="edit_account" id="edit_account" action="/edit_account" method="post">
-        <button class="edit" title="Редактировать профиль" type="submit"> Редактировать профиль 📝 </button>
+    <form name="edit_account" id="edit_account" action="/edit_account" method="get">
+        <button class="edit" title="Редактировать профиль" type="submit" name="id" value="${user.id_user}"> Редактировать профиль 📝 </button>
     </form>
 
     <form name="remove_account" id="remove_account" action="/rm_account" method="post">
-        <button class="edit" title="Удалить профиль" type="submit"> Удалить профиль ❌ </button>
+        <button class="edit" title="Удалить профиль" type="submit" name="id" value="${user.id_user}"> Удалить профиль ❌ </button>
     </form>
 
 </div>

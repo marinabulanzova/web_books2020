@@ -28,12 +28,8 @@
             Статус
             <input class="medium" type="text" name="status" placeholder="Необходимо заполнить это поле" <c:if test="${status != null}"> value="${status}" </c:if>>
         </label>
-
-        <form name="edit_order" id="edit_order_form" action="/detailed_orders" method="post">
-            <button class="edit" title="отмена" name="id" value="${id}" type="submit">Отмена  </button>
-        </form>
-        <button type="submit" <c:if test="${id != null}">name="id" value="${id}" </c:if>> Редактировать ✅</button>
-
+        <br>
+        <button id="edit" type="submit" <c:if test="${id != null}">name="id" value="${id}" </c:if>> Редактировать ✅</button>
     </form>
 </section>
 </body>

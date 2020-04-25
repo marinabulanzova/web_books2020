@@ -57,7 +57,7 @@
 
     <c:if test="${admin == false}" >
         <br>
-        <form name="search_by_private_information" action="/add_basket" method="post">
+        <form name="add_basket" action="/add_basket" method="post">
             <label>
                 Необходимое количество экземпляров
                 <input class="medium" type="number" name="count" placeholder="не больше количества экземпляров книги" >

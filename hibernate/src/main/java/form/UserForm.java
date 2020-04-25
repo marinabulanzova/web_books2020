@@ -1,6 +1,7 @@
 package form;
 
 public class UserForm {
+    private Integer id_user;
     private String surname;
     private String first_name;
     private String patronymic;
@@ -13,13 +14,22 @@ public class UserForm {
     public UserForm() {
     }
 
-    public UserForm(String surname, String first_name, String patronymic, String address, String phone_number, String e_mail) {
+    public UserForm(Integer id_user, String surname, String first_name, String patronymic, String address, String phone_number, String e_mail) {
+        this.id_user = id_user;
         this.surname = surname;
         this.first_name = first_name;
         this.patronymic = patronymic;
         this.address = address;
         this.phone_number = phone_number;
         this.e_mail = e_mail;
+    }
+
+    public Integer getId_user() {
+        return id_user;
+    }
+
+    public void setId_user(Integer id_user) {
+        this.id_user = id_user;
     }
 
     public String getSurname() {

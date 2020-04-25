@@ -69,7 +69,7 @@
 
         <button type="submit"> Искать 🔎</button>
     </form>
-
+    <br>
     <table border="1" bgcolor="#faebd7">
         <tr>
             <th>Номер заказа</th>

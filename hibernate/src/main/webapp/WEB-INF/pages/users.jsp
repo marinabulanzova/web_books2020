@@ -10,6 +10,7 @@
 
 <body>
 <%@ include file="header.jsp" %>
+
 <aside>
     <nav>
         <ul class="aside-menu">
@@ -55,6 +56,8 @@
         </label>
         <button type="submit"> Искать 🔎</button>
     </form>
+    <br>
+
     <table border="1" bgcolor="#d8bfd8">
         <tr>
             <th>Фамилия</th>

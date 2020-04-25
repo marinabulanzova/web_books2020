@@ -8,6 +8,7 @@ import models.Book_author;
 import org.hibernate.Session;
 
 import org.hibernate.SessionFactory;
+import org.omg.CORBA.UserException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -108,7 +109,12 @@ public class BookController {
         model.addAttribute("count_book", book.getCount_book());
         model.addAttribute("cover", book.getCover());
         model.addAttribute("price", book.getPrice());
-
+        int size = book.getBook_authors().size();
+        int i = 0;
+        while (i < size) {
+            model.addAttribute("author" + i, book.getBook_authors().get(i).getAuthor().getName());
+            i++;
+        }
         return "books/edit";
     }
 
@@ -116,11 +122,12 @@ public class BookController {
     public String edit_done(Integer id,
                             @RequestParam String title, @RequestParam String genre,
                             @RequestParam String publishing_house, @RequestParam Integer publication_year,
-                            @RequestParam Integer page_count, @RequestParam Integer count_book,
-                            @RequestParam String cover, @RequestParam Double price, @RequestParam List<String> authors, ModelMap model) {
+                            @RequestParam String page_count, @RequestParam String count_book,
+                            @RequestParam String cover, @RequestParam String price, @RequestParam String author0,
+                            @RequestParam String author1, @RequestParam String author2, ModelMap model) {
         Session session = factory.openSession();
         BookDAO books = new BookDAO(session);
-        if (title.equals("")) {
+        if (title.equals("") || author0.equals("") || price.equals("")) {
             model.addAttribute("error", true);
             model.addAttribute("title", title);
             model.addAttribute("genre", genre);
@@ -129,8 +136,9 @@ public class BookController {
             model.addAttribute("page_count", page_count);
             model.addAttribute("cover", cover);
             model.addAttribute("price", price);
-            model.addAttribute("authors", authors);
-
+            model.addAttribute("authors0", author0);
+            model.addAttribute("authors1", author0);
+            model.addAttribute("authors2", author0);
             if (id != null) {
                 model.addAttribute("id", id);
                 return "books/edit";
@@ -145,21 +153,35 @@ public class BookController {
             book.setTitle(title);
             book.setPublishing_house(publishing_house);
             book.setPublication_year(publication_year);
-            book.setPage_count(page_count);
-            book.setCount_book(count_book);
+            book.setPage_count((page_count.equals("")) ? null : Integer.parseInt(page_count));
+            book.setCount_book((count_book.equals("")) ? null : Integer.parseInt(count_book));
             book.setCover(cover);
-            book.setPrice(price);
+            book.setPrice((price.equals("")) ? null : Double.parseDouble(price));
         } else {
             book = new Book(genre, title, publishing_house, publication_year,
-                    page_count, count_book, cover, price);
+                    (page_count.equals("")) ? null : Integer.parseInt(page_count),
+                    (count_book.equals("")) ? null : Integer.parseInt(count_book), cover,
+                    (price.equals("")) ? null : Double.parseDouble(price));
             session.getTransaction().begin();
             books.save(book);
             session.getTransaction().commit();
         }
-        List<Book_author> book_authors = new ArrayList();
         List<Author> author;
         Author a;
+        Book_authorDAO book_authors_dao = new Book_authorDAO(session);
         AuthorDAO authors_dao = new AuthorDAO(session);
+        if (id != null) {
+            List<Book_author> list = book_authors_dao.find(book.getId_book());
+            for (Book_author l : list) {
+                session.getTransaction().begin();
+                book_authors_dao.delete(l);
+                session.getTransaction().commit();
+            }
+        }
+        List<String> authors = new ArrayList<>();
+        if (!author0.equals("")) authors.add(author0);
+        if (!author1.equals("")) authors.add(author1);
+        if (!author2.equals("")) authors.add(author2);
         for (String name : authors) {
             author = authors_dao.find(name);
             if (author.size() == 0) {
@@ -171,10 +193,12 @@ public class BookController {
                 a = author.get(0);
             }
             Book_author b_a = new Book_author(book, a);
-            book_authors.add(b_a);
+            if (!book.getBook_authors().contains(b_a)) {
+                session.getTransaction().begin();
+                book_authors_dao.save(b_a);
+                session.getTransaction().commit();
+            }
         }
-        book.setBook_authors(book_authors);
-
         session.getTransaction().begin();
         if(id != null) {
             books.update(book);
@@ -182,7 +206,6 @@ public class BookController {
             books.save(book);
         }
         session.getTransaction().commit();
-
         model.addAttribute("BooksList", books.findAll());
         return "books";
     }
@@ -226,19 +249,4 @@ public class BookController {
         return "books/detailed";
     }
 
-    @RequestMapping(value = "/add_basket", method = RequestMethod.POST)
-    public String add_basket(HttpServletRequest request, @RequestParam Integer id, @RequestParam String count, ModelMap model) {
-        Session session = factory.openSession();
-        BookDAO books = new BookDAO(session);
-        Integer c = (count.equals("")) ? 1 : Integer.parseInt(count);
-        Basket_customerDAO basket = new Basket_customerDAO(session);
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        models.User user = (models.User)auth.getPrincipal();
-        Basket_customer b_c = new Basket_customer(books.getById(id), user, c);
-        session.getTransaction().begin();
-        basket.save(b_c);
-        session.getTransaction().commit();
-        model.addAttribute("id", id);
-        return "redirect:books";
-    }
 }

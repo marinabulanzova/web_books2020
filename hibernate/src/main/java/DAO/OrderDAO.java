@@ -53,7 +53,7 @@ public class OrderDAO {
         String text_query = "SELECT o FROM Order o";
         if (customer != null || delivery_address != null || payment_card != null ||
                 min_o_date != null || max_o_date != null || min_d_date != null || max_d_date != null ||
-                status != null || min_d_price != 0 || max_d_price != 0) {
+                status != null || min_d_price != null || max_d_price != null) {
             text_query += " WHERE";
             Boolean flagAnd = false;
             if (customer != null) {

@@ -78,7 +78,6 @@ public class OrderController {
         model.addAttribute("status", status);
         model.addAttribute("min_d_price", min_d_price);
         model.addAttribute("max_d_price", max_d_price);
-
         return "orders/search_results";
     }
 
@@ -95,7 +94,7 @@ public class OrderController {
     }
 
     @RequestMapping(value = "/edit_done_orders", method = RequestMethod.POST)
-    public String edit_done(Integer id,
+    public String edit_done(@RequestParam Integer id,
                             @RequestParam String delivery_date, @RequestParam String status, ModelMap model) {
         Session session = factory.openSession();
         OrderDAO orders = new OrderDAO(session);
@@ -146,7 +145,7 @@ public class OrderController {
     }
 
     java.sql.Date get_sql_date(String date) {
-        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         java.util.Date parsed = null;
             try {
             parsed = format.parse(date);

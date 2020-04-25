@@ -1,6 +1,9 @@
 package DAO;
+import models.Book;
 import models.Book_author;
 import org.hibernate.Session;
+
+import java.util.List;
 
 public class Book_authorDAO {
 
@@ -23,4 +26,9 @@ public class Book_authorDAO {
         book_author.getBook().removeBook_authors(book_author);
     }
 
+    public List<Book_author> find(Integer id_book) {
+        String test_query = "SELECT b FROM Book_author b WHERE b.book.id_book = " + id_book;
+        List<Book_author> list = (List<Book_author>)session.createQuery(test_query).getResultList();
+        return list;
+    }
 }

@@ -9,7 +9,9 @@ import org.hibernate.Session;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -143,11 +145,13 @@ public class UserController {
     }
 
     @RequestMapping(value = "/rm_account", method = RequestMethod.POST)
-    public String remove_account(HttpServletRequest request, ModelMap model) {
+    public String remove_account(HttpServletRequest request, @RequestParam Integer id,
+                                 ModelMap model) {
         Session session = factory.openSession();
         UserDAO users = new UserDAO(session);
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        models.User user = (models.User)auth.getPrincipal();
+        /*Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        models.User user = (models.User)auth.getPrincipal();*/
+        User user = users.getById(id);
 
         session.getTransaction().begin();
         users.delete(user);
@@ -159,16 +163,18 @@ public class UserController {
         if (s != null) {
             s.invalidate();
         }
-        return "redirect:/?accountDeleted=true";
+        return "/register";
         //return "/register";
     }
 
     @RequestMapping(value = "/edit_account", method = RequestMethod.GET)
-    public String edit_user(@RequestParam Integer id,
-                              ModelMap model) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        models.User user = (models.User)auth.getPrincipal();
-        UserForm userForm = new UserForm(user.getSurname(), user.getFirst_name(), user.getPatronymic(),
+    public String edit_user(@RequestParam Integer id, ModelMap model) {
+        Session session = factory.openSession();
+        UserDAO users = new UserDAO(session);
+        User user = users.getById(id);
+        /*Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        models.User user = (models.User)auth.getPrincipal();*/
+        UserForm userForm = new UserForm(id, user.getSurname(), user.getFirst_name(), user.getPatronymic(),
                 user.getAddress(), user.getPhone_number(), user.getE_mail());
         model.addAttribute("userForm", userForm);
         return "users/edit";
@@ -181,8 +187,8 @@ public class UserController {
         boolean number = false;
         boolean email = false;
         if (userForm.getFirst_name().equals("") || userForm.getE_mail().equals("") || userForm.getPhone_number().equals("") ||
-                (number = users.find(null, null, null, null, userForm.getPhone_number(), null, null).size() > 0 )||
-                (email = users.find(null, null, null, null, null, userForm.getE_mail(), null).size() > 0 )
+                (number = users.find(null, null, null, null, userForm.getPhone_number(), null, null).size() > 1 )||
+                (email = users.find(null, null, null, null, null, userForm.getE_mail(), null).size() > 1 )
         ) {
             if(userForm.getFirst_name().equals("") || userForm.getE_mail().equals("") ||  userForm.getPhone_number().equals(""))
                 model.addAttribute("error", true);
@@ -195,15 +201,15 @@ public class UserController {
             model.addAttribute("userForm", userForm);
             return "users/edit";
         }
-        if (!userForm.getOld_password().equals("") || userForm.getNew_password().equals("")) {
+        if (!userForm.getOld_password().equals("") && userForm.getNew_password().equals("")) {
             model.addAttribute("error_new_password", true);
             model.addAttribute("userForm", userForm);
             return "users/edit";
         }
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         models.User user = (models.User)auth.getPrincipal();
-        if(!passwordEncoder.matches(userForm.getOld_password(), user.getPassword_hash())){
-            model.addAttribute("error_new_password", true);
+        if(!userForm.getOld_password().equals("") && !passwordEncoder.matches(userForm.getOld_password(), user.getPassword_hash())){
+            model.addAttribute("error_old_password", true);
             model.addAttribute("userForm", userForm);
             return "users/edit";
         }
@@ -213,18 +219,46 @@ public class UserController {
         user.setAddress(userForm.getAddress());
         user.setPhone_number(userForm.getPhone_number());
         user.setE_mail(userForm.getE_mail());
+        if (!userForm.getNew_password().equals("") && !passwordEncoder.matches(userForm.getOld_password(), user.getPassword_hash())) {
+            user.setPassword_hash(SecurityConfig.passwordEncoder().encode(userForm.getNew_password()));
+        }
+
+        Authentication oldAuthenticationObject = SecurityContextHolder.getContext().getAuthentication();
+        SecurityContextHolder.clearContext();
+        SecurityContext context = SecurityContextHolder.createEmptyContext();
+        UsernamePasswordAuthenticationToken authentication =
+                new UsernamePasswordAuthenticationToken(
+                        user,
+                        null,
+                        oldAuthenticationObject.getAuthorities());
+        context.setAuthentication(authentication);
+        SecurityContextHolder.setContext(context);
+
         session.getTransaction().begin();
         users.update(user);
         session.getTransaction().commit();
         return "users/account";
     }
 
-    @RequestMapping(value = "/my_orders", method = RequestMethod.GET)
-    public String my_orders(ModelMap model) {
+    @RequestMapping(value = "/add_basket", method = RequestMethod.POST)
+    public String add_basket(@RequestParam Integer id, @RequestParam String count, ModelMap model) {
+        Session session = factory.openSession();
+        BookDAO books = new BookDAO(session);
+        Integer c = (count.equals("")) ? 1 : Integer.parseInt(count);
+        Basket_customerDAO basket = new Basket_customerDAO(session);
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         models.User user = (models.User)auth.getPrincipal();
-        model.addAttribute("OrdersList", user.getOrders());
-        return "users/my_orders";
+
+        Basket_customer b_c = new Basket_customer(books.getById(id), user, c);
+
+        session.getTransaction().begin();
+        basket.save(b_c);
+        session.getTransaction().commit();
+
+        model.addAttribute("id", user.getId_user());
+        model.addAttribute("admin", user.getAdmin());
+        model.addAttribute("BooksList", books.findAll());
+        return "books";
     }
 
     @RequestMapping(value = "/basket", method = RequestMethod.GET)
@@ -245,7 +279,10 @@ public class UserController {
         basket_customers.delete(basket_customers.getById(id));
         session.getTransaction().commit();
 
-        return "redirect:users/basket";
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        models.User user = (models.User)auth.getPrincipal();
+        model.addAttribute("BooksList", user.getBasket_customerList());
+        return "users/basket";
     }
 
     @RequestMapping(value = "/add_orders", method = RequestMethod.POST)
@@ -258,7 +295,7 @@ public class UserController {
         Basket_customerDAO basket_customers = new Basket_customerDAO(session);
         OrderDAO orders = new OrderDAO(session);
         Boolean payment = payment_card ? payment_card : false;
-        Order order = new Order(user, delivery_address, payment,new Timestamp(System.currentTimeMillis()), null, "в обработке", null);
+        Order order = new Order(user, delivery_address, payment,new Timestamp(System.currentTimeMillis()), null, "в обработке", 0.0);
         session.getTransaction().begin();
         for(Basket_customer b_c : user.getBasket_customerList()) {
             Basket_order b_o = new Basket_order( b_c.getBook(), order,  b_c.getCount_book(), b_c.getBook().getPrice());
@@ -267,7 +304,16 @@ public class UserController {
         }
         orders.save(order);
         session.getTransaction().commit();
-        return "redirect:/users/basket";
+        model.addAttribute("OrdersList", user.getOrders());
+        return "users/my_orders";
+    }
+
+    @RequestMapping(value = "/my_orders", method = RequestMethod.GET)
+    public String my_orders(ModelMap model) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        models.User user = (models.User)auth.getPrincipal();
+        model.addAttribute("OrdersList", user.getOrders());
+        return "users/my_orders";
     }
 }
 

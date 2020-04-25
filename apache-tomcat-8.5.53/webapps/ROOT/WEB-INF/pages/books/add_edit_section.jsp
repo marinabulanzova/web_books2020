@@ -7,7 +7,7 @@
     <form name="book_info_edit" action="/edit_done" method="post">
         <label>
             Жанр
-            <input class="medium" type="text" name="genre" <c:if test="${ganre != null}"> value="${ganre}" </c:if>>
+            <input class="medium" type="text" name="genre" <c:if test="${genre != null}"> value="${genre}" </c:if>>
         </label>
         <br>
         <label>
@@ -17,9 +17,9 @@
         <br>
         <label>
             Авторы:
-            <input class="medium" type="text" name="authors" placeholder="Необходимо заполнить это поле" <c:if test="${authors.get(0) != null}"> value="${authors.get(0)}" </c:if>>
-            <input class="medium" type="text" name="authors" <c:if test="${authors.get(1) != null}"> value="${authors.get(1)}" </c:if>>
-            <input class="medium" type="text" name="authors" <c:if test="${authors.get(2) != null}"> value="${authors.get(2)}" </c:if>>
+            <input class="medium" type="text" name="author0" placeholder="Необходимо заполнить это поле" <c:if test="${author0 != null}"> value="${author0}" </c:if>>
+            <input class="medium" type="text" name="author1" <c:if test="${author1 != null}"> value="${author1}" </c:if>>
+            <input class="medium" type="text" name="author2" <c:if test="${author2 != null}"> value="${author2}" </c:if>>
         </label>
         <br>
         <label>

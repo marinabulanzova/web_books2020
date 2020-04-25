@@ -44,11 +44,12 @@
                     <td> <form name="rm_book_basket" id="rm_book_basket" action="/rm_book_basket" method="post">
                         <button class="edit" title="Удалить книгу из корзины" name="id" value="${book.id}" type="submit"> ❌ </button>
                     </form></td>
+                    <!--<td><span> <a href="/rm_book_basket?id=${book.id}"> ❌ </a></span></td> -->
                 </tr>
             </c:forEach>
         </table>
         <br>
-        <form name="basket" action = "/add_orders" method="post">
+        <form name="add_orders" action = "/add_orders" method="post">
             <label>
                 Адрес доставки
                 <input class="medium" type="text" name="delivery_address" placeholder="Необходимо заполнить это поле" >

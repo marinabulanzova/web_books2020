@@ -83,7 +83,7 @@ public class HibernateConfig {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**")
                 .addResourceLocations("/resources/")
-                .setCachePeriod(31556916);
+                .setCachePeriod(31556926);
     }
 
 }

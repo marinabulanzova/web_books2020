@@ -9,10 +9,10 @@ CREATE TABLE IF NOT EXISTS Authors  (
 -- "Книги" --
 CREATE TABLE IF NOT EXISTS Books (
   id_book serial primary key, -- номер книги
-  genre varchar(30) not null, -- жанр
+  genre varchar(30), -- жанр
   title varchar(50) not null, -- название
-  publishing_house varchar(30) not null, -- издательство
-  publication_year int not null, -- год публикации
+  publishing_house varchar(30), -- издательство
+  publication_year int, -- год публикации
   page_count int not null, -- количество страниц
   count_book int not null, -- количество экземпляров
   cover varchar(20) not null, -- вид обложки

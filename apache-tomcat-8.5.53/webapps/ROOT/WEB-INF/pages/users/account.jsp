@@ -14,9 +14,13 @@
 <aside>
     <nav>
         <ul class="aside-menu">
+            <li><a href="/" >Информация о книгах</a></li>
+            <c:if test="${user.admin == true}"><li class="active"> Добавить новую книгу </li></c:if>
+            <c:if test="${user.admin == true}"><li><a href="/users">Информация о клиентах </a></li></c:if>
+            <c:if test="${user.admin == true}"><li><a href="/orders"> Информация о заказах</a></li></c:if>
             <li class="active">Профиль</li>
-            <li><a href="/my_orders">Мои заказы</a></li>
-            <li><a href="/basket">Корзина</a></li>
+            <c:if test="${user.admin == false}"><li><a href="/my_orders">Мои заказы</a></li> </c:if>
+            <c:if test="${user.admin == false}"><li><a href="/basket">Корзина</a></li></c:if>
             <li class="submenu"><a href="/logout">Выход</a></li>
         </ul>
     </nav>

@@ -14,7 +14,8 @@
 <aside>
     <nav>
         <ul class="aside-menu">
-            <li><a hpet="/account">Профиль </a></li>
+            <li> <a href ="/"> Информация о книгах </a></li>
+            <li><a href="/account">Профиль </a></li>
             <li class="active ">Мои заказы</li>
             <li><a href="/basket">Корзина</a></li>
             <li class="submenu"><a href="/logout">Выход</a></li>
@@ -51,6 +52,7 @@
                         Название: ${b_o.book.title} <br>
                         Цена: ${b_o.price} <br>
                         Количество: ${b_o.count_book}
+                        <br>
                     </c:forEach>
                     <td>${order.delivery_price}</td>
                 </tr>

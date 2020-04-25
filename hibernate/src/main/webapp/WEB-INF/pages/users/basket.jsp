@@ -14,6 +14,7 @@
 <aside>
     <nav>
         <ul class="aside-menu">
+            <li> <a href ="/"> Информация о книгах </a></li>
             <li><a href="/account">Профиль </a></li>
             <li><a href="/my_orders">Мои заказы</a></li>
             <li class="active ">Корзина</li>

@@ -46,6 +46,7 @@
             Тип обложки
             <input class="medium" type="text" name="cover" placeholder="Необходимо заполнить это поле" <c:if test="${cover != null}"> value="${cover}" </c:if>>
         </label>
+        <br>
         <label>
             Стоимость
             <input class="medium" type="number" name="price" placeholder="Необходимо заполнить это поле" <c:if test="${price != null}"> value="${price}" </c:if>>

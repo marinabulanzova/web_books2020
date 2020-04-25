@@ -91,7 +91,7 @@ public class BookDAO {
                flagAnd = true;
            }
            if (count != null) {
-               text_query += (flagAnd ? " AND" : "") + " b.count_book  = " + count;
+               text_query += (flagAnd ? " AND" : "") + " b.count_book  >= " + count;
                flagAnd = true;
            }
            if (cover != null) {

@@ -10,6 +10,18 @@
 
 <body>
 <%@ include file="../header.jsp" %>
+
+<aside>
+    <nav>
+        <ul class="aside-menu">
+            <li><a href="/account">Профиль </a></li>
+            <li><a href="/my_orders">Мои заказы</a></li>
+            <li><a href="/basket">Корзина </a></li>
+            <li class="submenu"><a href="/logout">Выход</a></li>
+        </ul>
+    </nav>
+</aside>
+
 <div id="heading">
     <h1>Редактирование профиля</h1>
 </div>

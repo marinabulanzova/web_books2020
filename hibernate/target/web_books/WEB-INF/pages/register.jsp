@@ -39,7 +39,7 @@
         <p class="error">Пользователь с таким e_mail уже существует</p>
     </c:if>
 
-    <form name="client_info_edit" modelAttribute="user" action="/register" method="post">
+    <form name="client" modelAttribute="user" action="/register" method="post">
         <label>
             Фамилия
             <input class="medium" type="text" name="surname" <c:if test="${surname != null}"> value="${surname}" </c:if>>
@@ -75,7 +75,7 @@
             <input class="medium" type="password" name="password_hash" placeholder="Необходимо заполнить это поле" <c:if test="${password_hash != null}"> value="${password_hash}" </c:if>>
         </label>
         <br>
-        <button type="submit"  <c:if test="${id != null}">name="id" value="${id}" </c:if>> Готово ✅</button>
+        <button id="register" type="submit"  <c:if test="${id != null}">name="id" value="${id}" </c:if>> Готово ✅</button>
     </form>
 </section>
 </body>

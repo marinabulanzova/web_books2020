@@ -51,7 +51,6 @@ public class BookController {
         if (request.getUserPrincipal() != null) {
             Authentication auth = SecurityContextHolder.getContext().getAuthentication();
             models.User user = (models.User)auth.getPrincipal();
-            model.addAttribute("id", user.getId_user());
             model.addAttribute("admin", user.getAdmin());
         }
         if (title.equals("")) title = null;
@@ -115,7 +114,7 @@ public class BookController {
     }
 
     @RequestMapping(value = "/edit_done", method = RequestMethod.POST)
-    public String edit_done(Integer id,
+    public String edit_done(HttpServletRequest request, @RequestParam  Integer id,
                             @RequestParam String title, @RequestParam String genre,
                             @RequestParam String publishing_house, @RequestParam Integer publication_year,
                             @RequestParam String page_count, @RequestParam String count_book,
@@ -202,12 +201,18 @@ public class BookController {
             books.save(book);
         }
         session.getTransaction().commit();
-        model.addAttribute("BooksList", books.findAll());
-        return "books";
+        //model.addAttribute("BooksList", books.findAll());
+        model.addAttribute("book", book);
+        if (request.getUserPrincipal() != null) {
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            models.User user = (models.User)auth.getPrincipal();
+            model.addAttribute("admin", user.getAdmin());
+        }
+        return "books/detailed";
     }
 
     @RequestMapping(value = "/rm_books", method = RequestMethod.POST)
-    public String remove_book(@RequestParam Integer id,
+    public String remove_book(HttpServletRequest request, @RequestParam Integer id,
                                 ModelMap model) {
         Session session = factory.openSession();
         BookDAO books = new BookDAO(session);
@@ -217,6 +222,12 @@ public class BookController {
         session.getTransaction().commit();
 
         model.addAttribute("BooksList", books.findAll());
+        if (request.getUserPrincipal() != null) {
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            models.User user = (models.User)auth.getPrincipal();
+            model.addAttribute("id", user.getId_user());
+            model.addAttribute("admin", user.getAdmin());
+        }
         return "books";
     }
 

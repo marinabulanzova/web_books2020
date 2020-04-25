@@ -16,9 +16,10 @@
     <nav>
         <ul class="aside-menu">
             <li><a href="/" >Информация о книгах</a></li>
-            <li class="active"><a href="/add_books">Добавить новую книгу</a></li>
-            <li><a href="/users">Информация о клиентах></a></li>
-            <li><a href="/orders">Информация о заказах</a></li>
+            <li class="active"> Добавить новую книгу </li>
+            <li><a href="/users">Информация о клиентах </a></li>
+            <li><a href="/orders"> Информация о заказах</a></li>
+            <li class="submenu"><a href="/logout"> Выход </a></li>
         </ul>
     </nav>
 </aside>

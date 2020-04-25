@@ -42,7 +42,7 @@
             <input class="medium" type="password" name="password" placeholder="Необходимо заполнить это поле" <c:if test="${password != null}"> value="${password}" </c:if>>
         </label>
         <br>
-        <button type="submit" > Войти ✅</button>
+        <button id="login" type="submit" > Войти ✅</button>
     </form>
 </section>
 

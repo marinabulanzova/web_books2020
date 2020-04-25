@@ -9,13 +9,16 @@
 </head>
 
 <body>
+<%@ include file="../header.jsp" %>
+
 <aside>
     <nav>
         <ul class="aside-menu">
             <li><a href="/" >Информация о книгах</a></li>
             <li class="submenu"><a href="/add_books">Добавить новую книгу</a></li>
-            <li class = "active">Информация о клиентах></li>
-            <li><a href="/orders">Информация о заказах</a></li>
+            <li class="active"> Информация о клиентах</li>
+            <li><a href="/orders">Информация о заказах </a></li>
+            <li class="submenu"><a href="/logout"> Выход </a></li>
         </ul>
     </nav>
 </aside>
@@ -28,29 +31,29 @@
     <form name="search_by_private_information" action="/search_users" method="get">
         <label>
             Фамилия
-            <input class="medium" type="text" name="surname" placeholder="Любая" <c:if test="${surname != null}"> value="${surname}" </c:if>>
+            <input class="medium" type="text" name="surname" <c:if test="${surname != null}"> value="${surname}" </c:if>>
         </label>
         <label>
             Имя
-            <input class="medium" type="text" name="first_name" placeholder="Любое" <c:if test="${first_name != null}"> value="${first_name}" </c:if>>
+            <input class="medium" type="text" name="first_name" <c:if test="${first_name != null}"> value="${first_name}" </c:if>>
         </label>
         <label>
             Отчество
-            <input class="medium" type="text" name="patronymic" placeholder="Любое" <c:if test="${patronymic != null}"> value="${patronymic}" </c:if>>
+            <input class="medium" type="text" name="patronymic" <c:if test="${patronymic != null}"> value="${patronymic}" </c:if>>
             <br>
         </label>
         <label>
             Адрес
-            <input class="long" type="text" name="address" placeholder="Любой" <c:if test="${address != null}"> value="${address}" </c:if>>
+            <input class="long" type="text" name="address" <c:if test="${address != null}"> value="${address}" </c:if>>
             <br>
         </label>
         <label>
             Телефон
-            <input class="short" type="text" name="phone_number" placeholder="Любой" <c:if test="${phone_number != null}"> value="${phone_number}" </c:if>>
+            <input class="short" type="text" name="phone_number" <c:if test="${phone_number != null}"> value="${phone_number}" </c:if>>
         </label>
         <label>
             e-mail
-            <input class="medium" type="email" name="e_mail" placeholder="Любой" <c:if test="${e_mail != null}"> value="${e_mail}" </c:if>>
+            <input class="medium" type="email" name="e_mail" <c:if test="${e_mail != null}"> value="${e_mail}" </c:if>>
             <br>
         </label>
         <button type="submit"> Искать 🔎</button>

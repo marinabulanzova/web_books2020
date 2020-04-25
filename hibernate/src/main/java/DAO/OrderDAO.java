@@ -37,7 +37,9 @@ public class OrderDAO {
 
     public void delete(Order order) {
         session.delete(order);
-        order.getCustomer().removeOrder(order);
+        if (order.getCustomer()!= null) {
+            order.getCustomer().removeOrder(order);
+        }
     }
 
     public List<Order> findAll() {

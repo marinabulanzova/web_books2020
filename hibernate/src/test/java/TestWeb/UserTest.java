@@ -2,7 +2,6 @@ package TestWeb;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -24,23 +23,31 @@ public class UserTest {
         driver.findElement(By.name("password")).sendKeys("1234");
         driver.findElement(By.id("login")).click();
 
-        /*// USC4: оформление заказа
+        // USC4: добавление книг в корзину
         Assert.assertEquals(driver.getTitle(), "Информация о книгах");
+        driver.findElement(By.name("title")).sendKeys("Элементы математики в физике");
+        driver.findElement(By.id("search")).click();
         driver.findElement(By.className("watch")).click();
-        Assert.assertEquals(driver.findElement(By.xpath("//h3[2]")).getText(), "Название: Лирика");
+        Assert.assertEquals(driver.findElement(By.xpath("//h3[2]")).getText(), "Название: Элементы математики в физике");
         driver.findElement(By.name("count")).sendKeys("1");
         driver.findElement(By.className("add")).click();
+        driver.findElement(By.name("title")).sendKeys("Оно");
+        driver.findElement(By.id("search")).click();
+        driver.findElement(By.className("watch")).click();
+        Assert.assertEquals(driver.findElement(By.xpath("//h3[2]")).getText(), "Название: Оно");
+        driver.findElement(By.name("count")).sendKeys("2");
+        driver.findElement(By.className("add")).click();
+
         driver.findElement(By.linkText("Корзина")).click();
 
+        //USC5: Оформление заказа
         Assert.assertEquals(driver.getTitle(), "Корзина");
         driver.findElement(By.name("delivery_address")).sendKeys("г.Москва, ул.Гагарина, д.45");
         driver.findElement(By.name("payment_card")).click();
-        driver.findElement(By.className("add")).click();
+        driver.findElement(By.className("edit")).click();
+        Assert.assertEquals(driver.getTitle(), "Заказы");
 
-        //USC6: Просмотр своих заказов
-        Assert.assertEquals(driver.getTitle(), "Мои заказы");*/
-
-        //USC5: редактирование профиля (удаление профиля)
+        //USC6: редактирование профиля (удаление профиля)
         driver.findElement(By.linkText("Профиль")).click();
         Assert.assertEquals( driver.findElement(By.xpath("//h3[1]")).getText(), "Фамилия:");
         driver.findElement(By.className("edit")).click();
@@ -49,7 +56,7 @@ public class UserTest {
         driver.findElement(By.className("edit")).click();
         Assert.assertEquals(driver.findElement(By.xpath("//h3[1]")).getText(), "Фамилия: Егоров");
 
-        driver.findElement(By.className("remove")).click();
+        driver.findElement(By.id("remove")).click();
         Assert.assertEquals(driver.getTitle(), "Регистрация");
         driver.quit();
     }

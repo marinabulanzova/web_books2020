@@ -13,7 +13,7 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] { HibernateConfig.class, SecurityConfig.class};
+        return new Class[] { HibernateConfig.class, SecurityConfig.class, WebMvcConfig.class};
     }
 
     @Override

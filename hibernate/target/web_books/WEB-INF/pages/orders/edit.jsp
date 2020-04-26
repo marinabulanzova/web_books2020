@@ -36,12 +36,10 @@
             Дата доставки
             <input class="medium" type="date" name="delivery_date" placeholder="Необходимо заполнить это поле" <c:if test="${delivery_date != null}"> value="${delivery_date}" </c:if>>
         </label>
-        <br>
         <label>
             Статус
             <input class="medium" type="text" name="status" placeholder="Необходимо заполнить это поле" <c:if test="${status != null}"> value="${status}" </c:if>>
         </label>
-        <br>
         <button class="edit" type="submit" <c:if test="${id != null}">name="id" value="${id}" </c:if>> Редактировать ✅</button>
     </form>
 </section>

@@ -27,7 +27,7 @@
         </ul>
     </nav>
 </aside>
-
+<section>
     <h2>Подробная информация о книге</h2>
     <h3>Жанр: ${book.genre} </h3>
     <h3>Название: ${book.title} </h3>
@@ -63,6 +63,7 @@
             <button class="add" type="submit" name="id" value="${book.id_book}"> Добавить в корзину </button>
         </form>
     </c:if>
+</section>
 
 </body>
 

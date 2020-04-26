@@ -26,7 +26,7 @@
     </nav>
 </aside>
 
-<div id="heading">
+<section>
     <h2>Личная информация</h2>
     <h3> Фамилия: ${user.surname} </h3>
     <h3>Имя: ${user.first_name} </h3>
@@ -39,10 +39,9 @@
     </form>
 
     <form name="remove_account" id="remove_account" action="/rm_account" method="post">
-        <button class="remove" title="Удалить профиль" type="submit" name="id" value="${user.id_user}"> Удалить профиль ❌ </button>
+        <button id="remove" class="edit" title="Удалить профиль" type="submit" name="id" value="${user.id_user}"> Удалить профиль ❌ </button>
     </form>
-
-</div>
+</section>
 
 </body>
 

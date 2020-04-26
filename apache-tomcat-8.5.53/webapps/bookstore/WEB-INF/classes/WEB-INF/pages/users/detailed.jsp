@@ -23,7 +23,7 @@
     </nav>
 </aside>
 
-<div id="heading">
+<section>
     <h2>Подробная информация о клиенте</h2>
     <h3> Фамилия: ${user.surname} </h3>
     <h3>Имя: ${user.first_name} </h3>
@@ -34,8 +34,6 @@
     <form name="remove_user" id="remove_user_form" action="/rm_users" method="post">
         <button class="remove" title="Удалить информацию о клиенте" name="id" value="${user.id_user}" type="submit"> Удалить ❌ </button>
     </form>
-    <br>
-
     <h2> Заказы </h2>
     <c:if test="${user.orders.size() == 0}">
         У данного клиента пока нет заказов
@@ -64,7 +62,7 @@
             </c:forEach>
         </table>
     </c:if>
-</div>
+</section>
 
 </body>
 

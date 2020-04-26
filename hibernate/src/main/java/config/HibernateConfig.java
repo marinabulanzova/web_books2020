@@ -51,13 +51,6 @@ public class HibernateConfig {
     @Bean(name = "sessionFactory")
     public LocalSessionFactoryBean getSessionFactory(DataSource dataSource) {
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
-        /*factoryBean.setAnnotatedClasses(models.Book_author.class);
-        factoryBean.setAnnotatedClasses(models.Basket_order.class);
-        factoryBean.setAnnotatedClasses(models.Basket_customer.class);
-        factoryBean.setAnnotatedClasses(models.Book.class);
-        factoryBean.setAnnotatedClasses(models.User.class);
-        factoryBean.setAnnotatedClasses(models.Order.class);
-        factoryBean.setAnnotatedClasses(models.Author.class);*/
         factoryBean.setPackagesToScan("models");
         factoryBean.setDataSource(dataSource);
         factoryBean.setHibernateProperties(hibernateProperties());
@@ -78,12 +71,6 @@ public class HibernateConfig {
         viewResolver.setSuffix(".jsp");
 
         return viewResolver;
-    }
-
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/resources/**")
-                .addResourceLocations("/resources/")
-                .setCachePeriod(31556926);
     }
 
 }

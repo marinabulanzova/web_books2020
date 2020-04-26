@@ -31,45 +31,33 @@
     <form name="search_orders" action="/search_orders" method="get">
         <label>
             Адрес доставки
-            <input class="short" type="text" name="delivery_address" <c:if test="${delivery_address != null}"> value="${delivery_address}" </c:if>>
+            <input class="long" type="text" name="delivery_address" <c:if test="${delivery_address != null}"> value="${delivery_address}" </c:if>>
         </label>
         <label>
             <input type="checkbox" name="payment_card" title="Оплата картой"  <c:if test="${payment_card != null && payment_card.equals(true)}"> value = "${true}" checked </c:if>
             <c:if test="${payment_card == null}"> value = "${false}" </c:if>>
             Оплата картой
-        </label>
-        <label>
             Статус:
-            <input class="short" type="text" name="status" <c:if test="${status != null}"> value="${status}" </c:if>>
+            <input class="medium" type="text" name="status" <c:if test="${status != null}"> value="${status}" </c:if>>
         </label>
-        <br>
         <label>
             Дата заказа от:
-            <input class="medium" type="date" name="min_o_date" <c:if test="${min_o_date != null}"> value="${min_o_date}" </c:if>>
-        </label>
-        <label>
+            <input class="short" type="date" name="min_o_date" <c:if test="${min_o_date != null}"> value="${min_o_date}" </c:if>>
             до:
-            <input class="long" type="date" name="max_o_date" <c:if test="${max_o_date != null}"> value="${max_o_date}" </c:if>>
+            <input class="short" type="date" name="max_o_date" <c:if test="${max_o_date != null}"> value="${max_o_date}" </c:if>>
         </label>
-        <br>
         <label>
             Дата доставки от:
             <input class="short" type="date" name="min_d_date" <c:if test="${min_d_date != null}"> value="${min_d_date}" </c:if>>
-        </label>
-        <label>
             до:
-            <input class="medium" type="date" name="max_d_date" <c:if test="${max_d_date != null}"> value="${max_d_date}" </c:if>>
+            <input class="short" type="date" name="max_d_date" <c:if test="${max_d_date != null}"> value="${max_d_date}" </c:if>>
         </label>
-        <br>
         <label>
             Стоимость доставки от:
             <input class="short" type="number" step="0.01" name="min_d_price" <c:if test="${min_d_price != null}"> value="${min_d_price}" </c:if>>
-        </label>
-        <label>
             до:
             <input class="short" type="number" step="0.01" name="max_d_price" <c:if test="${max_d_price != null}"> value="${max_d_price}" </c:if>>
         </label>
-        <br>
         <button id="search" type="submit"> Искать 🔎</button>
     </form>
     <br>

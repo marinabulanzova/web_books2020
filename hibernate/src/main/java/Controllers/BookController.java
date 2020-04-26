@@ -237,16 +237,6 @@ public class BookController {
         Session session = factory.openSession();
         BookDAO books = new BookDAO(session);
         Book book = books.getById(id);
-        /*model.addAttribute("id", id);
-        model.addAttribute("title", book.getTitle());
-        model.addAttribute("genre", book.getGenre());
-        model.addAttribute("publishing_house", book.getPublishing_house());
-        model.addAttribute("publication_year", book.getPublication_year());
-        model.addAttribute("page_count", book.getPage_count());
-        model.addAttribute("count_book", book.getCount_book());
-        model.addAttribute("cover", book.getCover());
-        model.addAttribute("price", book.getPrice());
-        model.addAttribute("book_authors", book.getBook_authors());*/
         model.addAttribute("book", book);
         if (request.getUserPrincipal() != null) {
             Authentication auth = SecurityContextHolder.getContext().getAuthentication();

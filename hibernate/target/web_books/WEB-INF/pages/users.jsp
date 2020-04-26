@@ -30,35 +30,27 @@
     <form name="search_by_private_information" action="/search_users" method="get">
         <label>
             Фамилия
-            <input class="medium" type="text" name="surname" placeholder="Любая" <c:if test="${surname != null}"> value="${surname}" </c:if>>
-        </label>
-        <label>
+            <input class="medium" type="text" name="surname"  <c:if test="${surname != null}"> value="${surname}" </c:if>>
             Имя
-            <input class="medium" type="text" name="first_name" placeholder="Любое" <c:if test="${first_name != null}"> value="${first_name}" </c:if>>
+            <input class="medium" type="text" name="first_name"  <c:if test="${first_name != null}"> value="${first_name}" </c:if>>
         </label>
         <label>
             Отчество
-            <input class="medium" type="text" name="patronymic" placeholder="Любое" <c:if test="${patronymic != null}"> value="${patronymic}" </c:if>>
-            <br>
+            <input class="medium" type="text" name="patronymic"  <c:if test="${patronymic != null}"> value="${patronymic}" </c:if>>
         </label>
         <label>
             Адрес
-            <input class="long" type="text" name="address" placeholder="Любой" <c:if test="${address != null}"> value="${address}" </c:if>>
-            <br>
+            <input class="long" type="text" name="address"  <c:if test="${address != null}"> value="${address}" </c:if>>
         </label>
         <label>
             Телефон
-            <input class="short" type="text" name="phone_number" placeholder="Любой" <c:if test="${phone_number != null}"> value="${phone_number}" </c:if>>
-        </label>
-        <label>
+            <input class="medium" type="text" name="phone_number"  <c:if test="${phone_number != null}"> value="${phone_number}" </c:if>>
             e-mail
-            <input class="medium" type="email" name="e_mail" placeholder="Любой" <c:if test="${e_mail != null}"> value="${e_mail}" </c:if>>
-            <br>
+            <input class="medium" type="email" name="e_mail"  <c:if test="${e_mail != null}"> value="${e_mail}" </c:if>>
         </label>
         <button  id="search" type="submit"> Искать 🔎</button>
     </form>
     <br>
-
     <table border="1" bgcolor="#d8bfd8">
         <tr>
             <th>Фамилия</th>

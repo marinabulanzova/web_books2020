@@ -36,58 +36,40 @@
         <label>
             Название
             <input class="medium" type="text" name="title" <c:if test="${title != null}"> value="${title}" </c:if>>
-        </label>
-        <label>
             Автор
-            <input class="short" type="text" name="name_author" <c:if test="${name_author != null}"> value="${name_author}" </c:if>>
+            <input class="medium" type="text" name="name_author" <c:if test="${name_author != null}"> value="${name_author}" </c:if>>
         </label>
-        <br>
         <label>
             Жанр
             <input class="medium" type="text" name="genre"  <c:if test="${genre != null}"> value="${genre}" </c:if>>
-        </label>
-        <label>
             Издательство
             <input class="medium" type="text" name="publishing_house"  <c:if test="${publishing_house != null}"> value="${publishing_house}" </c:if>>
         </label>
-        <br>
         <label>
             год издания от:
             <input class="short" type="number" name="min_p_year"  <c:if test="${min_p_year != null}"> value="${min_p_year}" </c:if>>
-        </label>
-        <label>
             до:
             <input class="short" type="number" name="max_p_year" <c:if test="${max_p_year != null}"> value="${max_p_year}" </c:if>>
         </label>
-        <br>
         <label>
             количество страниц от:
-            <input class="medium" type="number" name="min_p_count" <c:if test="${min_p_count != null}"> value="${min_p_count}" </c:if>>
-        </label>
-        <label>
+            <input class="short" type="number" name="min_p_count" <c:if test="${min_p_count != null}"> value="${min_p_count}" </c:if>>
             до:
             <input class="short" type="number" name="max_p_count" <c:if test="${max_p_count != null}"> value="${max_p_count}" </c:if>>
         </label>
-        <br>
         <label>
             количестов экзампляров(не менее)
             <input class="short" type="number" name="count" <c:if test="${count != null}"> value="${count}" </c:if>>
-        </label>
-        <label>
             тип обложки
             <input class="short" type="text" name="cover"  <c:if test="${cover != null}"> value="${cover}" </c:if>>
         </label>
-        <br>
         <label>
             стоимость от:
             <input class="short" type="number" step="0.01" name="min_price" <c:if test="${min_price != null}"> value="${min_price}" </c:if>>
-        </label>
-        <label>
             до:
             <input class="short" type="number" step="0.01" name="max_price" <c:if test="${max_price != null}"> value="${max_price}" </c:if>>
         </label>
-        <br>
-        <button  id="search" type="submit"> Искать 🔎</button>
+        <button id="search" type="submit"> Искать 🔎</button>
     </form>
     <br>
     <c:if test="${BooksList.size() == 0}">
@@ -100,7 +82,7 @@
                 <th>Название</th>
                 <th>Авторы</th>
                 <th>Издательство</th>
-                <th>стоимость</th>
+                <th>Стоимость</th>
                 <th>Подробнее</th>
             </tr>
             <c:forEach items="${BooksList}" var="book">

@@ -12,8 +12,6 @@
 
     <target name = "buildProject">
         <mkdir dir = "${build.dir}"/>
-        <!--<copy file="hibernate/src/main/resources/hibernate.cfg.xml" todir="${build.dir}"/>
-        -->
         <copy file="hibernate/src/main/resources/hibernate.cfg.xml" todir="${build.dir}"/>
         <copy file = "${test.dir}/testng.xml" todir = "${build.dir}/test"/>
         <copy file = "${selenium.dir}/testng.xml" todir = "${build.dir}/selenium"/>

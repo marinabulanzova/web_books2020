@@ -34,6 +34,10 @@ public class AdminTest {
         driver.findElement(By.className("edit")).click();
         Assert.assertEquals(driver.findElement(By.xpath("//h3[6]")).getText(), "Статус: доставлен");
 
+        driver.findElement(By.linkText("Информация о заказах")).click();
+        driver.findElement(By.className("watch")).click();
+        driver.findElement(By.id("remove")).click();
+
         //USC 8: добавление книги
         driver.findElement(By.linkText("Добавить новую книгу")).click();
         driver.findElement(By.name("title")).sendKeys("Крики");
@@ -46,7 +50,6 @@ public class AdminTest {
         driver.findElement(By.name("publishing_house")).sendKeys("АРТ");
         driver.findElement(By.name("publication_year")).sendKeys("2018");
         driver.findElement(By.id("edit")).click();
-
 
         // USC9: Изменение информации о книге (удаление книги)
         driver.findElement(By.linkText("Информация о книгах")).click();

@@ -36,12 +36,10 @@
             e-mail
             <input class="medium" type="text" name="e_mail" placeholder="Необходимо заполнить это поле" <c:if test="${e_mail != null}"> value="${e_mail}" </c:if>>
         </label>
-        <br>
         <label>
             Пароль
             <input class="medium" type="password" name="password" placeholder="Необходимо заполнить это поле" <c:if test="${password != null}"> value="${password}" </c:if>>
         </label>
-        <br>
         <button id="login" type="submit" > Войти ✅</button>
     </form>
 </section>

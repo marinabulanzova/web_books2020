@@ -18,6 +18,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -244,9 +245,11 @@ public class UserController {
 
     @RequestMapping(value = "/basket", method = RequestMethod.GET)
     public String basket(ModelMap model) {
+        Session session = factory.openSession();
+        Basket_customerDAO basket_customers = new Basket_customerDAO(session);
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         models.User user = (models.User)auth.getPrincipal();
-        model.addAttribute("BooksList", user.getBasket_customerList());
+        model.addAttribute("BooksList", basket_customers.find(user.getId_user()));
         return "users/basket";
     }
 
@@ -261,7 +264,7 @@ public class UserController {
         user.removeBasket_customerList(basket_customers.getById(id));
         basket_customers.delete(basket_customers.getById(id));
         session.getTransaction().commit();
-        model.addAttribute("BooksList", user.getBasket_customerList());
+        model.addAttribute("BooksList", basket_customers.find(user.getId_user()));
         return "users/basket";
     }
 
@@ -280,13 +283,15 @@ public class UserController {
         orders.save(order);
         Basket_order b_o;
         Basket_customer b_c;
-        int size = user.getBasket_customerList().size();
-        while (size > 0) {
-            b_c = user.getBasket_customerList().get(0);
+        List<Basket_customer> basket = basket_customers.find(user.getId_user());
+        int size = basket.size();
+        int i = 0;
+        while (i < size) {
+            b_c = basket.get(i);
             b_o = new Basket_order(b_c.getBook(), order,  b_c.getCount_book(), b_c.getBook().getPrice());
             basket_customers.delete(b_c);
             basket_orders.save(b_o);
-            size--;
+            i++;
         }
         session.getTransaction().commit();
         model.addAttribute("OrdersList", orders.find(user.getId_user(), null, null, null, null, null, null, null, null, null));

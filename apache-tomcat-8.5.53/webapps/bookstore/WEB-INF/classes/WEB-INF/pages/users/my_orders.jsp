@@ -26,7 +26,7 @@
 <div id="heading">
     <h1>Мои заказы</h1>
 </div>
-<div >
+<section>
     <c:if test="${OrdersList.size() == 0}">
          У вас пока нет заказов
     </c:if>
@@ -60,8 +60,7 @@
             </c:forEach>
         </table>
     </c:if>
-
-</div>
+</section>
 
 </body>
 

@@ -23,7 +23,7 @@
     </nav>
 </aside>
 
-<div id="heading">
+<section>
     <h2>Подробная информация о заказе</h2>
     <h3>Клиент: ${order.customer.surname} ${order.customer.first_name} </h3>
     <h3>Адрес доставки: ${order.delivery_address}</h3>
@@ -39,7 +39,7 @@
         <button class="edit" title="Редактировать данные" name="id" value="${order.id_order}" type="submit">Редактировать 📝 </button>
     </form>
     <form name="remove_order" id="remove_order_form" action="/rm_orders" method="post">
-        <button class="remove" title="Удалить информацию о заказе" name="id" value="${order.id_order}" type="submit"> Удалить ❌ </button>
+        <button id="remove" class="edit" title="Удалить информацию о заказе" name="id" value="${order.id_order}" type="submit"> Удалить ❌ </button>
     </form>
 
     <h2> Корзина заказа: </h2>
@@ -57,9 +57,7 @@
             </tr>
         </c:forEach>
     </table>
-
-</div>
-</div>
+</section>
 
 </body>
 

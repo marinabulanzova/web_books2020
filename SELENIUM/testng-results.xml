@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="SystemSuite" duration-ms="45536" started-at="2020-04-26T20:32:22Z" finished-at="2020-04-26T20:33:07Z">
+  <suite name="SystemSuite" duration-ms="38950" started-at="2020-04-26T20:53:16Z" finished-at="2020-04-26T20:53:55Z">
     <groups>
     </groups>
-    <test name="SystemTest" duration-ms="45536" started-at="2020-04-26T20:32:22Z" finished-at="2020-04-26T20:33:07Z">
-      <class name="TestWeb.UserTest">
-        <test-method status="PASS" signature="user_test()[pri:0, instance:TestWeb.UserTest@33723e30]" name="user_test" duration-ms="12753" started-at="2020-04-26T23:32:37Z" finished-at="2020-04-26T23:32:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_test -->
-      </class> <!-- TestWeb.UserTest -->
+    <test name="SystemTest" duration-ms="38950" started-at="2020-04-26T20:53:16Z" finished-at="2020-04-26T20:53:55Z">
       <class name="TestWeb.AdminTest">
-        <test-method status="PASS" signature="admin_test()[pri:0, instance:TestWeb.AdminTest@64f6106c]" name="admin_test" duration-ms="17785" started-at="2020-04-26T23:32:49Z" finished-at="2020-04-26T23:33:07Z">
+        <test-method status="PASS" signature="admin_test()[pri:0, instance:TestWeb.AdminTest@704921a5]" name="admin_test" duration-ms="14317" started-at="2020-04-26T23:53:40Z" finished-at="2020-04-26T23:53:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- admin_test -->
       </class> <!-- TestWeb.AdminTest -->
+      <class name="TestWeb.UserTest">
+        <test-method status="PASS" signature="user_test()[pri:0, instance:TestWeb.UserTest@727803de]" name="user_test" duration-ms="12124" started-at="2020-04-26T23:53:28Z" finished-at="2020-04-26T23:53:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- user_test -->
+      </class> <!-- TestWeb.UserTest -->
       <class name="TestWeb.GuestTest">
-        <test-method status="PASS" signature="guest_test()[pri:0, instance:TestWeb.GuestTest@3ecd23d9]" name="guest_test" duration-ms="14965" started-at="2020-04-26T23:32:22Z" finished-at="2020-04-26T23:32:37Z">
+        <test-method status="PASS" signature="guest_test()[pri:0, instance:TestWeb.GuestTest@548ad73b]" name="guest_test" duration-ms="12477" started-at="2020-04-26T23:53:16Z" finished-at="2020-04-26T23:53:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- guest_test -->

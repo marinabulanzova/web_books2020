@@ -32,7 +32,7 @@
     <h3>e_mail: ${user.e_mail}</h3>
     <h3>Номер телефона: ${user.phone_number} </h3>
     <form name="remove_user" id="remove_user_form" action="/rm_users" method="post">
-        <button class="edit" title="Удалить информацию о клиенте" name="id" value="${user.id_user}" type="submit"> Удалить ❌ </button>
+        <button class="remove" title="Удалить информацию о клиенте" name="id" value="${user.id_user}" type="submit"> Удалить ❌ </button>
     </form>
     <br>
 

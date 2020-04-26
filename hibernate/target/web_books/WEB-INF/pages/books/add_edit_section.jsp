@@ -52,6 +52,6 @@
             <input class="medium" type="number" name="price" placeholder="Необходимо заполнить это поле" <c:if test="${price != null}"> value="${price}" </c:if>>
         </label>
         <br>
-        <button id="edit" type="submit" <c:if test="${id != null}">name="id" value="${id}" </c:if>> Готово ✅</button>
+        <button id="edit" type="submit" <c:if test="${id != null}"> name="id" value="${id}" </c:if>> Готово ✅</button>
     </form>
 </section>

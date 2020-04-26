@@ -39,7 +39,7 @@
     </form>
 
     <form name="remove_account" id="remove_account" action="/rm_account" method="post">
-        <button class="edit" title="Удалить профиль" type="submit" name="id" value="${user.id_user}"> Удалить профиль ❌ </button>
+        <button class="remove" title="Удалить профиль" type="submit" name="id" value="${user.id_user}"> Удалить профиль ❌ </button>
     </form>
 
 </div>

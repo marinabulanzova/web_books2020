@@ -39,7 +39,7 @@
         <button class="edit" title="Редактировать данные" name="id" value="${order.id_order}" type="submit">Редактировать 📝 </button>
     </form>
     <form name="remove_order" id="remove_order_form" action="/rm_orders" method="post">
-        <button class="edit" title="Удалить информацию о заказе" name="id" value="${order.id_order}" type="submit"> Удалить ❌ </button>
+        <button class="remove" title="Удалить информацию о заказе" name="id" value="${order.id_order}" type="submit"> Удалить ❌ </button>
     </form>
 
     <h2> Корзина заказа: </h2>

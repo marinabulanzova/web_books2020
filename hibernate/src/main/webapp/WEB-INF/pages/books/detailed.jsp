@@ -41,38 +41,7 @@
     <h3>Количество экземпляров: ${book.count_book}</h3>
     <h3>Тип обложки: ${book.cover} </h3>
     <h3>Стоимость: ${book.price} </h3>
-<!--<br>
-    <td>Жанр: <td>
-    <td> ${book.genre} </td>
-    <br>
-    <td>Название: </td>
-    <td> ${book.title} </td>
-    <br>
-    <td> Авторы: </td>
-    <td>
-        <c:forEach items = "${book.book_authors}" var="author" >
-            ${author.author.name}
-        </c:forEach>
-    </td>
-    <br>
-    <td>Издательство: </td>
-    <td> ${book.publishing_house} </td>
-    <br>
-    <td>Год издания: </td>
-    <td>${book.publication_year} </td>
-    <br>
-    <td>Количество страниц:</td>
-    <td> ${book.page_count}</td>
-    <br>
-    <td> Количество экземпляров: </td>
-    <td> ${book.count_book}</td>
-    <br>
-    <td>Тип обложки: </td>
-    <td> ${book.cover} </td>
-    <br>
-    <td>Стоимость: </td>
-    <td> ${book.price} </td>
-    <br> -->
+
     <c:if test="${admin == true}" >
         <form name="edit_book" id="edit_book_form" action="/edit_books" method="post">
             <button id="edit" class="edit" title="Редактировать данные" name="id" value="${book.id_book}" type="submit">Редактировать 📝 </button>
@@ -91,7 +60,7 @@
                 Необходимое количество экземпляров
                 <input class="medium" type="number" name="count" placeholder="не больше количества экземпляров книги" >
             </label>
-            <button type="submit" name="id" value="${book.id_book}"> Добавить в корзину </button>
+            <button class="add" type="submit" name="id" value="${book.id_book}"> Добавить в корзину </button>
         </form>
     </c:if>
 

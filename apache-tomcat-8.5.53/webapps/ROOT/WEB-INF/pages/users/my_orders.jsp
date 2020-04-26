@@ -49,6 +49,7 @@
                     <td>${order.delivery_date}</td>
                     <td>${order.status}</td>
                     <td> <c:forEach items="${order.basket_orderList}" var="b_o" >
+                        <br>
                         Название: ${b_o.book.title} <br>
                         Цена: ${b_o.price} <br>
                         Количество: ${b_o.count_book}

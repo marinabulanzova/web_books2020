@@ -109,8 +109,16 @@ public class OrderController {
         session.getTransaction().begin();
         orders.update(order);
         session.getTransaction().commit();
-        model.addAttribute("OrdersList", orders.findAll());
-        return "orders";
+        double full_price = 0;
+        for(Basket_order b_o : order.getBasket_orderList()) {
+            full_price+=b_o.getPrice()*b_o.getCount_book();
+        }
+        model.addAttribute("order", order);
+        model.addAttribute("full_price", full_price);
+        model.addAttribute("BooksList", order.getBasket_orderList());
+        return "orders/detailed";
+        /*model.addAttribute("OrdersList", orders.findAll());
+        return "orders";*/
     }
 
     @RequestMapping(value = "/rm_orders", method = RequestMethod.POST)

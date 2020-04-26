@@ -88,7 +88,7 @@
             <input class="short" type="number" step="0.01" name="max_price" <c:if test="${max_price != null}"> value="${max_price}" </c:if>>
         </label>
         <br>
-        <button type="submit"> Искать 🔎</button>
+        <button id="search" type="submit"> Искать 🔎</button>
     </form>
     <br>
     <c:if test="${BooksList.size() == 0}">

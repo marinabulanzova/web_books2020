@@ -32,13 +32,15 @@ INSERT INTO Books_authors VALUES
 	(default, 8, 9);
 
 INSERT INTO Users /*(surname, first_name, patronymic, address, phone_number, e_mail, password_hash, user_right)*/ VALUES 
-	(default, 'Матвеев', 'Даниил', 'Олегович', 'г.Москва, Лермонтовский проспект, д.13, к.56', '89507899067', 'matveev_d@mail.ru', 'drgdrh', true),
+	(default, 'Матвеев', 'Даниил', 'Олегович', 'г.Москва, Лермонтовский проспект, д.13, к.56', '89507899067', 'matveev_d@mail.ru', 'drgdrh', default),
 	(default, 'Митин', 'Виктор', 'Владимирович', 'г.Москва, Ломоносовский проспект, д.27, к.11', '89779347105', 'mitin_v@mail.ru', 'dgdrgaetes', default),
 	(default, 'Кометова', 'Дарья', 'Максимовна', 'г.Москва, ул.Ленина, д.4, к.128', '89507895634','kometova_d@mail.ru', 'drgyhruw', default),
 	(default, 'Денин', 'Борис', 'Ильич', 'г.Москва, ул.Вавилова, д.103, к.26', '89003456704', 'denin_b@mail.ru', 'sgtrs', default),
 	(default, 'Огородникова', 'Валерия', 'Станиславовна', 'г.Москва, ул.Гагарина, д.56, к.17', '89022345676', 'ogorodnikova_a@mail.ru', 'dsrgedsha', default),
 	(default, 'Межукова', 'Валерия', 'Игоревна', 'г.Москва, Ломоносовский проспект, д.103, к.1', '89087887005', 'mezhukova_v@mail.ru', 'esgrshfc', default),
-	(default, 'Костина', 'Екатерина', 'Андреевна', 'г.Москва, ул.Новый Арбат, д.48, к.56', '89082405686', 'kostina_e@mail.ru', 'ergesdh', default);
+	(default, 'Костина', 'Екатерина', 'Андреевна', 'г.Москва, ул.Новый Арбат, д.48, к.56', '89082405686', 'kostina_e@mail.ru', 'ergesdh', default),
+    (default, 'Буланцова', 'Марина', null, 'г.Москва, Ломоносовский проспект', '89506917032', 'margo@mail.ru','$2a$10$Spp.0g6PpLqleDb4XB9dveVM5eB6PA9OjGXh0F79AXC8S095wCvri', true),
+    (default, null, 'Влад', 'Игоревич', 'г.Москва, Ломоносовский проспект', '89506917832', 'vlad@mail.ru','$2a$10$Spp.0g6PpLqleDb4XB9dveVM5eB6PA9OjGXh0F79AXC8S095wCvri', false);
 
 INSERT INTO Orders /*(id_customer, delivery_address, payment_card, order_date, delivery_date, status, delivery_price)*/ VALUES
 	(default, 2, 'г.Москва, Ломоносовский проспект, д.27, к.11', true, '23/01/2020 10:30:06', '26/01/2020', 'доставлен', 0),

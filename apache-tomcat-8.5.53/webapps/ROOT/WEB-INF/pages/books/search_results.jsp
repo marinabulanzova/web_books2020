@@ -87,11 +87,11 @@
             <input class="short" type="number" step="0.01" name="max_price" <c:if test="${max_price != null}"> value="${max_price}" </c:if>>
         </label>
         <br>
-        <button type="submit"> Искать 🔎</button>
+        <button  id="search" type="submit"> Искать 🔎</button>
     </form>
     <br>
     <c:if test="${BooksList.size() == 0}">
-        Книг с такими пареметрами не найдено
+        <p class="null">Книг с такими параметрами не найдено</p>
     </c:if>
     <c:if test="${BooksList.size() > 0}">
         <table id="tableBooks" border="1" bgcolor="#faebd7">
@@ -115,12 +115,11 @@
                     </td>
                     <td>${book.publishing_house}</td>
                     <td>${book.price}</td>
-                    <!-- <td>
-                        <form name="more_detailed" id="book_more_detailed" action="/books/detailed" method="get">
-                            <button class="watch" id="detailed" title="Подробная информация о книге" name="id" value="{book.id_book}" type="submit">  👁 </button>
+                    <td>
+                        <form name="more_detailed" id="book_more_detailed" action="/detailed_books" method="get">
+                            <button class="watch" id="detailed" title="Подробная информация о книге" name="id" value="${book.id_book}" type="submit">  👁 </button>
                         </form>
-                    </td> -->
-                    <td><span><a href="/detailed_books?id=${book.id_book}">Подробнее</a></span></td>
+                    </td>
                 </tr>
             </c:forEach>
         </table>

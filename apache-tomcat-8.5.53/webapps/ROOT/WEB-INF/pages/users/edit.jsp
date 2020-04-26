@@ -90,7 +90,7 @@
             <input class="medium" type="password" name="new_password" placeholder="Необходимо заполнить это поле">
         </label>
         <br>
-        <button type="submit" name="id" value="${userForm.id_user}"> Редактировать ✅</button>
+        <button class="edit" type="submit" name="id" value="${userForm.id_user}"> Редактировать ✅</button>
     </form>
 </body>
 

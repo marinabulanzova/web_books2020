@@ -57,11 +57,11 @@
             </label>
             <br>
             <label>
+                <input  type="checkbox" name="payment_card" title="Оплата картой"  <c:if test="${payment_card != null && payment_card.equals(true)}"> value = "${true}" checked </c:if>>
                 Оплата картой
-                <input type="checkbox" name="payment_card" title="" <c:if test="${payment_card != null && payment_card.equals(true)}"> checked </c:if>>
             </label>
             <br>
-            <button type="submit" > Оформить заказ ✅</button>
+            <button class="add" type="submit" > Оформить заказ ✅</button>
         </form>
     </c:if>
 

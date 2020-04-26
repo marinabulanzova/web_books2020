@@ -127,7 +127,8 @@ public class UserController {
         users.delete(users.getById(id));
         session.getTransaction().commit();
 
-        model.addAttribute("UsersList", users.findAll());
+        model.addAttribute("UsersList", users.find(null,null,null,
+                null,null, null, false));
         return "users";
     }
 
@@ -273,7 +274,7 @@ public class UserController {
         Basket_orderDAO basket_orders = new Basket_orderDAO(session);
         Basket_customerDAO basket_customers = new Basket_customerDAO(session);
         OrderDAO orders = new OrderDAO(session);
-        Boolean payment = payment_card ? true : false;
+        Boolean payment = (payment_card != null) ? true : false;
         Order order = new Order(user, delivery_address, payment, new Timestamp(System.currentTimeMillis()), new java.sql.Date((new java.util.Date()).getTime()), "в обработке", 0.0);
         session.getTransaction().begin();
         orders.save(order);

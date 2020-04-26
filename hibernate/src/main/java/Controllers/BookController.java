@@ -114,7 +114,7 @@ public class BookController {
     }
 
     @RequestMapping(value = "/edit_done", method = RequestMethod.POST)
-    public String edit_done(HttpServletRequest request, @RequestParam  Integer id,
+    public String edit_done(HttpServletRequest request, @RequestParam(required = false) Integer id,
                             @RequestParam String title, @RequestParam String genre,
                             @RequestParam String publishing_house, @RequestParam Integer publication_year,
                             @RequestParam String page_count, @RequestParam String count_book,

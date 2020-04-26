@@ -42,7 +42,7 @@
             <input class="medium" type="text" name="status" placeholder="Необходимо заполнить это поле" <c:if test="${status != null}"> value="${status}" </c:if>>
         </label>
         <br>
-        <button id="edit" type="submit" <c:if test="${id != null}">name="id" value="${id}" </c:if>> Редактировать ✅</button>
+        <button class="edit" type="submit" <c:if test="${id != null}">name="id" value="${id}" </c:if>> Редактировать ✅</button>
     </form>
 </section>
 </body>

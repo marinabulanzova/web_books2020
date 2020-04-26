@@ -45,6 +45,7 @@
             Статус:
             <input class="short" type="text" name="status" <c:if test="${status != null}"> value="${status}" </c:if>>
         </label>
+        <br>
         <label>
             Дата заказа от:
             <input class="medium" type="date" name="min_o_date" <c:if test="${min_o_date != null}"> value="${min_o_date}" </c:if>>
@@ -52,8 +53,8 @@
         <label>
             до:
             <input class="long" type="date" name="max_o_date" <c:if test="${max_o_date != null}"> value="${max_o_date}" </c:if>>
-            <br>
         </label>
+        <br>
         <label>
             Дата доставки от:
             <input class="short" type="date" name="min_d_date" <c:if test="${min_d_date != null}"> value="${min_d_date}" </c:if>>
@@ -62,6 +63,7 @@
             до:
             <input class="medium" type="date" name="max_d_date" <c:if test="${max_d_date != null}"> value="${max_d_date}" </c:if>>
         </label>
+        <br>
         <label>
             Стоимость доставки от:
             <input class="short" type="number" step="0.01" name="min_d_price" <c:if test="${min_d_price != null}"> value="${min_d_price}" </c:if>>
@@ -70,8 +72,9 @@
             до:
             <input class="short" type="number" step="0.01" name="max_d_price" <c:if test="${max_d_price != null}"> value="${max_d_price}" </c:if>>
         </label>
+        <br>
 
-        <button type="submit"> Искать 🔎</button>
+        <button id="search" type="submit"> Искать 🔎</button>
     </form>
     <br>
 

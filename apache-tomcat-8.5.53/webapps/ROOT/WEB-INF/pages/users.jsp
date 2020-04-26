@@ -55,7 +55,7 @@
             <input class="medium" type="email" name="e_mail" placeholder="Любой" <c:if test="${e_mail != null}"> value="${e_mail}" </c:if>>
             <br>
         </label>
-        <button type="submit"> Искать 🔎</button>
+        <button  id="search" type="submit"> Искать 🔎</button>
     </form>
     <br>
 

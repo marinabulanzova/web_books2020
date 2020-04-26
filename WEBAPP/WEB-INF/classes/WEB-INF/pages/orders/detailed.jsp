@@ -11,22 +11,35 @@
 <body>
 <%@ include file="../header.jsp" %>
 
+<aside>
+    <nav>
+        <ul class="aside-menu">
+            <li><a href="/" >Информация о книгах</a></li>
+            <li class="submenu"><a href="/add_books">Добавить новую книгу</a></li>
+            <li><a href="/users">Информация о клиентах </a></li>
+            <li><a href="/orders">Информация о заказах </a></li>
+            <li class="submenu"><a href="/logout"> Выход </a></li>
+        </ul>
+    </nav>
+</aside>
 
 <div id="heading">
     <h2>Подробная информация о заказе</h2>
-    <h3>Клиент: ${customer.surname} ${customer.first_name} </h3>
-    <h3>Адрес доставки: ${delivery_address}</h3>
-    <h3>Оплата картой: ${payment_metod}</h3>
-    <h3>Дата заказа: ${order_date} </h3>
-    <h3>Дата доставки: ${delivery_date}</h3>
-    <h3>Статус: ${status}</h3>
+    <h3>Клиент: ${order.customer.surname} ${order.customer.first_name} </h3>
+    <h3>Адрес доставки: ${order.delivery_address}</h3>
+    <h3>Оплата картой: <c:if test="${order.payment == true}"> да </c:if>
+                        <c:if test="${order.payment == false}"> нет </c:if>
+    </h3>
+    <h3>Дата заказа: ${order.order_date} </h3>
+    <h3>Дата доставки: ${order.delivery_date}</h3>
+    <h3>Статус: ${order.status}</h3>
     <h3>Полная стоимость: ${full_price} </h3>
 
-    <form name="edit_order" id="edit_order_form" action="/orders/edit" method="post">
-        <button class="edit" title="Редактировать данные" name="id" value="${id}" type="submit">Редактировать 📝 </button>
+    <form name="edit_order" id="edit_order_form" action="/edit_orders" method="post">
+        <button class="edit" title="Редактировать данные" name="id" value="${order.id_order}" type="submit">Редактировать 📝 </button>
     </form>
-    <form name="remove_order" id="remove_order_form" action="/orders/rm" method="post">
-        <button class="edit" title="Удалить информацию о заказе" name="id" value="${id}" type="submit"> Удалить ❌ </button>
+    <form name="remove_order" id="remove_order_form" action="/rm_orders" method="post">
+        <button class="remove" title="Удалить информацию о заказе" name="id" value="${order.id_order}" type="submit"> Удалить ❌ </button>
     </form>
 
     <h2> Корзина заказа: </h2>

@@ -1,0 +1,16 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name = "Suite">
+    <test name = "HibernateTest" parallel="false">
+        <classes>
+            <class name = "testDAO.OrderTest"/>
+            <class name = "testDAO.UserTest"/>
+            <class name = "testDAO.TestAuthor"/>
+            <class name = "testDAO.Basket_orderTest"/>
+            <class name = "testDAO.Basket_customerTest"/>
+            <class name = "testDAO.Book_authorTest"/>
+            <class name = "testDAO.BookTest"/>
+        </classes>
+    </test>
+</suite>

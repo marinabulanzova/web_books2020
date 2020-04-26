@@ -4,7 +4,9 @@
 <suite name = "SystemSuite">
     <test name = "SystemTest" parallel = "false">
         <classes>
-            <class name = "TestWeb.GuestTest"/>
+            <class name ="TestWeb.GuestTest"/>
+            <class name="TestWeb.UserTest"/>
+            <class name="TestWeb.AdminTest"/>
         </classes>
     </test>
 </suite>

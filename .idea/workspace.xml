@@ -7,73 +7,88 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6473cb1-fd09-4918-acb6-910f747b0d08" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/geckodriver" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.~lock.описание приложения и схема БД.docx#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD/classes/Controllers/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BUILD/classes/Controllers/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD/classes/Controllers/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BUILD/classes/Controllers/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD/classes/Controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BUILD/classes/Controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD/classes/DAO/Basket_customerDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BUILD/classes/DAO/Basket_customerDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD/classes/DAO/BookDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BUILD/classes/DAO/BookDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD/classes/DAO/Book_authorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BUILD/classes/DAO/Book_authorDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD/classes/DAO/OrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BUILD/classes/DAO/OrderDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD/classes/TestWeb/UserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/BUILD/classes/TestWeb/UserTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD/classes/authentication/DBAuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD/classes/config/AppInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/BUILD/classes/config/AppInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD/classes/config/HibernateConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/BUILD/classes/config/HibernateConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD/classes/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/BUILD/classes/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD/classes/selenium/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BUILD/classes/selenium/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUILD/classes/testDAO/UserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/BUILD/classes/testDAO/UserTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/fillDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/fillDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/classes/Controllers/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/classes/Controllers/BookController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/classes/Controllers/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/classes/Controllers/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/classes/Controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/classes/Controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/books.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/books.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/books/add_edit_section.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/books/add_edit_section.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/books/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/books/detailed.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/books/search_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/books/search_results.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/orders.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/orders/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/orders/detailed.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/orders/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/orders/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/orders/search_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/orders/search_results.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/users.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/users/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/users/account.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/users/basket.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/users/basket.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/users/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/users/detailed.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/users/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/users/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/users/my_orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/users/my_orders.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/users/search_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/webapps/ROOT/WEB-INF/pages/users/search_results.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/Controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/Controllers/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/Controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/Controllers/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/java/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/java/Controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books/add_edit_section.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books/add_edit_section.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books/detailed.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books/search_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books/search_results.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/orders.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/orders/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/orders/detailed.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/orders/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/orders/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/orders/search_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/orders/search_results.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/account.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/basket.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/basket.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/detailed.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/my_orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/my_orders.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/search_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/users/search_results.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/AdminTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/TestWeb/AdminTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/TestWeb/GuestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/TestWeb/GuestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/TestWeb/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/TestWeb/UserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/TestWeb/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/TestWeb/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/Controllers/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/Controllers/BookController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/Controllers/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/Controllers/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/classes/Controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/classes/Controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/test-classes/AdminTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/test-classes/TestWeb/GuestTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/test-classes/TestWeb/GuestTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/test-classes/TestWeb/UserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/test-classes/TestWeb/UserTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books.war" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/Controllers/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/Controllers/BookController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/Controllers/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/Controllers/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/Controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/classes/Controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/books.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/books.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/books/add_edit_section.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/books/add_edit_section.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/books/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/books/detailed.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/books/search_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/books/search_results.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/orders.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/orders/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/orders/detailed.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/orders/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/orders/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/orders/search_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/orders/search_results.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/account.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/basket.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/basket.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/detailed.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/my_orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/my_orders.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/search_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/target/web_books/WEB-INF/pages/users/search_results.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/Controllers/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/Controllers/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/Controllers/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/Controllers/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/Controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/Controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/DAO/Basket_customerDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/DAO/Basket_customerDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/DAO/BookDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/DAO/BookDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/DAO/Book_authorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/DAO/Book_authorDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/DAO/OrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/DAO/OrderDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/TestWeb/UserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/TestWeb/UserTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/books.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/books.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/books/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/books/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/books/add_edit_section.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/books/add_edit_section.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/books/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/books/detailed.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/books/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/books/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/books/search_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/books/search_results.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/orders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/orders/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/orders/detailed.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/orders/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/orders/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/orders/search_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/orders/search_results.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/users.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/users/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/users/detailed.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/users/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/users/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/users/search_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/WEB-INF/pages/users/search_results.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/authentication/DBAuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/config/AppInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/config/AppInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/config/HibernateConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/config/HibernateConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/selenium/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/selenium/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/testDAO/UserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/classes/testDAO/UserTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/books.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/books.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/books/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/books/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/books/add_edit_section.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/books/add_edit_section.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/books/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/books/detailed.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/books/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/books/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/books/search_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/books/search_results.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/orders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/orders/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/orders/detailed.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/orders/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/orders/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/orders/search_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/orders/search_results.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/users.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/users/detailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/users/detailed.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/users/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/users/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/users/search_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/WEB-INF/pages/users/search_results.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WEBAPP/bookstore.war" beforeDir="false" afterPath="$PROJECT_DIR$/WEBAPP/bookstore.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.53/conf/tomcat-users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-8.5.53/conf/tomcat-users.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/TestWeb/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/TestWeb/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate/src/test/java/testDAO/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-aop-4.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-beans-4.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-context-4.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-core-4.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-jdbc-4.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-orm-4.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-tx-4.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-web-4.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spring-webmvc-4.2.4.RELEASE.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/описание приложения и схема БД.docx" beforeDir="false" afterPath="$PROJECT_DIR$/описание приложения и схема БД.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,25 +156,26 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15295926" />
     <property name="project.structure.side.proportion" value="0.21889192" />
     <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF" />
-      <recent name="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books" />
-      <recent name="$PROJECT_DIR$/hibernate/src/main/resources" />
-      <recent name="$PROJECT_DIR$/hibernate/src/test" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/hibernate/src/test/java/testDAO" />
       <recent name="$PROJECT_DIR$/hibernate/src/test/java/TestWeb" />
       <recent name="$PROJECT_DIR$/hibernate/src/test/java" />
       <recent name="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF" />
+      <recent name="$PROJECT_DIR$/hibernate/src/main/webapp/WEB-INF/pages/books" />
+      <recent name="$PROJECT_DIR$/hibernate/src/main/resources" />
+      <recent name="$PROJECT_DIR$/hibernate/src/test" />
     </key>
   </component>
   <component name="RunManager" selected="TestNG.UserTest.user_test">
@@ -451,7 +467,7 @@
       <workItem from="1587764542693" duration="9399000" />
       <workItem from="1587804826843" duration="17592000" />
       <workItem from="1587845651706" duration="11407000" />
-      <workItem from="1587889336095" duration="14030000" />
+      <workItem from="1587889336095" duration="27028000" />
     </task>
     <servers />
   </component>
@@ -503,10 +519,10 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="164" y="96" width="1103" height="573" key="DiffContextDialog/65.24.1301.744@65.24.1301.744" timestamp="1586517933371" />
-    <state x="409" y="156" width="907" height="516" key="FileChooserDialogImpl" timestamp="1587477698736">
+    <state x="409" y="156" width="907" height="516" key="FileChooserDialogImpl" timestamp="1587919147100">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state x="409" y="156" width="907" height="516" key="FileChooserDialogImpl/65.24.1301.744@65.24.1301.744" timestamp="1587477698736" />
+    <state x="409" y="156" width="907" height="516" key="FileChooserDialogImpl/65.24.1301.744@65.24.1301.744" timestamp="1587919147100" />
     <state width="1080" height="543" key="GridCell.Tab.-1.bottom" timestamp="1586606471463">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
@@ -523,22 +539,22 @@
       <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state width="1080" height="543" key="GridCell.Tab.-1.right/65.24.1301.744@65.24.1301.744" timestamp="1586606471462" />
-    <state width="1085" height="2" key="GridCell.Tab.0.bottom" timestamp="1587904086407">
+    <state width="1301" height="2" key="GridCell.Tab.0.bottom" timestamp="1587908140585">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="2" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1587904086407" />
-    <state width="1085" height="2" key="GridCell.Tab.0.center" timestamp="1587904086407">
+    <state width="1301" height="2" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1587908140585" />
+    <state width="1301" height="2" key="GridCell.Tab.0.center" timestamp="1587908140585">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="2" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1587904086407" />
-    <state width="1085" height="2" key="GridCell.Tab.0.left" timestamp="1587904086406">
+    <state width="1301" height="2" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1587908140585" />
+    <state width="1301" height="2" key="GridCell.Tab.0.left" timestamp="1587908140585">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="2" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1587904086406" />
-    <state width="1085" height="2" key="GridCell.Tab.0.right" timestamp="1587904086407">
+    <state width="1301" height="2" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1587908140585" />
+    <state width="1301" height="2" key="GridCell.Tab.0.right" timestamp="1587908140585">
       <screen x="65" y="24" width="1301" height="744" />
     </state>
-    <state width="1085" height="2" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1587904086407" />
+    <state width="1301" height="2" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1587908140585" />
     <state width="1085" height="2" key="GridCell.Tab.1.bottom" timestamp="1587904086409">
       <screen x="65" y="24" width="1301" height="744" />
     </state>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="HibernateTest(failed)">
+    <classes>
+      <class name="testDAO.UserTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="testSaveUpdateDeleteUser"/>
+        </methods>
+      </class> <!-- testDAO.UserTest -->
+    </classes>
+  </test> <!-- HibernateTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->

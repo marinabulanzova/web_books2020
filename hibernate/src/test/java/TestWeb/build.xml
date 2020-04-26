@@ -1,7 +1,7 @@
 <?xml version = "1.0" encoding = "utf-8"?>
-<project basedir = "TestWeb" default = "run-tests" name = "run-system-tests">
+<project basedir = "." default = "run-tests" name = "run-system-tests">
 
-    <property file = "../../../../build.properties"/>
+    <property file = "../../../../../build.properties"/>
 
     <path id = "classpath.test">
         <fileset dir = "${lib.dir}">
@@ -18,9 +18,9 @@
     </taskdef>
 
     <target name = "run-tests">
-        <mkdir dir = "${TESTS.dir}"/>
+        <mkdir dir = "${SELENIUM.dir}"/>
 
-        <testng classpathref = "classpath.test" outputdir = "${report.dir}">
+        <testng classpathref = "classpath.test" outputdir = "${SELENIUM.dir}">
             <xmlfileset dir = "${selenium.dir}" includes = "testng.xml"/>
         </testng>
     </target>

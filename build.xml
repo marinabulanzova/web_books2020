@@ -3,13 +3,6 @@
 
     <property file = "build.properties"/>
 
-    <!--
-    <presetdef name = "asadmin">
-        <java jar = "${glassfish.home}/modules/admin-cli.jar" fork = "true" jvm = "${java.home}/bin/java">
-            <arg line = "-port ${glassfish.admin.port}"/>
-        </java>
-    </presetdef>-->
-
     <target name="initDB">
 
         <ant antfile="${DB.dir}/build.xml"/>
@@ -47,120 +40,53 @@
         <ant antfile = "${web.dir}/build.xml"/>
     </target>
 
-    <!--<target name = "start-server">
-        <asadmin failonerror = "true">
-            <arg value = "start-domain"/>
-            <arg value = "${glassfish.domain}"/>
-        </asadmin>
+    <path id="tomcat.class.path">
+        <fileset dir="${tomcat.home.dir}/lib">
+            <include name="**/*.jar"/>
+            <include name="**/*.zip"/>
+        </fileset>
+        <pathelement location="${tomcat.home.dir}/bin/bootstrap.jar"/>
+        <pathelement location="${tomcat.home.dir}/bin/tomcat-juli.jar"/>
+    </path>
+
+    <target name="tomcat-start">
+        <echo>Stop Tomcat</echo>
+        <java classname="org.apache.catalina.startup.Bootstrap" fork="true"
+              classpathref="tomcat.class.path">
+            <jvmarg value="-Dcatalina.home=${tomcat.home.dir}"/>
+        </java>
     </target>
 
-    <target name = "shutdown-server">
-        <asadmin failonerror = "true">
-            <arg value = "stop-domain"/>
-            <arg value = "${glassfish.domain}"/>
-        </asadmin>
+    <target name="tomcat-stop" depends="tomcat-check-status" if="tomcat.started">
+        <echo>Start Tomcat</echo>
+        <java classname="org.apache.catalina.startup.Bootstrap" fork="true"
+              classpathref="tomcat.class.path">
+            <jvmarg value="-Dcatalina.home=${tomcat.home.dir}"/>
+            <arg line="stop"/>
+        </java>
+        <sleep seconds="5"/>
     </target>
 
-    <target name = "deploy">
-        <asadmin failonerror = "true">
-            <arg value = "deploy"/>
-            <arg value = "-force=true"/>
-            <arg value = "${webapp.dir}/${war.file}"/>
-        </asadmin>
-    </target>
-
-    <target name = "undeploy">
-        <asadmin failonerror = "true">
-            <arg value = "undeploy"/>
-            <arg value = "${war.name}"/>
-        </asadmin>
-    </target>-->
-
-    <target name = "start-server">
-        <exec executable = "${asadmin}">
-            <arg value="start-domain"/>
-        </exec>
-    </target>
-
-    <target name = "stop-server">
-        <exec executable = "${asadmin}">
-            <arg value="stop-domain"/>
-        </exec>
-    </target>
-
-    <target name = "deploy">
-        <exec executable = "${asadmin}">
-            <arg value = "deploy"/>
-            <arg value = "--force=true"/>
-            <arg value = "${webapp.dir}/${war.file}"/>
-        </exec>
-    </target>
-
-    <target name = "undeploy">
-        <exec executable = "${asadmin}">
-            <arg value = "undeploy"/>
-            <arg value = "${war.name}"/>
-        </exec>
-    </target>
-
-
-    <target name="check-if-deployed">
-
-        <property name="tomcat.home.dir" value="apache-tomcat-8.5.53" />
-        <property name="tomcat.base.url" value="http://localhost:8080" />
-        <property name="tomcat.manager.url" value="${tomcat.base.url}/manager/text" />
-        <property name="tomcat.user.name" value="tomcat" />
-        <property name="tomcat.user.password" value="tomcat" />
-
-        <condition property="is.webapp.deployed">
-            <http url="${tomcat.manager.url}" />
+    <target name="tomcat-check-status">
+        <condition property="tomcat.started">
+            <socket server="localhost" port="8080"/>
         </condition>
-
-        <path id="tomcat.classpath">
-            <!-- We need the Catalina jars for Tomcat -->
-            <fileset dir="${tomcat.home.dir}/lib">
-                <include name="catalina-ant.jar"/>
-                <include name="tomcat-coyote.jar"/>
-                <include name="tomcat-util.jar"/>
-            </fileset>
-            <fileset dir="${tomcat.home.dir}/bin">
-                <include name="tomcat-juli.jar"/>
-            </fileset>
-        </path>
-
-        <!-- Configure the custom Ant tasks for the Manager application -->
-        <taskdef name="deploy"    classname="org.apache.catalina.ant.DeployTask" classpathref="tomcat.classpath"/>
-        <taskdef name="list"      classname="org.apache.catalina.ant.ListTask" classpathref="tomcat.classpath"/>
-        <taskdef name="reload"    classname="org.apache.catalina.ant.ReloadTask" classpathref="tomcat.classpath"/>
-        <taskdef name="findleaks" classname="org.apache.catalina.ant.FindLeaksTask" classpathref="tomcat.classpath"/>
-        <taskdef name="resources" classname="org.apache.catalina.ant.ResourcesTask" classpathref="tomcat.classpath"/>
-        <taskdef name="start"     classname="org.apache.catalina.ant.StartTask" classpathref="tomcat.classpath"/>
-        <taskdef name="stop"      classname="org.apache.catalina.ant.StopTask" classpathref="tomcat.classpath"/>
-        <taskdef name="undeploy"  classname="org.apache.catalina.ant.UndeployTask" classpathref="tomcat.classpath"/>
     </target>
 
-    <!-- <target name="undeploy" depends="check-if-deployed" if="is.webapp.deployed">
-        <undeploy
-                url="${tomcat.manager.url}"
-                username="${tomcat.user.name}"
-                password="${tomcat.user.password}"
-                path="/${ant.project.name}"
-        />
+    <target name="deploy" >
+        <sequential>
+            <antcall target="tomcat-stop"/>
+            <echo>Deploy to server</echo>
+            <copy todir="${deploy.path}/${war.name}">
+                <fileset dir="${webapp.dir}"/>
+            </copy>
+            <antcall target="tomcat-start"/>
+        </sequential>
     </target>
-
-    <target name="deploy" depends="clean, clean-war, initDB, buildProject, build-war, undeploy" >
-        <deploy
-                url="${tomcat.base.url}"
-                username="${tomcat.user.name}"
-                password="${tomcat.user.password}"
-                path="/${ant.project.name}"
-                war="${dist.dir}/${war.file}"
-        />
-    </target> -->
 
     <target name = "run-system-tests" >
         <ant antfile = "${selenium.dir}/build.xml"/>
     </target>
 
-    <target name = "all" depends = "clean, clean-war, initDB, buildProject, build-war, start-server, deploy"/>
+    <target name = "all" depends = "clean, clean-war, initDB, buildProject, build-war, deploy"/>
 </project>

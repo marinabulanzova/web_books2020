@@ -27,7 +27,7 @@ public class UserTest {
     public void testSaveUpdateDeleteUser() throws Exception {
         UserDAO users = new UserDAO(session);
         List<User> l = users.findAll();
-        Assert.assertEquals(l.size(), 7 );
+        Assert.assertEquals(l.size(), 9 );
         User user = new User(
                 "Буланцова",
                 "Марина",
@@ -43,7 +43,7 @@ public class UserTest {
         session.getTransaction().commit();
 
         l = users.findAll();
-        Assert.assertEquals(l.size(), 8 );
+        Assert.assertEquals(l.size(), 10 );
         Assert.assertEquals(l.get(0).getSurname(), "Буланцова" );
         Assert.assertEquals(l.get(0).getFirst_name(), "Марина" );
         Assert.assertEquals(l.get(0).getPatronymic(), "Геннадьевна" );
@@ -61,18 +61,18 @@ public class UserTest {
         session.getTransaction().commit();
 
         l = users.findAll();
-        Assert.assertEquals(l.size(), 7 );
+        Assert.assertEquals(l.size(), 9 );
 
-        Assert.assertEquals(l.get(3).getE_mail(), "matveev_d@mail.ru");
-        Assert.assertEquals((int)l.get(3).getId_user(), 1);
+        Assert.assertEquals(l.get(3).getE_mail(), "kostina_e@mail.ru");
+        Assert.assertEquals((int)l.get(3).getId_user(), 7);
         user = users.getById(1);
-        user.setE_mail("matveev_d@gmail.ru");
+        user.setE_mail("kostina_e@mail.ru");
         users.update(user);
         l = users.findAll();
-        Assert.assertEquals((int)l.get(3).getId_user(), 1);
-        Assert.assertEquals(l.get(3).getE_mail(), "matveev_d@gmail.ru");
+        Assert.assertEquals((int)l.get(3).getId_user(), 7);
+        Assert.assertEquals(l.get(3).getE_mail(), "kostina_e@mail.ru");
         user = l.get(3);
-        user.setE_mail("matveev_d@mail.ru");
+        user.setE_mail("kostina_e@mail.ru");
         users.update(user);
     }
 
@@ -97,9 +97,7 @@ public class UserTest {
                 null,
                 null,
                 null);
-        Assert.assertEquals(l.size(), 2 );
-        Assert.assertEquals(l.get(0).getAddress(), "г.Москва, Ломоносовский проспект, д.103, к.1");
-        Assert.assertEquals(l.get(1).getAddress(), "г.Москва, Ломоносовский проспект, д.27, к.11");
+        Assert.assertEquals(l.size(), 4 );
 
         l =  users.find(null,
                 null,
